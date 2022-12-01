@@ -1,0 +1,75 @@
+import "./header.css";
+import tab from "./tab.svg";
+import furniture from "./furniture.png";
+import car from "./car.png";
+
+const Header = () => {
+    return ( 
+        <div className="Header">
+            <div className="Header_tabs">
+                
+                    <button className="Header_tabs_tab">
+                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" />
+                        <div id="icon">
+                            <img src={car} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Vintage Cars
+                        </span>
+
+                    </button>
+                    <button className="Header_tabs_tab">
+                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" />
+                        <div id="icon">
+                            <img src={furniture} alt="tab" />
+                        </div>
+                        
+                        <span className="Header_tabs_tab_text">
+                            Furniture
+                        </span>
+
+                    </button>
+                    <button className="Header_tabs_tab">
+                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" />
+                        <div id="icon">
+                            <img src={furniture} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Jewellery
+                        </span>
+
+                    </button>
+                    <button className="Header_tabs_tab">
+                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" />
+                        <div id="icon">
+                            <img src={furniture} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Handcraft
+                        </span>
+
+                    </button>
+                    <button className="Header_tabs_tab">
+                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" />
+                        <div id="icon">
+                            <img src={furniture} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Handcraft
+                        </span>
+
+                    </button>
+                    
+                
+            </div>
+           
+        </div>
+     );
+}
+ 
+export default Header;

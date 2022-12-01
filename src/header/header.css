@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+* {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.Header {
+  border: 2px solid red;
+}
+.Header_tabs {
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  display: grid;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid silver;
+  padding: 20px;
+  border-radius: 20px;
+  row-gap: 10px;
+}
+.Header_tabs_tab {
+  width: 140px;
+  aspect-ratio: 10/9;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Header_tabs_tab #icon {
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -13px;
+  left: -18px;
+  z-index: 1;
+}
+.Header_tabs_tab #icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.Header_tabs_tab img {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+}
+.Header_tabs_tab_text {
+  z-index: 5;
+  font-size: 17px;
+  font-weight: 900;
+  padding: 0 7px;
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  color: #E3856B;
+  text-decoration: overline;
+}/*# sourceMappingURL=header.css.map */
