@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
 
-
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 $oswald:  "Oswald", sans-serif;
 $roboto:  'Roboto Slab', serif;
 $sborderr: 2px solid red;
 $sborderb: 2px solid black;
+$sborderg: 2px solid green;
 
 @mixin grid-center {
   display: grid;

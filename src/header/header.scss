@@ -1,7 +1,10 @@
 @import '../base';
 
 .Header{
-    border: $sborderr;
+    //border: $sborderr;
+    display: grid;
+    align-items: center;
+    width: fit-content;
     &_tabs{
             font-family: $roboto;
             font-size: 16px;
@@ -61,3 +64,136 @@
 
 }
 
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    .Header{
+        &_tabs{
+                border: 2px solid blue;
+
+                &_tab{
+
+                    #icon{
+
+                        img{
+
+                        }
+                    }
+                    img{
+                 
+                    }
+                    &_text{
+
+                    }
+                }
+    
+        }
+        
+    
+    }
+  }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .Header{
+        &_tabs{
+                font-size: 16px;
+                border: 2px solid red;
+                padding: 20px;
+                border-radius: 20px;
+                row-gap: 10px;
+                &_tab{
+                    width: 140px;
+                    aspect-ratio: 10/9;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    @include grid-center;
+                    position: relative;
+                    //border: $sborderb;
+                    #icon{
+                        //border: $sborderr;
+                        width: 40px;
+                        aspect-ratio: 1/1;
+                        display: grid;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        top:-13px;
+                        left:-18px;
+                        z-index: 1;
+                        img{
+                            object-fit: contain;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    img{
+                        position: absolute;
+                        top:0px;
+                        z-index: 3;                    
+                    }
+                    &_text{
+                        z-index: 5;
+                        font-size: 17px;
+                        font-weight: 900;
+                        padding: 0 7px;
+                        position: absolute;
+                        bottom: -2px;
+                        width: 100%;
+                        color: #E3856B;
+                        text-decoration: overline;
+                    }
+                }
+    
+        }
+        
+    
+    }
+ }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+
+    .Header{
+        position: relative;
+        top:20px;
+        overflow: scroll;
+        &_tabs{
+            //border: 2px solid green;
+                padding: 0;
+                row-gap: 0;
+                display: flex;
+                overflow: scroll;
+                border: none;
+                &_tab{
+                    //border: $sborderg;
+                    width: 33vw;
+                    .tile{
+                        display: none;
+                    }
+                    #icon{
+                        //border: $sborderg;
+                        width: 50px;
+                        left: 0;
+                        img{
+
+                        }
+                    }
+                    img{
+                 
+                    }
+                    &_text{
+                        font-size: 14px;
+                        bottom: 1vh;
+
+                    }
+                }
+    
+        }
+        
+    
+    }
+ }

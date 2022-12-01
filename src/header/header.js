@@ -9,8 +9,7 @@ const Header = () => {
             <div className="Header_tabs">
                 
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" />
-                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={car} alt="tab" />
                         </div>
@@ -20,8 +19,7 @@ const Header = () => {
 
                     </button>
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" />
-                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={furniture} alt="tab" />
                         </div>
@@ -32,8 +30,7 @@ const Header = () => {
 
                     </button>
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" />
-                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={furniture} alt="tab" />
                         </div>
@@ -43,8 +40,7 @@ const Header = () => {
 
                     </button>
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" />
-                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={furniture} alt="tab" />
                         </div>
@@ -54,10 +50,9 @@ const Header = () => {
 
                     </button>
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" />
-                        <img src={tab} alt="tab" />
+                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
-                            <img src={furniture} alt="tab" />
+                            <img src={furniture} alt="tab"/>
                         </div>
                         <span className="Header_tabs_tab_text">
                             Handcraft

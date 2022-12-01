@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 * {
   font-family: "Oswald", sans-serif;
   color: black;
@@ -6,7 +14,11 @@
 }
 
 .Header {
-  border: 2px solid red;
+  display: grid;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .Header_tabs {
   font-family: "Roboto Slab", serif;
@@ -64,4 +76,91 @@
   width: 100%;
   color: #E3856B;
   text-decoration: overline;
+}
+
+@media (max-width: 991.98px) {
+  .Header_tabs {
+    border: 2px solid blue;
+  }
+}
+@media (max-width: 767.98px) {
+  .Header_tabs {
+    font-size: 16px;
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 20px;
+    row-gap: 10px;
+  }
+  .Header_tabs_tab {
+    width: 140px;
+    aspect-ratio: 10/9;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .Header_tabs_tab #icon {
+    width: 40px;
+    aspect-ratio: 1/1;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -13px;
+    left: -18px;
+    z-index: 1;
+  }
+  .Header_tabs_tab #icon img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  .Header_tabs_tab img {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+  }
+  .Header_tabs_tab_text {
+    z-index: 5;
+    font-size: 17px;
+    font-weight: 900;
+    padding: 0 7px;
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    color: #E3856B;
+    text-decoration: overline;
+  }
+}
+@media (max-width: 575.98px) {
+  .Header {
+    position: relative;
+    top: 20px;
+    overflow: scroll;
+  }
+  .Header_tabs {
+    padding: 0;
+    row-gap: 0;
+    display: flex;
+    overflow: scroll;
+    border: none;
+  }
+  .Header_tabs_tab {
+    width: 33vw;
+  }
+  .Header_tabs_tab .tile {
+    display: none;
+  }
+  .Header_tabs_tab #icon {
+    width: 50px;
+    left: 0;
+  }
+  .Header_tabs_tab_text {
+    font-size: 14px;
+    bottom: 1vh;
+  }
 }/*# sourceMappingURL=header.css.map */
