@@ -23,18 +23,20 @@ html, body {
 .Header_tabs {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
-  display: grid;
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border: 2px solid silver;
   padding: 20px;
   border-radius: 20px;
   row-gap: 10px;
 }
 .Header_tabs_tab {
-  width: 140px;
+  width: 130px;
   aspect-ratio: 10/9;
   background: transparent;
   border: none;
@@ -79,85 +81,66 @@ html, body {
 }
 
 @media (max-width: 991.98px) {
+  .Header {
+    position: relative;
+  }
   .Header_tabs {
-    border: 2px solid blue;
+    width: 100vw;
+  }
+  .Header_tabs_tab {
+    width: 120px;
   }
 }
 @media (max-width: 767.98px) {
+  .Header {
+    top: 3vh;
+  }
   .Header_tabs {
     font-size: 16px;
-    border: 2px solid red;
-    padding: 20px;
+    padding: 0;
     border-radius: 20px;
     row-gap: 10px;
+    height: 125px;
+    flex-direction: row;
   }
-  .Header_tabs_tab {
-    width: 140px;
-    aspect-ratio: 10/9;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  .Header_tabs_tab .tile {
+    transform: rotate(45deg);
   }
   .Header_tabs_tab #icon {
-    width: 40px;
-    aspect-ratio: 1/1;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -13px;
-    left: -18px;
-    z-index: 1;
-  }
-  .Header_tabs_tab #icon img {
-    -o-object-fit: contain;
-       object-fit: contain;
-    width: 100%;
-    height: 100%;
-  }
-  .Header_tabs_tab img {
-    position: absolute;
-    top: 0px;
-    z-index: 3;
-  }
-  .Header_tabs_tab_text {
-    z-index: 5;
-    font-size: 17px;
-    font-weight: 900;
-    padding: 0 7px;
-    position: absolute;
-    bottom: -2px;
-    width: 100%;
-    color: #E3856B;
-    text-decoration: overline;
+    left: -12px;
+    top: -30px;
   }
 }
 @media (max-width: 575.98px) {
   .Header {
     position: relative;
     top: 20px;
-    overflow: scroll;
+    overflow: hidden;
+    width: 100vw;
   }
   .Header_tabs {
+    border: none;
+    width: 100vw;
     padding: 0;
     row-gap: 0;
     display: flex;
     overflow: scroll;
-    border: none;
+    height: 130px;
+    justify-content: unset;
   }
   .Header_tabs_tab {
     width: 33vw;
+    aspect-ratio: 1/1;
   }
   .Header_tabs_tab .tile {
     display: none;
   }
   .Header_tabs_tab #icon {
-    width: 50px;
+    width: 60px;
     left: 0;
+    top: -13px;
+    left: 2px;
+    z-index: 1;
   }
   .Header_tabs_tab_text {
     font-size: 14px;
