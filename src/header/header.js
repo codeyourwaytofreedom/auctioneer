@@ -60,12 +60,8 @@ const Header = () => {
                         <span className="Header_tabs_tab_text">
                             Paintings
                         </span>
-
                     </button>
-                    
-                
             </div>
-           
         </div>
      );
 }

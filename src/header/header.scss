@@ -32,7 +32,7 @@
                     align-items: center;
                     justify-content: center;
                     position: relative;
-                    top:-13px;
+                    top:-11%;
                     left:-18px;
                     z-index: 1;
                     img{
@@ -67,6 +67,8 @@
     .Header{
         position: relative;
         &_tabs{
+                flex-direction: row;
+                height: 150px;
                 width: 100vw;
                 &_tab{
                     width: 120px;
@@ -106,6 +108,7 @@
         top:20px;
         overflow: hidden;
         width: 100vw;
+        top:0;
         &_tabs{
                 border: none;
                 width: 100vw;

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.Products {
+  border: 2px solid purple;
+  display: grid;
+  justify-self: center;
+  width: calc(96vw - 130px);
+  position: relative;
+  top: 1vh;
+}
+
+@media (max-width: 991.98px) {
+  .App {
+    grid-auto-flow: row;
+  }
+  .Products {
+    border: 2px solid black;
+    display: grid;
+    justify-self: center;
+    width: calc(96vw - 130px);
+  }
+}
+@media (max-width: 767.98px) {
+  .Products {
+    border: 2px solid red;
+    display: grid;
+    justify-self: center;
+    width: calc(96vw - 130px);
+  }
+}
+@media (max-width: 575.98px) {
+  .Products {
+    border: 2px solid green;
+    display: grid;
+    justify-self: center;
+    width: calc(96vw - 130px);
+  }
+}/*# sourceMappingURL=products.css.map */

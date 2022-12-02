@@ -13,6 +13,11 @@ html, body {
   box-sizing: border-box;
 }
 
+.App {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 .Header {
   display: grid;
   align-items: center;
@@ -53,7 +58,7 @@ html, body {
   align-items: center;
   justify-content: center;
   position: relative;
-  top: -13px;
+  top: -11%;
   left: -18px;
   z-index: 1;
 }
@@ -85,6 +90,8 @@ html, body {
     position: relative;
   }
   .Header_tabs {
+    flex-direction: row;
+    height: 150px;
     width: 100vw;
   }
   .Header_tabs_tab {
@@ -117,6 +124,7 @@ html, body {
     top: 20px;
     overflow: hidden;
     width: 100vw;
+    top: 0;
   }
   .Header_tabs {
     border: none;
