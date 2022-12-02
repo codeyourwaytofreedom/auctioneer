@@ -3,13 +3,11 @@ import "./products.css"
 const Products = () => {
     return ( 
         <div className="Products">
-            <div className="Products_product">PRODUCT INFO</div>
-            <div className="Products_product">PRODUCT INFO</div>
-            <div className="Products_product">PRODUCT INFO</div>
-            <div className="Products_product">PRODUCT INFO</div>
-            <div className="Products_product">PRODUCT INFO</div>
-            <div className="Products_product">PRODUCT INFO</div>
-            
+            {
+                [...Array(10)].map( e =>
+                    <div className="Products_product">PRODUCT INFO</div>
+                    )
+            }
         </div>
      );
 }

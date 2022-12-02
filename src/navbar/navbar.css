@@ -1,26 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
-
 html, body {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
   overflow: hidden;
-}
-$oswald:  "Oswald", sans-serif;
-$roboto:  'Roboto Slab', serif;
-$sborderr: 2px solid red;
-$sborderb: 2px solid black;
-$sborderg: 2px solid green;
-$sborderp: 2px solid purple;
-
-$main_orange: #E3856B;
-$main_turq: #80C4B7;
-
-@mixin grid-center {
-  display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 * {
@@ -29,8 +13,15 @@ $main_turq: #80C4B7;
   box-sizing: border-box;
 }
 
-
-.App{
+.App {
   display: grid;
   grid-auto-flow: column;
 }
+
+.Navbar {
+  position: fixed;
+  width: 100vw;
+  height: 70px;
+  background-color: #80C4B7;
+  z-index: 4;
+}/*# sourceMappingURL=navbar.css.map */

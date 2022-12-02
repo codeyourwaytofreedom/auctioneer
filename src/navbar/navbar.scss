@@ -1,0 +1,12 @@
+@import '../base';
+
+
+
+.Navbar{
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    background-color: $main_turq;
+    z-index: 4;
+
+}

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./header/header";
+import Navbar from "./navbar/navbar";
 import Products from "./products/products";
 
 
@@ -9,10 +10,12 @@ function App() {
         <Routes>
           <Route path="/" 
                   element={<>
-                  <div className="Page_products">
+                    <div className="Page_products">
+                      <Navbar/>
                       <Header/>
                       <Products/>
-                  </div>
+                    </div>
+                  
                   </>}
           />
         </Routes>

@@ -1,24 +1,20 @@
 @import '../base';
 
 .Header{
-    //border: $sborderr;
     display: grid;
-    align-items: start;
-    width: fit-content;
+    height: 700px;
     &_tabs{
             font-family: $roboto;
             font-size: 16px;
-            display: flex;
-            height: 700px;
-            flex-direction: column;
-            justify-content: space-between;
-            position: fixed;
-            width: 160px;
+            display: grid;
+            position: relative;
             padding: 20px;
             border-radius: 20px;
-            row-gap: 10px;
+            row-gap: 15px;
+            top: 73px;
+            overflow: scroll;
             &_tab{
-                width: 130px;
+                width: 110px;
                 aspect-ratio: 10/9;
                 background: transparent;
                 border: none;
@@ -52,7 +48,7 @@
                     font-weight: 900;
                     padding: 0 7px;
                     position: absolute;
-                    bottom: -2px;
+                    bottom: -5px;
                     width: 100%;
                     color: #E3856B;
                     text-decoration: overline;
@@ -70,6 +66,7 @@
                 flex-direction: row;
                 height: 150px;
                 width: 100vw;
+                position: relative;
                 &_tab{
                     width: 120px;
                 }
