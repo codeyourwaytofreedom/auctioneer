@@ -3,7 +3,7 @@
 .Header{
     //border: $sborderr;
     display: grid;
-    align-items: center;
+    align-items: start;
     width: fit-content;
     &_tabs{
             font-family: $roboto;
@@ -12,8 +12,8 @@
             height: 700px;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            width: fit-content;
+            position: fixed;
+            width: 160px;
             padding: 20px;
             border-radius: 20px;
             row-gap: 10px;

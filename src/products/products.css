@@ -4,7 +4,6 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 * {
@@ -18,39 +17,44 @@ html, body {
   grid-auto-flow: column;
 }
 
+.Page_products {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 .Products {
   border: 2px solid purple;
   display: grid;
-  justify-self: center;
-  width: calc(96vw - 130px);
+  justify-self: end;
+  width: calc(97vw - 160px);
   position: relative;
   top: 1vh;
+  grid-template-columns: repeat(3, 1fr);
+}
+.Products_product {
+  border: 2px solid red;
+  aspect-ratio: 1/1;
 }
 
 @media (max-width: 991.98px) {
-  .App {
+  .Page_products {
     grid-auto-flow: row;
   }
   .Products {
-    border: 2px solid black;
-    display: grid;
-    justify-self: center;
-    width: calc(96vw - 130px);
+    border: 2px solid blue;
+    width: 100vw;
+    top: 150px;
   }
 }
 @media (max-width: 767.98px) {
   .Products {
     border: 2px solid red;
-    display: grid;
-    justify-self: center;
-    width: calc(96vw - 130px);
+    top: calc(3vh + 150px);
   }
 }
 @media (max-width: 575.98px) {
   .Products {
     border: 2px solid green;
-    display: grid;
-    justify-self: center;
-    width: calc(96vw - 130px);
+    top: 140px;
   }
 }/*# sourceMappingURL=products.css.map */

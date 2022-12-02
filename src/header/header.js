@@ -1,10 +1,10 @@
 import "./header.css";
-import tab from "./tab.svg";
-import furniture from "./furniture.png";
-import car from "./car.png";
-import jewelry from "./jewelry.png";
-import handcraft from "./handcraft.png";
-import painting from "./painting.png";
+import tab from "./images/tab.svg";
+import furniture from "./images/furniture.png";
+import car from "./images/car.png";
+import jewelry from "./images/jewelry.png";
+import handcraft from "./images/handcraft.png";
+import painting from "./images/painting.png";
 
 const Header = () => {
     return ( 

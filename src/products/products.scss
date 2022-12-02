@@ -1,47 +1,51 @@
 @import '../base';
 
+.Page_products{
+    display: grid;
+    grid-auto-flow: column;
+}
 
 .Products{
     border: $sborderp;
     display: grid;
-    justify-self: center;
-    width: calc(96vw - 130px);
+    justify-self: end;
+    width: calc(97vw - 160px);
     position: relative;
     top:1vh;
+    grid-template-columns: repeat(3, 1fr);
+    &_product{
+        border: $sborderr;
+        aspect-ratio: 1/1;
+    }
 }
 
 
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) { 
-    .App{
+    .Page_products{
         grid-auto-flow: row;
     }
     .Products{
-        border: $sborderb;
-        display: grid;
-        justify-self: center;
-        width: calc(96vw - 130px);
+        border: 2px solid blue;
+        width: 100vw;
+        top: 150px;
     }
  }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
     .Products{
-        border: $sborderr;
-        display: grid;
-        justify-self: center;
-        width: calc(96vw - 130px);
+        border: 2px solid red;
+        top: calc(3vh + 150px);
     }
  }
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
     .Products{
-        border: $sborderg;
-        display: grid;
-        justify-self: center;
-        width: calc(96vw - 130px);
+        border: 2px solid green;
+        top: 140px;
     }
  }
 
