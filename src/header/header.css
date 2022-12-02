@@ -32,6 +32,9 @@ html, body {
   row-gap: 15px;
   top: 73px;
   overflow: scroll;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .Header_tabs_tab {
   width: 110px;
@@ -83,7 +86,10 @@ html, body {
     position: relative;
   }
   .Header_tabs {
+    display: flex;
     flex-direction: row;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
     height: 150px;
     width: 100vw;
     position: relative;

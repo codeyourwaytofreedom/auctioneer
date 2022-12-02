@@ -13,6 +13,7 @@
             row-gap: 15px;
             top: 73px;
             overflow: scroll;
+            width: fit-content;
             &_tab{
                 width: 110px;
                 aspect-ratio: 10/9;
@@ -63,7 +64,9 @@
     .Header{
         position: relative;
         &_tabs{
+                display: flex;
                 flex-direction: row;
+                column-gap: 5px;
                 height: 150px;
                 width: 100vw;
                 position: relative;

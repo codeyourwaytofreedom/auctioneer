@@ -4,7 +4,7 @@ const Products = () => {
     return ( 
         <div className="Products">
             {
-                [...Array(10)].map( e =>
+                [...Array(20)].map( e =>
                     <div className="Products_product">PRODUCT INFO</div>
                     )
             }
