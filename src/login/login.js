@@ -14,11 +14,14 @@ const Login = () => {
                 </div>
                 <div className="Login_shell_entries">
                     <form action="">
-                        <div>
-                            Entries
+                        <div className="Login_shell_entries_email">
+                            <input type="text" placeholder="Email..." />
                         </div>
-                        <div>
-                            Login
+                        <div className="Login_shell_entries_password">
+                            <input type="text" placeholder="Password..." />
+                        </div>
+                        <div className="Login_shell_entries_button">
+                            <button id="loginbutton">Login</button>
                         </div>
                     </form>
                         

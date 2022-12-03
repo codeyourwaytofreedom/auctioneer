@@ -26,22 +26,20 @@ html, body {
 .Login {
   position: relative;
   top: 70px;
-  border: 8px solid black;
   height: calc(100vh - 70px);
   display: grid;
   justify-content: center;
   align-items: center;
 }
 .Login_shell {
-  border: 4px solid yellow;
   width: 600px;
   height: 600px;
 }
 .Login_shell_gavel {
   width: 200px;
   height: 200px;
-  border: 2px solid green;
   position: relative;
+  left: 95px;
 }
 .Login_shell_gavel_image {
   width: 100%;
@@ -81,9 +79,38 @@ html, body {
   top: 0;
 }
 .Login_shell_entries {
-  border: 2px solid red;
   display: grid;
   justify-items: center;
+  padding-top: 30px;
+}
+.Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button {
+  border: 2px solid #E3856B;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.Login_shell_entries_email input, .Login_shell_entries_password input, .Login_shell_entries_button input {
+  border: none;
+  width: 100%;
+  font-size: 18px;
+}
+.Login_shell_entries_email input:focus, .Login_shell_entries_password input:focus, .Login_shell_entries_button input:focus {
+  outline: none;
+}
+.Login_shell_entries_email button, .Login_shell_entries_password button, .Login_shell_entries_button button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  background-image: radial-gradient(circle at center center, #E3856B 0%, #d36b4f 27.5%, #c05537 40%, #ac4224 57.5%, #983519 75%, #862a11 100%) !important;
+  color: white;
+}
+.Login_shell_entries_button {
+  padding: 0;
 }
 
 @media (max-width: 575.98px) {
@@ -92,7 +119,6 @@ html, body {
     height: calc(100vh - 50px);
   }
   .Login_shell {
-    border: 4px solid green;
     width: 100vw;
     height: auto;
     display: grid;
@@ -100,52 +126,16 @@ html, body {
     justify-content: center;
   }
   .Login_shell_gavel {
-    width: 200px;
-    height: 200px;
-    border: 2px solid green;
-    position: relative;
-  }
-  .Login_shell_gavel_image {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    transform: rotate(-18deg);
-    -webkit-animation-name: hit;
-            animation-name: hit;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    position: relative;
-    top: 0;
-  }
-  .Login_shell_gavel #bid {
-    width: 100px;
-    height: 150px;
-    position: absolute;
-    bottom: -36px;
-    right: -45px;
-  }
-  .Login_shell_gavel #bid #bid_hand {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    transform: rotate(0deg);
-    -webkit-animation-name: down;
-            animation-name: down;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    position: relative;
-    top: 0;
+    left: 0;
+    display: grid;
+    justify-self: center;
   }
   .Login_shell_entries {
-    border: 2px solid red;
-    display: grid;
-    justify-items: center;
+    width: 100vw;
+  }
+  .Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button {
+    width: 90vw;
+    max-width: 400px;
   }
 }
 @-webkit-keyframes hit {
