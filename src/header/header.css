@@ -28,8 +28,7 @@ html, body {
   display: grid;
   position: relative;
   padding: 20px;
-  border-radius: 20px;
-  row-gap: 15px;
+  row-gap: 5px;
   top: 73px;
   overflow: scroll;
   width: -webkit-fit-content;
@@ -48,15 +47,12 @@ html, body {
   position: relative;
 }
 .Header_tabs_tab #icon {
-  width: 40px;
+  width: 60px;
   aspect-ratio: 1/1;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -11%;
-  left: -18px;
-  z-index: 1;
+  justify-self: center;
+  position: absolute;
+  top: 0;
 }
 .Header_tabs_tab #icon img {
   -o-object-fit: contain;
@@ -64,21 +60,14 @@ html, body {
   width: 100%;
   height: 100%;
 }
-.Header_tabs_tab img {
-  position: absolute;
-  top: 0px;
-  z-index: 3;
-}
 .Header_tabs_tab_text {
-  z-index: 5;
   font-size: 17px;
   font-weight: 900;
-  padding: 0 7px;
   position: absolute;
-  bottom: -5px;
+  bottom: 15px;
   width: 100%;
   color: #E3856B;
-  text-decoration: overline;
+  text-decoration: underline;
 }
 
 @media (max-width: 991.98px) {
@@ -90,9 +79,10 @@ html, body {
     flex-direction: row;
     -moz-column-gap: 10px;
          column-gap: 10px;
-    height: 150px;
+    height: 133px;
     width: 100vw;
     position: relative;
+    padding: 5px 10px;
   }
   .Header_tabs_tab {
     width: 120px;
@@ -103,21 +93,11 @@ html, body {
     font-size: 16px;
     padding: 0;
     border-radius: 20px;
-    height: 130px;
+    height: 120px;
     flex-direction: row;
     top: 78px;
     -moz-column-gap: 5px;
          column-gap: 5px;
-  }
-  .Header_tabs_tab .tile {
-    transform: rotate(45deg);
-  }
-  .Header_tabs_tab #icon {
-    left: -12px;
-    top: -30px;
-  }
-  .Header_tabs_tab_text {
-    bottom: 5px;
   }
 }
 @media (max-width: 575.98px) {
@@ -129,29 +109,16 @@ html, body {
     top: -15px;
   }
   .Header_tabs {
-    border: none;
     width: 100vw;
     padding: 0;
     row-gap: 0;
     display: flex;
     overflow: scroll;
     height: 107px;
+    -moz-column-gap: 0;
+         column-gap: 0;
   }
   .Header_tabs_tab {
-    width: 33.5vw;
-  }
-  .Header_tabs_tab .tile {
-    display: none;
-  }
-  .Header_tabs_tab #icon {
-    width: 60px;
-    left: 0;
-    top: -13px;
-    left: 2px;
-    z-index: 1;
-  }
-  .Header_tabs_tab_text {
-    font-size: 14px;
-    bottom: 1vh;
+    width: 25vw;
   }
 }/*# sourceMappingURL=header.css.map */

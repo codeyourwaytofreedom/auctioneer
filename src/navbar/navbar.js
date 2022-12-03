@@ -4,7 +4,7 @@ import login from "./login.png"
 import signup from "./signup.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faSignIn } from '@fortawesome/free-solid-svg-icons';
+import { faDollar, faPlusCircle, faSignIn } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     return ( 
@@ -15,6 +15,9 @@ const Navbar = () => {
             <div className="Navbar_motto">
                     auctioneer
             </div>
+{/*             <div className="Navbar_bids">
+                <FontAwesomeIcon icon={faDollar} size={"2x"} color={"green"} />
+            </div> */}
             <div className="Navbar_member">
                 <div className="Navbar_member_login">
                     <button>

@@ -12,7 +12,6 @@ const Header = () => {
             <div className="Header_tabs">
                 
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={car} alt="tab" />
                         </div>
@@ -21,8 +20,8 @@ const Header = () => {
                         </span>
 
                     </button>
+
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={furniture} alt="tab" />
                         </div>
@@ -32,8 +31,8 @@ const Header = () => {
                         </span>
 
                     </button>
+
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={jewelry} alt="tab" />
                         </div>
@@ -42,8 +41,8 @@ const Header = () => {
                         </span>
 
                     </button>
+
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={handcraft} alt="tab" />
                         </div>
@@ -52,8 +51,8 @@ const Header = () => {
                         </span>
 
                     </button>
+
                     <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
                         <div id="icon">
                             <img src={painting} alt="tab"/>
                         </div>
@@ -61,10 +60,8 @@ const Header = () => {
                             Paintings
                         </span>
                     </button>
-                    {
-                        [...Array(10)].map( e =>
-                            <button className="Header_tabs_tab">
-                        <img src={tab} alt="tab" className="tile"/>
+                    
+                    <button className="Header_tabs_tab">
                         <div id="icon">
                             <img src={car} alt="tab" />
                         </div>
@@ -73,8 +70,46 @@ const Header = () => {
                         </span>
 
                     </button>
-                            )
-                    }
+
+                    <button className="Header_tabs_tab">
+                        <div id="icon">
+                            <img src={furniture} alt="tab" />
+                        </div>
+                        
+                        <span className="Header_tabs_tab_text">
+                            Furniture
+                        </span>
+
+                    </button>
+
+                    <button className="Header_tabs_tab">
+                        <div id="icon">
+                            <img src={jewelry} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Jewelery
+                        </span>
+
+                    </button>
+
+                    <button className="Header_tabs_tab">
+                        <div id="icon">
+                            <img src={handcraft} alt="tab" />
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Handcraft
+                        </span>
+
+                    </button>
+
+                    <button className="Header_tabs_tab">
+                        <div id="icon">
+                            <img src={painting} alt="tab"/>
+                        </div>
+                        <span className="Header_tabs_tab_text">
+                            Paintings
+                        </span>
+                    </button>
                     
 
             </div>

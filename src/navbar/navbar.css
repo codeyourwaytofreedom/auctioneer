@@ -26,7 +26,7 @@ html, body {
   z-index: 4;
   display: flex;
   align-items: center;
-  padding: 0 44px;
+  padding-left: 44px;
 }
 .Navbar_icon {
   position: relative;
@@ -46,11 +46,14 @@ html, body {
   text-shadow: 1px 1px #80C4B7;
   font-size: 27px;
 }
+.Navbar_bids {
+  border: 2px solid black;
+}
 .Navbar_member {
   display: flex;
   width: 300px;
   position: absolute;
-  right: 44px;
+  right: 40px;
   justify-content: end;
   -moz-column-gap: 10px;
        column-gap: 10px;
@@ -69,6 +72,7 @@ html, body {
        column-gap: 10px;
   padding: 5px 10px;
   font-size: 17px;
+  border-bottom: 1px solid #80C4B7;
 }
 .Navbar_member_login button span, .Navbar_member_signup button span {
   text-shadow: 0.5px 0.5px #80C4B7;
@@ -85,5 +89,23 @@ html, body {
   }
   .Navbar_icon {
     height: 50px;
+  }
+  .Navbar_member {
+    right: 5px;
+    -moz-column-gap: 4px;
+         column-gap: 4px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .Navbar_member_login, .Navbar_member_signup {
+    border: none;
+    padding: 0;
+  }
+  .Navbar_member_login button, .Navbar_member_signup button {
+    border: none;
+  }
+  .Navbar_member_login button span, .Navbar_member_signup button span {
+    display: none;
   }
 }/*# sourceMappingURL=navbar.css.map */
