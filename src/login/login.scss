@@ -1,0 +1,149 @@
+@import '../base';
+
+.Page_login{
+    height: 100vh;
+    width: 100vw;
+}
+
+.Login{
+    position: relative;
+    top:70px;
+    border: 8px solid black;
+    height: calc(100vh - 70px);
+    @include grid-center;
+    &_shell{
+        border: 4px solid yellow;
+        width: 600px;
+        height: 600px;
+        &_gavel{
+            width: 200px;
+            height: 200px;
+            border: 2px solid green;
+            position: relative;
+            &_image{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transform: rotate(-18deg);
+                animation-name: hit;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                position: relative;
+                top:0;
+            }
+            #bid{
+                width: 100px;
+                height: 150px;
+                //border: 3px solid orange;
+                position: absolute;
+                bottom: -36px;
+                right: -45px;
+                #bid_hand{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    transform: rotate(0deg);
+                    animation-name: down;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    position: relative;
+                    top:0;
+                }
+            }
+        }
+        &_entries{
+            border:2px solid red;
+            display: grid;
+            justify-items: center;
+        }
+    }
+}
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    
+ }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .Login{
+        top:50px;
+        height: calc(100vh - 50px);
+        &_shell{
+            border: 4px solid green;
+            width: 100vw;
+            height: auto;
+            display: grid;
+            align-self: start;
+            justify-content: center;
+            &_gavel{
+                width: 200px;
+                height: 200px;
+                border: 2px solid green;
+                position: relative;
+                &_image{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    transform: rotate(-18deg);
+                    animation-name: hit;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    position: relative;
+                    top:0;
+                }
+                #bid{
+                    width: 100px;
+                    height: 150px;
+                    //border: 3px solid orange;
+                    position: absolute;
+                    bottom: -36px;
+                    right: -45px;
+                    #bid_hand{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        transform: rotate(0deg);
+                        animation-name: down;
+                        animation-duration: 1.5s;
+                        animation-iteration-count: infinite;
+                        position: relative;
+                        top:0;
+                    }
+                }
+            }
+            &_entries{
+                border:2px solid red;
+                display: grid;
+                justify-items: center;
+            }
+        }
+    }
+ }
+
+
+
+@keyframes hit{
+    0%   { transform: rotate(-18deg);}
+    30%  {transform: rotate(0deg);}
+    60%  {transform: rotate(0deg);}
+    100% {transform: rotate(-18deg);}
+}
+
+
+@keyframes down{
+    0%   {top: 0px;
+    }
+    15%  {top: 0px;
+    }
+    45% {top: 10px;
+    }
+    100% {top: 0px;
+    }
+}

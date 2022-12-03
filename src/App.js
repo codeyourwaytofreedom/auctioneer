@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./header/header";
+import Login from "./login/login";
 import Navbar from "./navbar/navbar";
 import Products from "./products/products";
 
@@ -21,9 +22,18 @@ function App() {
                       <Header/>
                       <Products/>
                     </div>
-                  
                   </>}
           />
+
+          <Route path="/login" 
+                  element={<>
+                    <div className="Page_login">
+                      <Navbar/>
+                      <Login/>
+                    </div>
+                  </>}
+          />
+
         </Routes>
       </Router>
   );

@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.Page_login {
+  height: 100vh;
+  width: 100vw;
+}
+
+.Login {
+  position: relative;
+  top: 70px;
+  border: 8px solid black;
+  height: calc(100vh - 70px);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.Login_shell {
+  border: 4px solid yellow;
+  width: 600px;
+  height: 600px;
+}
+.Login_shell_gavel {
+  width: 200px;
+  height: 200px;
+  border: 2px solid green;
+  position: relative;
+}
+.Login_shell_gavel_image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transform: rotate(-18deg);
+  -webkit-animation-name: hit;
+          animation-name: hit;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+}
+.Login_shell_gavel #bid {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  bottom: -36px;
+  right: -45px;
+}
+.Login_shell_gavel #bid #bid_hand {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transform: rotate(0deg);
+  -webkit-animation-name: down;
+          animation-name: down;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+}
+.Login_shell_entries {
+  border: 2px solid red;
+  display: grid;
+  justify-items: center;
+}
+
+@media (max-width: 575.98px) {
+  .Login {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+  .Login_shell {
+    border: 4px solid green;
+    width: 100vw;
+    height: auto;
+    display: grid;
+    align-self: start;
+    justify-content: center;
+  }
+  .Login_shell_gavel {
+    width: 200px;
+    height: 200px;
+    border: 2px solid green;
+    position: relative;
+  }
+  .Login_shell_gavel_image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: rotate(-18deg);
+    -webkit-animation-name: hit;
+            animation-name: hit;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    position: relative;
+    top: 0;
+  }
+  .Login_shell_gavel #bid {
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    bottom: -36px;
+    right: -45px;
+  }
+  .Login_shell_gavel #bid #bid_hand {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: rotate(0deg);
+    -webkit-animation-name: down;
+            animation-name: down;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    position: relative;
+    top: 0;
+  }
+  .Login_shell_entries {
+    border: 2px solid red;
+    display: grid;
+    justify-items: center;
+  }
+}
+@-webkit-keyframes hit {
+  0% {
+    transform: rotate(-18deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+@keyframes hit {
+  0% {
+    transform: rotate(-18deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+@-webkit-keyframes down {
+  0% {
+    top: 0px;
+  }
+  15% {
+    top: 0px;
+  }
+  45% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@keyframes down {
+  0% {
+    top: 0px;
+  }
+  15% {
+    top: 0px;
+  }
+  45% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}/*# sourceMappingURL=login.css.map */
