@@ -10,7 +10,7 @@
     z-index: 4;
     display: flex;
     align-items: center;
-    padding-left:44px;
+    padding:0 44px;
     &_icon{
         position: relative;
         height: 70px;
@@ -23,12 +23,39 @@
         }
     }
     &_motto{
-        border: 2px solid red;
+        //border: 2px solid red;
         padding: 0 20px;
-        color: white;
-        text-shadow: 1px $main_turq;
+        color: black;
+        text-shadow: 1px 1px $main_turq;
         font-size: 27px;
         
+    }
+    &_member{
+        display: flex;
+        width: 300px;
+        //border: 2px solid blue;
+        position: absolute;
+        right: 44px;
+        justify-content: end;
+        column-gap: 10px;
+        &_login, &_signup{
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid black;
+            button{
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                display: flex;
+                column-gap: 10px;
+                padding: 5px 10px;
+                font-size: 17px;
+                span{
+                    text-shadow: 0.5px 0.5px $main_turq;
+                }
+            }
+
+        }
     }
 
 }

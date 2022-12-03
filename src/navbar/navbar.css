@@ -26,7 +26,7 @@ html, body {
   z-index: 4;
   display: flex;
   align-items: center;
-  padding-left: 44px;
+  padding: 0 44px;
 }
 .Navbar_icon {
   position: relative;
@@ -41,11 +41,37 @@ html, body {
      object-fit: contain;
 }
 .Navbar_motto {
-  border: 2px solid red;
   padding: 0 20px;
-  color: white;
-  text-shadow: 1px #80C4B7;
+  color: black;
+  text-shadow: 1px 1px #80C4B7;
   font-size: 27px;
+}
+.Navbar_member {
+  display: flex;
+  width: 300px;
+  position: absolute;
+  right: 44px;
+  justify-content: end;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.Navbar_member_login, .Navbar_member_signup {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+.Navbar_member_login button, .Navbar_member_signup button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 5px 10px;
+  font-size: 17px;
+}
+.Navbar_member_login button span, .Navbar_member_signup button span {
+  text-shadow: 0.5px 0.5px #80C4B7;
 }
 
 @media (max-width: 767.98px) {
