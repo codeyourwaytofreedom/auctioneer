@@ -20,7 +20,7 @@ html, body {
 
 .Header {
   display: grid;
-  height: 700px;
+  height: calc(100vh - 70px);
 }
 .Header_tabs {
   font-family: "Roboto Slab", serif;
@@ -35,6 +35,7 @@ html, body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  border: 2px solid red;
 }
 .Header_tabs_tab {
   width: 110px;
@@ -99,16 +100,14 @@ html, body {
   }
 }
 @media (max-width: 767.98px) {
-  .Header {
-    top: 3vh;
-  }
   .Header_tabs {
     font-size: 16px;
     padding: 0;
     border-radius: 20px;
     row-gap: 10px;
-    height: 125px;
+    height: 130px;
     flex-direction: row;
+    top: 78px;
   }
   .Header_tabs_tab .tile {
     transform: rotate(45deg);
@@ -133,12 +132,11 @@ html, body {
     row-gap: 0;
     display: flex;
     overflow: scroll;
-    height: 130px;
+    height: 107px;
     justify-content: unset;
   }
   .Header_tabs_tab {
     width: 33vw;
-    aspect-ratio: 1/1;
   }
   .Header_tabs_tab .tile {
     display: none;

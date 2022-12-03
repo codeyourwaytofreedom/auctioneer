@@ -2,7 +2,7 @@
 
 .Header{
     display: grid;
-    height: 700px;
+    height: calc(100vh - 70px);
     &_tabs{
             font-family: $roboto;
             font-size: 16px;
@@ -14,6 +14,7 @@
             top: 73px;
             overflow: scroll;
             width: fit-content;
+            border: 2px solid red;
             &_tab{
                 width: 110px;
                 aspect-ratio: 10/9;
@@ -80,14 +81,14 @@
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
     .Header{
-        top:3vh;
         &_tabs{
                 font-size: 16px;
                 padding: 0;
                 border-radius: 20px;
                 row-gap: 10px;
-                height: 125px;
+                height: 130px;
                 flex-direction: row;
+                top: 78px;
                 &_tab{
                     .tile{
                         transform: rotate(45deg);
@@ -116,11 +117,12 @@
                 row-gap: 0;
                 display: flex;
                 overflow: scroll;
-                height: 130px;
+                height: 107px;
                 justify-content: unset;
                 &_tab{
                     width: 33vw;
-                    aspect-ratio: 1/1;
+
+                  
                     .tile{
                         display: none;
                     }
