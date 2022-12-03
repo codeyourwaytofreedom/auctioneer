@@ -24,4 +24,40 @@ html, body {
   height: 70px;
   background-color: #E3856B;
   z-index: 4;
+  display: flex;
+  align-items: center;
+  padding-left: 44px;
+}
+.Navbar_icon {
+  position: relative;
+  height: 70px;
+  aspect-ratio: 1/1;
+  display: grid;
+  align-items: center;
+}
+.Navbar_icon img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Navbar_motto {
+  border: 2px solid red;
+  padding: 0 20px;
+  color: white;
+  text-shadow: 1px #80C4B7;
+  font-size: 27px;
+}
+
+@media (max-width: 767.98px) {
+  .Navbar {
+    padding-left: 19px;
+  }
+}
+@media (max-width: 575.98px) {
+  .Navbar {
+    height: 50px;
+  }
+  .Navbar_icon {
+    height: 50px;
+  }
 }/*# sourceMappingURL=navbar.css.map */

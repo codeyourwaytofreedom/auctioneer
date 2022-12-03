@@ -5,7 +5,9 @@ const Products = () => {
         <div className="Products">
             {
                 [...Array(20)].map( e =>
-                    <div className="Products_product">PRODUCT INFO</div>
+                    <div className="Products_product">
+                        <button>Cick me</button>
+                    </div>
                     )
             }
         </div>

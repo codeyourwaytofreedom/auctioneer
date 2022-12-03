@@ -14,7 +14,7 @@
             top: 73px;
             overflow: scroll;
             width: fit-content;
-            border: 2px solid red;
+            //border: 2px solid red;
             &_tab{
                 width: 110px;
                 aspect-ratio: 10/9;
@@ -67,7 +67,7 @@
         &_tabs{
                 display: flex;
                 flex-direction: row;
-                column-gap: 5px;
+                column-gap: 10px;
                 height: 150px;
                 width: 100vw;
                 position: relative;
@@ -85,10 +85,10 @@
                 font-size: 16px;
                 padding: 0;
                 border-radius: 20px;
-                row-gap: 10px;
                 height: 130px;
                 flex-direction: row;
                 top: 78px;
+                column-gap: 5px;
                 &_tab{
                     .tile{
                         transform: rotate(45deg);
@@ -96,6 +96,9 @@
                     #icon{
                         left:-12px;
                         top:-30px;
+                    }
+                    &_text{
+                        bottom: 5px;
                     }
                 }
         }
@@ -109,7 +112,7 @@
         top:20px;
         overflow: hidden;
         width: 100vw;
-        top:0;
+        top:-15px;
         &_tabs{
                 border: none;
                 width: 100vw;
@@ -118,11 +121,8 @@
                 display: flex;
                 overflow: scroll;
                 height: 107px;
-                justify-content: unset;
                 &_tab{
-                    width: 33vw;
-
-                  
+                    width: 33.5vw;
                     .tile{
                         display: none;
                     }

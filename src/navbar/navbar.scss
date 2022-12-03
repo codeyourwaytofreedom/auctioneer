@@ -8,5 +8,52 @@
     height: 70px;
     background-color: $main_orange;
     z-index: 4;
+    display: flex;
+    align-items: center;
+    padding-left:44px;
+    &_icon{
+        position: relative;
+        height: 70px;
+        aspect-ratio: 1/1;
+        display: grid;
+        align-items: center;
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    &_motto{
+        border: 2px solid red;
+        padding: 0 20px;
+        color: white;
+        text-shadow: 1px $main_turq;
+        font-size: 27px;
+        
+    }
 
 }
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    
+ }
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .Navbar{
+        padding-left: 19px;
+    }
+ }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .Navbar{
+        height: 50px;
+        &_icon{
+            height: 50px;
+        }
+    }
+ }

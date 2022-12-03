@@ -5,6 +5,12 @@ import Products from "./products/products";
 
 
 function App() {
+
+  function square (number) {
+      console.log("Girdiğiniz sayının karesi = ",number*number)
+  }
+  square(15)
+
   return (
       <Router>
         <Routes>

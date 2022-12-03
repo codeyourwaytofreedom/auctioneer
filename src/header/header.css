@@ -35,7 +35,6 @@ html, body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border: 2px solid red;
 }
 .Header_tabs_tab {
   width: 110px;
@@ -89,8 +88,8 @@ html, body {
   .Header_tabs {
     display: flex;
     flex-direction: row;
-    -moz-column-gap: 5px;
-         column-gap: 5px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
     height: 150px;
     width: 100vw;
     position: relative;
@@ -104,10 +103,11 @@ html, body {
     font-size: 16px;
     padding: 0;
     border-radius: 20px;
-    row-gap: 10px;
     height: 130px;
     flex-direction: row;
     top: 78px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
   }
   .Header_tabs_tab .tile {
     transform: rotate(45deg);
@@ -116,6 +116,9 @@ html, body {
     left: -12px;
     top: -30px;
   }
+  .Header_tabs_tab_text {
+    bottom: 5px;
+  }
 }
 @media (max-width: 575.98px) {
   .Header {
@@ -123,7 +126,7 @@ html, body {
     top: 20px;
     overflow: hidden;
     width: 100vw;
-    top: 0;
+    top: -15px;
   }
   .Header_tabs {
     border: none;
@@ -133,10 +136,9 @@ html, body {
     display: flex;
     overflow: scroll;
     height: 107px;
-    justify-content: unset;
   }
   .Header_tabs_tab {
-    width: 33vw;
+    width: 33.5vw;
   }
   .Header_tabs_tab .tile {
     display: none;
