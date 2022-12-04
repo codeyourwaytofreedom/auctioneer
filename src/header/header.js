@@ -7,6 +7,12 @@ import handcraft from "./images/handcraft.png";
 import painting from "./images/painting.png";
 
 const Header = () => {
+/*     useEffect(() => {
+                        axios.get("http://localhost:5000",
+                    ).then(function (response) {
+                        console.log(response);
+                    }).catch((error) => console.log(error))
+    }, []); */
     return ( 
         <div className="Header">
             <div className="Header_tabs">
