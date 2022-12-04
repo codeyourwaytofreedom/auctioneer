@@ -3,6 +3,7 @@ import Header from "./header/header";
 import Login from "./login/login";
 import Navbar from "./navbar/navbar";
 import Products from "./products/products";
+import Register from "./register/register";
 
 
 function App() {
@@ -31,6 +32,14 @@ function App() {
                       <Navbar/>
                       <Login/>
                     </div>
+                  </>}
+          />
+          <Route path="/register" 
+                element={<>
+                  <div className="Page_login">
+                    <Navbar/>
+                    <Register/>
+                  </div>
                   </>}
           />
 

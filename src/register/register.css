@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.Register {
+  border: 3px solid green;
+  position: relative;
+  top: 70px;
+}/*# sourceMappingURL=register.css.map */
