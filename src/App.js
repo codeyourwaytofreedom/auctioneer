@@ -8,11 +8,6 @@ import Register from "./register/register";
 
 function App() {
 
-  function square (number) {
-      console.log("Girdiğiniz sayının karesi = ",number*number)
-  }
-  square(15)
-
   return (
       <Router>
         <Routes>
