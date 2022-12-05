@@ -19,7 +19,6 @@ html, body {
 }
 
 .Register {
-  border: 3px solid green;
   position: relative;
   top: 70px;
   height: calc(100vh - 70px);
@@ -34,7 +33,6 @@ html, body {
   display: grid;
 }
 .Register_shell_entries {
-  border: 2px solid green;
   display: grid;
   justify-items: center;
   padding-top: 30px;
@@ -52,9 +50,19 @@ html, body {
   border: none;
   width: 100%;
   font-size: 18px;
+  color: #E3856B;
 }
 .Register_shell_entries_username input:focus, .Register_shell_entries_email input:focus, .Register_shell_entries_password input:focus, .Register_shell_entries_button input:focus {
   outline: none;
+}
+.Register_shell_entries_username input::-moz-placeholder, .Register_shell_entries_email input::-moz-placeholder, .Register_shell_entries_password input::-moz-placeholder, .Register_shell_entries_button input::-moz-placeholder {
+  color: #E3856B;
+}
+.Register_shell_entries_username input:-ms-input-placeholder, .Register_shell_entries_email input:-ms-input-placeholder, .Register_shell_entries_password input:-ms-input-placeholder, .Register_shell_entries_button input:-ms-input-placeholder {
+  color: #E3856B;
+}
+.Register_shell_entries_username input::placeholder, .Register_shell_entries_email input::placeholder, .Register_shell_entries_password input::placeholder, .Register_shell_entries_button input::placeholder {
+  color: #E3856B;
 }
 .Register_shell_entries_username button, .Register_shell_entries_email button, .Register_shell_entries_password button, .Register_shell_entries_button button {
   width: 100%;
@@ -64,7 +72,7 @@ html, body {
   font-size: 18px;
   background: transparent;
   border: none;
-  background-image: radial-gradient(circle at center center, #E3856B 0%, #d36b4f 27.5%, #c05537 40%, #ac4224 57.5%, #983519 75%, #862a11 100%) !important;
+  background-image: radial-gradient(circle at center center, #80C4B7 0%, #5aaf9f 27.5%, #53a999 40%, #3c9887 57.5%, #2b8a79 75%, #1d7d6b 100%) !important;
   color: white;
 }
 .Register_shell_entries_button {

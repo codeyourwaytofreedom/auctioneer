@@ -1,7 +1,7 @@
 @import "../base";
 
-.Register{
-    border:3px solid green;
+.register{
+    //border:3px solid green;
     position: relative;
     top:70px;
     height: calc(100vh - 70px);
@@ -12,7 +12,7 @@
         border:2px solid red;
         display: grid;
         &_entries{
-            border:2px solid green;
+            //border:2px solid green;
             display: grid;
             justify-items: center;
             padding-top: 30px;
@@ -28,8 +28,12 @@
                     border: none;
                     width: 100%;
                     font-size: 18px;
+                    color: $main_orange;
                     &:focus{
                         outline: none;
+                    }
+                    &::placeholder{
+                        color: $main_orange;
                     }
                 }
                 button{
@@ -40,7 +44,7 @@
                     font-size: 18px;
                     background: transparent;
                     border: none;
-                    background-image: radial-gradient(circle at center center, #E3856B 0%, #d36b4f  27.5%, #c05537  40%, #ac4224 57.5%, #983519 75%, #862a11 100%) !important;
+                    background-image: radial-gradient(circle at center center, #80C4B7 0%, #5aaf9f 27.5%, #53a999   40%, #3c9887  57.5%, #2b8a79 75%, #1d7d6b 100%) !important;
                     color: white;
                 }
             }
@@ -50,3 +54,33 @@
         }
     }
 }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .register{
+        top:50px;
+        height: calc(100vh - 50px);
+        &_shell{
+            //border: 4px solid green;
+            width: 100vw;
+            height: auto;
+            display: grid;
+            align-self: start;
+            justify-content: center;
+            &_gavel{
+                left:0;
+                display: grid;
+                justify-self: center;
+
+            }
+
+            &_entries{
+                width: 100vw;
+                &_email, &_password, &_button{
+                    width: 90vw;
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+ }

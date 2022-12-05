@@ -32,7 +32,7 @@ const Login = () => {
                 <div className="Login_shell_entries">
                     <form action="">
                         <div className="Login_shell_entries_email">
-                            <input type="text" placeholder="Email..." />
+                            <input type="text"  placeholder="Email..." />
                         </div>
                         <div className="Login_shell_entries_password">
                             <input type="text" placeholder="Password..." />
