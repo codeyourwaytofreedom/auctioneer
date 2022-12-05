@@ -1,6 +1,9 @@
 const express = require('express'); //Line 1
 const app = express(); //Line 2
 
+const cors = require('cors');
+app.use(cors());
+
 const port = process.env.PORT || 9000; //Line 3
 
 /* const mongoose = require("mongoose");
@@ -35,7 +38,8 @@ app.get('/express_backend', (req, res) => { //Line 9
   let results = [];
    db.collection('auctioneer').find()
         .forEach (auc => results.push(auc))
-        .then(() => console.log(results))
-
-   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
-}); //Line 11
+        .then(() => {
+            console.log(results);
+            res.json(results)
+          })
+});

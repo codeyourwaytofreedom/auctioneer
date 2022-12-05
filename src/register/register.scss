@@ -4,5 +4,11 @@
     border:3px solid green;
     position: relative;
     top:70px;
-
+    height: calc(100vh - 70px);
+    @include grid-center;
+    &_shell{
+        width: 600px;
+        height: 600px;
+        border:2px solid red;
+    }
 }

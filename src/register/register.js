@@ -6,14 +6,16 @@ const Register = () => {
         useEffect(() => {
                     axios.get("http://localhost:9000/express_backend"
                 ).then(function (response) {
-                    console.log(response.data.express);
+                    console.log(response);
                 }).catch((error) => console.log(error))
         });
 
 
 return ( 
     <div className="Register">
-        REGİSTER
+        <div className="Register_shell">
+            Register Shell
+        </div>
     </div>
     );
 }
