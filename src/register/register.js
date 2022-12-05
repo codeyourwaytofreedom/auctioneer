@@ -1,6 +1,7 @@
 import "./register.css";
 import { useEffect } from "react";
 import axios from "axios";
+import que from "./que.jpg";
 
 const Register = () => {
         useEffect(() => {
@@ -14,6 +15,9 @@ const Register = () => {
 return ( 
     <div className="register">
         <div className="register_shell">
+            <div className="register_shell_animation">
+                <img src={que} alt="xx" />
+            </div>
                 <div className="register_shell_entries">
                     <form action="">
                         <div className="register_shell_entries_username">
@@ -29,7 +33,7 @@ return (
                             <input type="password" placeholder="Confirm password..." />
                         </div>
                         <div className="register_shell_entries_button">
-                            <button id="registerbutton">Login</button>
+                            <button id="registerbutton">Register</button>
                         </div>
                     </form>
                         

@@ -1,5 +1,10 @@
 @import "../base";
 
+.page_register{
+    height: 100vh;
+    width: 100vw;
+}
+
 .register{
     //border:3px solid green;
     position: relative;
@@ -8,9 +13,22 @@
     @include grid-center;
     &_shell{
         width: 600px;
-        height: 600px;
-        border:2px solid red;
+        height: auto;
+        //border:2px solid red;
         display: grid;
+        align-self: start;
+        padding-top: 20px;
+        &_animation{
+            //border:2px solid purple;
+            width: 500px;
+            display: grid;
+            justify-self: center;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
         &_entries{
             //border:2px solid green;
             display: grid;
@@ -60,6 +78,7 @@
     .register{
         top:50px;
         height: calc(100vh - 50px);
+        //border: 2px solid blue;
         &_shell{
             //border: 4px solid green;
             width: 100vw;
@@ -67,16 +86,13 @@
             display: grid;
             align-self: start;
             justify-content: center;
-            &_gavel{
-                left:0;
-                display: grid;
-                justify-self: center;
-
+            padding-top: 30px;
+            &_animation{
+                width: 95vw;
             }
-
             &_entries{
                 width: 100vw;
-                &_email, &_password, &_button{
+                &_username, &_email, &_password, &_button{
                     width: 90vw;
                     max-width: 400px;
                 }

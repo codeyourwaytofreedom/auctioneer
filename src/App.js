@@ -31,7 +31,7 @@ function App() {
           />
           <Route path="/register" 
                 element={<>
-                  <div className="Page_login">
+                  <div className="page_register">
                     <Navbar/>
                     <Register/>
                   </div>
