@@ -17,6 +17,10 @@ const Register = () => {
         }); */
 
     const [warning, setWarning] = useState(null);
+    const [username_ok, setUserok] = useState(false);
+    const [email_ok, setEmailok] = useState(false);
+    const [password_ok, setPasswordok] = useState(false);
+    const [confirm_ok, setConfirmok] = useState(false);
 
     // form data references
     const username = useRef();
@@ -28,10 +32,22 @@ const Register = () => {
     let email_warning = "*Please enter a valid email adress!";
     let password_warning = "*Password must be 8 characters long minimum and must include at least one letter and one number!";
     let confirm_warning = "*Please make sure that you confirm your password!";
+    let html = <span>Hello</span>
+    let mismatch = "Password Mismatch"
 
     const handle_register = (e) => {
-        
-        const auctioneer = {
+        if(username_ok && password_ok && email_ok && confirm_ok)
+        {
+            console.log("hepsi ok")
+        }
+        if(password.current.value !== confirmpassword.current.value)
+        {setWarning(mismatch)}
+        else{
+            setWarning("Please double-check the fields with *")            
+        }
+
+
+/*         const auctioneer = {
             username: username.current.value,
             email: email.current.value,
             password: password.current.value,
@@ -42,8 +58,7 @@ const Register = () => {
             {auctioneer: auctioneer}
         ).then(function (response) {
             console.log(response);
-        }).catch((error) => console.log(error))
-
+        }).catch((error) => console.log(error)) */
         e.preventDefault()
     }
 
@@ -51,9 +66,11 @@ const Register = () => {
         if(/^[A-Za-z0-9]*$/.test(username.current.value) && username.current.value.length===8)
         {
             setWarning(null)
+            setUserok(true)
         }
         else{
             setWarning(username_warning)
+            setUserok(false)
         }
     }
 
@@ -61,9 +78,11 @@ const Register = () => {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value))
         {
             setWarning(null)
+            setEmailok(true)
         }        
         else{
             setWarning(email_warning)
+            setEmailok(false)
         }
     }
 
@@ -71,16 +90,25 @@ const Register = () => {
         if(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password.current.value))
         {
             setWarning(null)
+            setPasswordok(true)
         }
        else{
         setWarning(password_warning)
+        setPasswordok(false)
        }
-       console.log(
-        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password.current.value)
-    )
-
     }
 
+    const handle_confirm = () => {
+        if(password.current.value === confirmpassword.current.value)
+        {
+            setWarning(null)
+            setConfirmok(true)
+        }
+       else{
+        setWarning(confirm_warning)
+        setConfirmok(false)
+       }
+    }
 
 return ( 
     <div className="register">
@@ -93,10 +121,11 @@ return (
                         <div className="warning" style={{display: warning ? "grid" : "none"}}>
                                 {warning}
                                 <span>
-                                    <FontAwesomeIcon icon={faWarning} color={"blue"} size={"2x"} beatFade/>
+                                    <FontAwesomeIcon icon={faWarning} color={"red"} size={"2x"} beatFade/>
                                 </span>
                         </div>
                         <div className="register_shell_entries_username">
+                            <span style={{opacity: username_ok ? "0" : "1"}}>*</span>
                             <input type="text" placeholder="Username..." ref={username} 
                                     onFocus={handle_username} 
                                     onBlur={()=> setWarning(null)}
@@ -104,6 +133,7 @@ return (
                             />
                         </div>
                         <div className="register_shell_entries_email">
+                        <span style={{opacity: email_ok ? "0" : "1"}}>*</span>
                             <input type="text" placeholder="Email..." ref={email} 
                                     onFocus={handle_email} 
                                     onBlur={()=> setWarning(null)}
@@ -111,6 +141,7 @@ return (
                             />
                         </div>
                         <div className="register_shell_entries_password">
+                        <span style={{opacity: password_ok ? "0" : "1"}}>*</span>
                             <input type="password" placeholder="Password..." ref={password} 
                             onFocus={handle_password} 
                             onBlur={()=> setWarning(null)}
@@ -118,7 +149,12 @@ return (
                             />
                         </div>
                         <div className="register_shell_entries_password">
-                            <input type="password" placeholder="Confirm password..." ref={confirmpassword} />
+                        <span style={{opacity: confirm_ok ? "0" : "1"}}>*</span>
+                            <input type="password" placeholder="Confirm password..." ref={confirmpassword} 
+                                onFocus={handle_confirm} 
+                                onBlur={()=> setWarning(null)}
+                                onChange={handle_confirm}
+                            />
                         </div>
                         <div className="register_shell_entries_button">
                             <button id="registerbutton" type="submit" onClick={(e)=>handle_register(e)}>Register</button>

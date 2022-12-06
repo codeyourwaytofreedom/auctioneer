@@ -43,6 +43,14 @@
                 padding: 10px 20px;
                 border-radius: 5px;
                 position: relative;
+                span{
+                    position: absolute;
+                    right: 10px;
+                    display: grid;
+                    align-self: center;
+                    color:red;
+                    font-size: 21px;
+                }
                 input{
                     border: none;
                     width: 100%;
@@ -112,14 +120,14 @@
     top: 60px;
     display: grid;
     justify-self: center;
-    background-color: white;
+    background-color: $main_turq;
     padding: 10px 20px;
-    color: red;
+    color: black;
+    text-decoration: underline;
     span{
         position: absolute;
         right: 20px;
         bottom: 10px;
-        color:red;
     }
  }
 

@@ -64,6 +64,14 @@ html, body {
   border-radius: 5px;
   position: relative;
 }
+.register_shell_entries_username span, .register_shell_entries_email span, .register_shell_entries_password span, .register_shell_entries_button span {
+  position: absolute;
+  right: 10px;
+  display: grid;
+  align-self: center;
+  color: red;
+  font-size: 21px;
+}
 .register_shell_entries_username input, .register_shell_entries_email input, .register_shell_entries_password input, .register_shell_entries_button input {
   border: none;
   width: 100%;
@@ -131,15 +139,15 @@ html, body {
   top: 60px;
   display: grid;
   justify-self: center;
-  background-color: white;
+  background-color: #80C4B7;
   padding: 10px 20px;
-  color: red;
+  color: black;
+  text-decoration: underline;
 }
 .warning span {
   position: absolute;
   right: 20px;
   bottom: 10px;
-  color: red;
 }
 
 @-webkit-keyframes blink {
