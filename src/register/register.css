@@ -133,8 +133,12 @@ html, body {
   justify-self: center;
   background-color: white;
   padding: 10px 20px;
+  color: red;
 }
 .warning span {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
   color: red;
 }
 
