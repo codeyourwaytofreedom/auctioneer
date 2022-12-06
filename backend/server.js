@@ -20,8 +20,8 @@ let db;
 const { connectToDb, getDb } = require("./db");
 connectToDb( (err) => {
         if(!err){
-          // This displays message that the server running and listening to specified port
           app.listen(port, () => {console.log(`Listening on port ${port}`)}); //Line 6
+          //stored an instance of database after successful connection
           db = getDb();
         }
 })
@@ -39,6 +39,8 @@ app.get('/express_backend', (req, res) => { //Line 9
           })
 });
 
+//Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
-    console.log(req.body.url)
+    console.log(req.body.auctioneer)
+    res.json({"title":"GeeksforGeeks"})
 })
