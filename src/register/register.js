@@ -6,6 +6,7 @@ import { useRef } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faWarning } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
 
 
 const Register = () => {
@@ -15,12 +16,13 @@ const Register = () => {
                     console.log(response);
                 }).catch((error) => console.log(error))
         }); */
-
+    const navigate = useNavigate();
     const [warning, setWarning] = useState(null);
     const [username_ok, setUserok] = useState(false);
     const [email_ok, setEmailok] = useState(false);
     const [password_ok, setPasswordok] = useState(false);
     const [confirm_ok, setConfirmok] = useState(false);
+    const [temp_anim, setTemp] = useState(false)
 
     // form data references
     const username = useRef();
@@ -52,6 +54,8 @@ const Register = () => {
                 console.log(response);
             }).catch((error) => console.log(error))
             setWarning(false)
+            setTemp(true)
+            e.preventDefault();
         }
         else{
             setWarning("Please double-check the fields with *")  
@@ -63,7 +67,9 @@ const Register = () => {
             e.preventDefault()
         }
         
-
+        setTimeout(() => {
+            navigate("/")
+        }, 3000);
 
 
         
@@ -124,6 +130,10 @@ return (
                 <img src={que} alt="xx" />
             </div>
                 <div className="register_shell_entries">
+                    <div id="temporary" style={{display: temp_anim ? "grid" : "none"}}>
+                        <div class="lds-ripple"><div></div><div></div></div>
+                    </div>
+                
                     <form action="">
                         <div className="warning" style={{display: warning ? "grid" : "none"}}>
                                 {warning}
