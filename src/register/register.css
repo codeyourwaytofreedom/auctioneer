@@ -62,6 +62,7 @@ html, body {
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 5px;
+  position: relative;
 }
 .register_shell_entries_username input, .register_shell_entries_email input, .register_shell_entries_password input, .register_shell_entries_button input {
   border: none;
@@ -118,5 +119,39 @@ html, body {
   .register_shell_entries_username, .register_shell_entries_email, .register_shell_entries_password, .register_shell_entries_button {
     width: 90vw;
     max-width: 400px;
+  }
+}
+.warning {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  top: 60px;
+  display: grid;
+  justify-self: center;
+  background-color: white;
+  padding: 10px 20px;
+}
+.warning span {
+  color: red;
+}
+
+@-webkit-keyframes blink {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(245, 177, 177);
+  }
+}
+
+@keyframes blink {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: rgb(245, 177, 177);
   }
 }/*# sourceMappingURL=register.css.map */

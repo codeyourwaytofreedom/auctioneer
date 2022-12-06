@@ -42,5 +42,5 @@ app.get('/express_backend', (req, res) => { //Line 9
 //Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
     console.log(req.body.auctioneer)
-    res.json({"title":"GeeksforGeeks"})
+    res.json({"title":"this is response"})
 })
