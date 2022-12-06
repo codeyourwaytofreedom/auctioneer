@@ -39,27 +39,34 @@ const Register = () => {
         if(username_ok && password_ok && email_ok && confirm_ok)
         {
             console.log("hepsi ok")
+            const auctioneer = {
+                username: username.current.value,
+                email: email.current.value,
+                password: password.current.value,
+                confirmpassword:confirmpassword.current.value
+            }
+    
+            axios.post("http://localhost:9000/express_backend",
+                {auctioneer: auctioneer}
+            ).then(function (response) {
+                console.log(response);
+            }).catch((error) => console.log(error))
+            setWarning(false)
+        }
+        else{
+            setWarning("Please double-check the fields with *")  
+            e.preventDefault()          
         }
         if(password.current.value !== confirmpassword.current.value)
-        {setWarning(mismatch)}
-        else{
-            setWarning("Please double-check the fields with *")            
+        {
+            setWarning(mismatch)
+            e.preventDefault()
         }
+        
 
 
-/*         const auctioneer = {
-            username: username.current.value,
-            email: email.current.value,
-            password: password.current.value,
-            confirmpassword:confirmpassword.current.value
-        }
 
-        axios.post("http://localhost:9000/express_backend",
-            {auctioneer: auctioneer}
-        ).then(function (response) {
-            console.log(response);
-        }).catch((error) => console.log(error)) */
-        e.preventDefault()
+        
     }
 
     const handle_username = () => {
