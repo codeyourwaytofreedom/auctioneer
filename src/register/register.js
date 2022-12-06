@@ -4,12 +4,22 @@ import axios from "axios";
 import que from "./que.jpg";
 
 const Register = () => {
-        useEffect(() => {
+/*         useEffect(() => {
                     axios.get("http://localhost:9000/express_backend"
                 ).then(function (response) {
                     console.log(response);
                 }).catch((error) => console.log(error))
-        });
+        }); */
+
+        const handle_register = () => {
+
+            axios.post("http://localhost:9000/express_backend",
+                {url: "hello"}
+            ).then(function (response) {
+                console.log(response);
+            }).catch((error) => console.log(error))
+        }
+        
 
 
 return ( 
@@ -33,7 +43,7 @@ return (
                             <input type="password" placeholder="Confirm password..." />
                         </div>
                         <div className="register_shell_entries_button">
-                            <button id="registerbutton">Register</button>
+                            <button id="registerbutton" type="submit" onClick={handle_register}>Register</button>
                         </div>
                     </form>
                         

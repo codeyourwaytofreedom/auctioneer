@@ -6,17 +6,12 @@ app.use(cors());
 
 const port = process.env.PORT || 9000; //Line 3
 
-/* const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/members", {
-  useNewUrlParser: true
-});
+// to parse request object when receiving post request
+const bodyParser = require("body-parser")
+var jsonParser = bodyParser.json()
 
-const connection = mongoose.connection;
 
-connection.once("open", function() {
-  console.log("Connection with MongoDB was successful");
-}); */
 
 
 
@@ -43,3 +38,7 @@ app.get('/express_backend', (req, res) => { //Line 9
             res.json(results)
           })
 });
+
+app.post('/express_backend', jsonParser, (req, res) => {
+    console.log(req.body.url)
+})
