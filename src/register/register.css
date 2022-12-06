@@ -105,6 +105,27 @@ html, body {
   padding: 0;
 }
 
+.warning {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  top: 60px;
+  display: grid;
+  justify-self: center;
+  background-color: #80C4B7;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: underline;
+}
+.warning span {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
 @media (max-width: 575.98px) {
   .register {
     top: 50px;
@@ -128,28 +149,10 @@ html, body {
     width: 90vw;
     max-width: 400px;
   }
+  .warning {
+    width: 90vw;
+  }
 }
-.warning {
-  border: 2px solid black;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  position: absolute;
-  width: 400px;
-  height: 100px;
-  top: 60px;
-  display: grid;
-  justify-self: center;
-  background-color: #80C4B7;
-  padding: 10px 20px;
-  color: black;
-  text-decoration: underline;
-}
-.warning span {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-}
-
 @-webkit-keyframes blink {
   from {
     background-color: white;
@@ -158,7 +161,6 @@ html, body {
     background-color: rgb(245, 177, 177);
   }
 }
-
 @keyframes blink {
   from {
     background-color: white;

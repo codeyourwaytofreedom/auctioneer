@@ -82,6 +82,29 @@
     }
 }
 
+.warning{
+    border: 2px solid black;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 60px;
+    display: grid;
+    justify-self: center;
+    background-color: $main_turq;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: underline;
+    span{
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+    }
+ }
+
+
+
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
     .register{
@@ -108,28 +131,12 @@
             }
         }
     }
+    .warning{
+        width: 90vw;
+     }
  }
 
- .warning{
-    border: 2px solid black;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    position: absolute;
-    width: 400px;
-    height: 100px;
-    top: 60px;
-    display: grid;
-    justify-self: center;
-    background-color: $main_turq;
-    padding: 10px 20px;
-    color: black;
-    text-decoration: underline;
-    span{
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-    }
- }
+
 
  @keyframes blink {
     from{
