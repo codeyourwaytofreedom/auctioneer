@@ -13,27 +13,44 @@ const Login = () => {
     let navigate = useNavigate();
     const email = useRef();
     const password = useRef();
+    const log = useRef();
 
     const [login_response, setResponse] = useState(false);
 
     const handle_login = (e) => {
         e.preventDefault();
-
         const user = {
-                email: email.current.value,
-                password: password.current.value
+            email: email.current.value,
+            password: password.current.value
         }
-        axios.post("http://localhost:9000/login",
-        {user_loggingin: user}
-        ).then(function (response) {
-            if(response.data === "notin")
+
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)
+            && /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password.current.value))
             {
-                setResponse(true)
+                console.log("valid")
+                axios.post("http://localhost:9000/login",
+                {user_loggingin: user}
+                ).then(function (response) {
+                    console.log(response.data)
+                    if(response.data === "notin")
+                    {
+                        setResponse(true)
+                        e.target.disabled = true;
+                        setTimeout(() => {
+                            e.target.disabled=false;
+                        }, 3000);
+                    }
+                    else{
+                        setResponse(false)
+                        setTimeout(() => {
+                            navigate("/")
+                        }, 3000);
+                    }
+                }).catch((error) => console.log(error))
             }
             else{
-                setResponse(false)
+                setResponse(true)
             }
-        }).catch((error) => console.log(error))
     }
 
     return ( 
