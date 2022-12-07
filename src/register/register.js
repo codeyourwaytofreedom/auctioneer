@@ -23,6 +23,7 @@ const Register = () => {
     const [password_ok, setPasswordok] = useState(false);
     const [confirm_ok, setConfirmok] = useState(false);
     const [temp_anim, setTemp] = useState(false)
+    const [response_text, setResponsetext] = useState(null);
     // form data references
     const username = useRef();
     const email = useRef();
@@ -48,10 +49,10 @@ const Register = () => {
             axios.post("http://localhost:9000/express_backend",
                 {auctioneer: auctioneer}
             ).then(function (response) {
-                console.log(response.data);
-                if(response.data.result===false)
+                if(response.data)
                 {
-                    setWarning(response.data.message)
+                    console.log(response)
+                    setWarning("Email already registered. Please try another one!")
                 }
             }).catch((error) => console.log(error))
 
@@ -72,10 +73,7 @@ const Register = () => {
             setWarning(mismatch)
             e.preventDefault()
         }
-        e.preventDefault();
-
-
-        
+      
     }
 
     const handle_username = () => {
@@ -180,7 +178,7 @@ return (
                             />
                         </div>
                         <div className="register_shell_entries_button">
-                            <button id="registerbutton" type="submit" onClick={(e)=>handle_register(e)}>Register</button>
+                            <button id="registerbutton" type="submit" onClick={(e)=>handle_register(e)}>Register {response_text}</button>
                         </div>
                     </form>
                         

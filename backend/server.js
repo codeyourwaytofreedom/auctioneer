@@ -39,9 +39,10 @@ app.get('/express_backend', (req, res) => { //Line 9
           })
 });
 
+
 //Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
-      if(req.body.user_loggingin)
+/*       if(req.body.user_loggingin)
       {
 
         db.collection('auctioneer').find({name:"Sophie"}).forEach(r=>
@@ -51,35 +52,33 @@ app.post('/express_backend', jsonParser, (req, res) => {
                 if(r.name === req.body.user_loggingin.email)
                 {
                   console.log("matched");
-                  res.json(true);
+                   res.json(true);
                 }
               }
           )
         console.log("This request is coming from Login page");
         console.log(req.body.user_loggingin)
-      }
+      } */
+
+
       if(req.body.auctioneer)
       {
         console.log("Register form data received")
         console.log(req.body.auctioneer)
-/*         db.collection('auctioneer').insertOne(req.body.auctioneer);
-        res.json({result:true}) */
+        //db.collection('auctioneer').insertOne(req.body.auctioneer);
 
-        db.collection('auctioneer').find({email:req.body.auctioneer.email}).forEach(r=>
+        db.collection('auctioneer').findOne({email:req.body.auctioneer.email}).then(doc => {
+          console.log(doc)
+          if(!doc)
           {
-            console.log(r.email)
-            console.log(req.body.auctioneer.email)
-            if(r.email === req.body.auctioneer.email)
-            {
-              res.json({result:false, message:"This email is already registered! Please try another one!"})
-              console.log("matched")
-            }
+            res.send("yokumş yokmuş")
+            db.collection('auctioneer').insertOne(req.body.auctioneer);
           }
-      )
-
-
+          else{
+            res.send("varmış varmış")
+          }
+          
+        })
       }
-
-/*     console.log(req.body.auctioneer)
-    res.json({"title":"this is response"}) */
+      
 })
