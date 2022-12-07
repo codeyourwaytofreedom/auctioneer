@@ -16,6 +16,7 @@ const Login = () => {
     const log = useRef();
 
     const [login_response, setResponse] = useState(false);
+    const [final_animation, setFinal] = useState(false);
 
     const handle_login = (e) => {
         e.preventDefault();
@@ -42,9 +43,10 @@ const Login = () => {
                     }
                     else{
                         setResponse(false)
+                        setFinal(true)
                         setTimeout(() => {
                             navigate("/")
-                        }, 3000);
+                        }, 2000);
                     }
                 }).catch((error) => console.log(error))
             }
@@ -71,7 +73,10 @@ const Login = () => {
                             <input type="text" placeholder="Password..." ref={password}/>
                         </div>
                         <div className="Login_shell_entries_button">
-                            <button id="loginbutton" onClick={(e)=> handle_login(e)}>Login</button>
+                            <button id="loginbutton" onClick={(e)=> handle_login(e)}>
+                                Login
+                                <div class="lds-hourglass" style={{display: final_animation ? "inline-block" : "none"}}></div>
+                            </button>
                         </div>
                     </form>
                         <div className="Login_shell_entries_warning" style={{display: login_response ? "flex" : "none"}}>
