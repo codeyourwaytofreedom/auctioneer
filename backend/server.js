@@ -62,8 +62,22 @@ app.post('/express_backend', jsonParser, (req, res) => {
       {
         console.log("Register form data received")
         console.log(req.body.auctioneer)
-        db.collection('auctioneer').insertOne(req.body.auctioneer);
-        res.json({result:true})
+/*         db.collection('auctioneer').insertOne(req.body.auctioneer);
+        res.json({result:true}) */
+
+        db.collection('auctioneer').find({email:req.body.auctioneer.email}).forEach(r=>
+          {
+            console.log(r.email)
+            console.log(req.body.auctioneer.email)
+            if(r.email === req.body.auctioneer.email)
+            {
+              res.json({result:false, message:"This email is already registered! Please try another one!"})
+              console.log("matched")
+            }
+          }
+      )
+
+
       }
 
 /*     console.log(req.body.auctioneer)

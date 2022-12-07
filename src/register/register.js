@@ -23,7 +23,6 @@ const Register = () => {
     const [password_ok, setPasswordok] = useState(false);
     const [confirm_ok, setConfirmok] = useState(false);
     const [temp_anim, setTemp] = useState(false)
-
     // form data references
     const username = useRef();
     const email = useRef();
@@ -34,13 +33,11 @@ const Register = () => {
     let email_warning = "*Please enter a valid email adress!";
     let password_warning = "*Password must be 8 characters long minimum and must include at least one letter and one number!";
     let confirm_warning = "*Please make sure that you confirm your password!";
-    let html = <span>Hello</span>
     let mismatch = "Password Mismatch"
 
     const handle_register = (e) => {
         if(username_ok && password_ok && email_ok && confirm_ok)
         {
-            console.log("hepsi ok")
             const auctioneer = {
                 username: username.current.value,
                 email: email.current.value,
@@ -51,14 +48,20 @@ const Register = () => {
             axios.post("http://localhost:9000/express_backend",
                 {auctioneer: auctioneer}
             ).then(function (response) {
-                console.log(response);
+                console.log(response.data);
+                if(response.data.result===false)
+                {
+                    setWarning(response.data.message)
+                }
             }).catch((error) => console.log(error))
+
+/* 
             setWarning(false)
-            setTemp(true)
+            setTemp(true) */
             e.preventDefault();
-            setTimeout(() => {
+/*             setTimeout(() => {
                 navigate("/login")
-            }, 3000);
+            }, 3000); */
         }
         else{
             setWarning("Please double-check the fields with *")  
@@ -69,7 +72,7 @@ const Register = () => {
             setWarning(mismatch)
             e.preventDefault()
         }
-        
+        e.preventDefault();
 
 
         
