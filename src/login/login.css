@@ -34,6 +34,7 @@ html, body {
 .Login_shell {
   width: 600px;
   height: 600px;
+  align-self: start;
 }
 .Login_shell_gavel {
   width: 200px;
@@ -83,22 +84,22 @@ html, body {
   justify-items: center;
   padding-top: 30px;
 }
-.Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button {
+.Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button, .Login_shell_entries_reminder, .Login_shell_entries_warning {
   border: 2px solid #E3856B;
   width: 400px;
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 5px;
 }
-.Login_shell_entries_email input, .Login_shell_entries_password input, .Login_shell_entries_button input {
+.Login_shell_entries_email input, .Login_shell_entries_password input, .Login_shell_entries_button input, .Login_shell_entries_reminder input, .Login_shell_entries_warning input {
   border: none;
   width: 100%;
   font-size: 18px;
 }
-.Login_shell_entries_email input:focus, .Login_shell_entries_password input:focus, .Login_shell_entries_button input:focus {
+.Login_shell_entries_email input:focus, .Login_shell_entries_password input:focus, .Login_shell_entries_button input:focus, .Login_shell_entries_reminder input:focus, .Login_shell_entries_warning input:focus {
   outline: none;
 }
-.Login_shell_entries_email button, .Login_shell_entries_password button, .Login_shell_entries_button button {
+.Login_shell_entries_email button, .Login_shell_entries_password button, .Login_shell_entries_button button, .Login_shell_entries_reminder button, .Login_shell_entries_warning button {
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -111,6 +112,26 @@ html, body {
 }
 .Login_shell_entries_button {
   padding: 0;
+}
+.Login_shell_entries_warning {
+  display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  border: 2px solid red;
+}
+.Login_shell_entries_warning span {
+  color: red;
+}
+.Login_shell_entries_reminder {
+  display: flex;
+  justify-content: end;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  border: none;
+}
+.Login_shell_entries_reminder #signup a {
+  text-decoration: none;
+  color: #E3856B;
 }
 
 @media (max-width: 575.98px) {
@@ -133,7 +154,7 @@ html, body {
   .Login_shell_entries {
     width: 100vw;
   }
-  .Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button {
+  .Login_shell_entries_email, .Login_shell_entries_password, .Login_shell_entries_button, .Login_shell_entries_reminder, .Login_shell_entries_warning {
     width: 90vw;
     max-width: 400px;
   }

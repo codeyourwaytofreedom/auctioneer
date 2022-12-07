@@ -41,6 +41,12 @@ app.get('/express_backend', (req, res) => { //Line 9
 
 //Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
-    console.log(req.body.auctioneer)
-    res.json({"title":"this is response"})
+      if(req.body.user_loggingin)
+      {
+        console.log("This request is coming from Login page");
+        console.log(req.body.user_loggingin)
+      }
+
+/*     console.log(req.body.auctioneer)
+    res.json({"title":"this is response"}) */
 })

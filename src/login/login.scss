@@ -15,6 +15,7 @@
         //border: 4px solid yellow;
         width: 600px;
         height: 600px;
+        align-self: start;
         &_gavel{
             width: 200px;
             height: 200px;
@@ -57,7 +58,7 @@
             display: grid;
             justify-items: center;
             padding-top: 30px;
-            &_email, &_password, &_button{
+            &_email, &_password, &_button, &_reminder,&_warning{
                 border:2px solid $main_orange;
                 width: 400px;
                 margin-bottom: 10px;
@@ -85,6 +86,26 @@
             }
             &_button{
                 padding: 0;
+            }
+            &_warning{
+                display: flex;
+                column-gap: 5px;
+                border: 2px solid red;
+                span{
+                    color:red;
+                }
+            }
+            &_reminder{
+                display: flex;
+                justify-content: end;
+                column-gap: 5px;
+                border: none;
+                #signup{
+                    a{
+                        text-decoration: none;
+                        color: $main_orange;
+                    }
+                }
             }
         }
     }
@@ -122,7 +143,7 @@
 
             &_entries{
                 width: 100vw;
-                &_email, &_password, &_button{
+                &_email, &_password, &_button, &_reminder,&_warning{
                     width: 90vw;
                     max-width: 400px;
                 }
