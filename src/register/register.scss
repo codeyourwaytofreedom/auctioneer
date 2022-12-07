@@ -23,6 +23,7 @@
             width: 500px;
             display: grid;
             justify-self: center;
+            position: relative;
             img{
                 width: 100%;
                 height: 100%;
@@ -103,7 +104,26 @@
     }
  }
 
+ #temporary{
+    //border: 2px solid blue;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
+#success{
+    //border: 2px solid red;
+    position: absolute;
+    color: #3c9887;
+    bottom: -20px;
+    display: grid;
+    justify-self: center;
+    font-size: 21px;
+}
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
@@ -133,7 +153,12 @@
     }
     .warning{
         width: 90vw;
+        display: grid;
+        justify-self: center;
      }
+     #success{
+        font-size: 17px;
+    }
  }
 
 
@@ -147,16 +172,8 @@
     }
  }
 
-#temporary{
-    //border: 2px solid blue;
-    width: 400px;
-    height: 300px;
-    position: absolute;
-    z-index: 999;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
+
+
  .lds-ripple {
     display: grid;
     position: absolute;

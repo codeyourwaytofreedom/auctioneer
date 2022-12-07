@@ -56,6 +56,9 @@ const Register = () => {
             setWarning(false)
             setTemp(true)
             e.preventDefault();
+            setTimeout(() => {
+                navigate("/login")
+            }, 3000);
         }
         else{
             setWarning("Please double-check the fields with *")  
@@ -67,9 +70,6 @@ const Register = () => {
             e.preventDefault()
         }
         
-        setTimeout(() => {
-            navigate("/")
-        }, 3000);
 
 
         
@@ -128,6 +128,9 @@ return (
         <div className="register_shell">
             <div className="register_shell_animation">
                 <img src={que} alt="xx" />
+                <div id="success" style={{display: temp_anim ? "grid" : "none"}}>
+                        Successfully registered as an Auctioneer...
+                </div>
             </div>
                 <div className="register_shell_entries">
                     <div id="temporary" style={{display: temp_anim ? "grid" : "none"}}>
