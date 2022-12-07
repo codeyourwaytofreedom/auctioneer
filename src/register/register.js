@@ -49,20 +49,22 @@ const Register = () => {
             axios.post("http://localhost:9000/express_backend",
                 {auctioneer: auctioneer}
             ).then(function (response) {
-                if(response.data)
+                if(response.data === "in")
                 {
-                    console.log(response)
+                    console.log(response.data)
                     setWarning("Email already registered. Please try another one!")
                 }
+                if(response.data ==="notin")
+                {
+                    console.log(response.data)
+                    setWarning(false)
+                    setTemp(true) 
+                    setTimeout(() => {
+                        navigate("/login")
+                    }, 3000);
+                }
             }).catch((error) => console.log(error))
-
-/* 
-            setWarning(false)
-            setTemp(true) */
             e.preventDefault();
-/*             setTimeout(() => {
-                navigate("/login")
-            }, 3000); */
         }
         else{
             setWarning("Please double-check the fields with *")  

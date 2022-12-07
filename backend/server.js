@@ -71,14 +71,32 @@ app.post('/express_backend', jsonParser, (req, res) => {
           console.log(doc)
           if(!doc)
           {
-            res.send("yokumş yokmuş")
+            res.send("notin")
             db.collection('auctioneer').insertOne(req.body.auctioneer);
           }
           else{
-            res.send("varmış varmış")
+            res.send("in")
           }
           
         })
       }
       
 })
+
+
+//Post route to handle login
+app.post('/login', jsonParser, (req, res) => {
+
+          console.log(req.body.user_loggingin.email)
+  
+           db.collection('auctioneer').findOne({email:req.body.user_loggingin.email}).then(doc => {
+            console.log(doc)
+            if(!doc)
+            {
+              res.send("notin")
+            }
+            else{
+              res.send("in")
+            }
+          })   
+  })

@@ -6,12 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faWarning } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from "react";
+import { useState } from "react";
 
 
 const Login = () => {
     let navigate = useNavigate();
     const email = useRef();
     const password = useRef();
+
+    const [login_response, setResponse] = useState(false);
 
     const handle_login = (e) => {
         e.preventDefault();
@@ -20,10 +23,16 @@ const Login = () => {
                 email: email.current.value,
                 password: password.current.value
         }
-        axios.post("http://localhost:9000/express_backend",
+        axios.post("http://localhost:9000/login",
         {user_loggingin: user}
         ).then(function (response) {
-            console.log(response);
+            if(response.data === "notin")
+            {
+                setResponse(true)
+            }
+            else{
+                setResponse(false)
+            }
         }).catch((error) => console.log(error))
     }
 
@@ -48,7 +57,7 @@ const Login = () => {
                             <button id="loginbutton" onClick={(e)=> handle_login(e)}>Login</button>
                         </div>
                     </form>
-                        <div className="Login_shell_entries_warning">
+                        <div className="Login_shell_entries_warning" style={{display: login_response ? "flex" : "none"}}>
                             <span><FontAwesomeIcon icon={faWarning} color={"red"} /></span>
                             <span>Invalid email or password! </span>
                         </div>
