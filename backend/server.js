@@ -43,8 +43,27 @@ app.get('/express_backend', (req, res) => { //Line 9
 app.post('/express_backend', jsonParser, (req, res) => {
       if(req.body.user_loggingin)
       {
+
+        db.collection('auctioneer').find({name:"Sophie"}).forEach(r=>
+              {
+                console.log(r.name, "from database");
+                console.log(req.body.user_loggingin.email, "from login form");
+                if(r.name === req.body.user_loggingin.email)
+                {
+                  console.log("matched");
+                  res.json(true);
+                }
+              }
+          )
         console.log("This request is coming from Login page");
         console.log(req.body.user_loggingin)
+      }
+      if(req.body.auctioneer)
+      {
+        console.log("Register form data received")
+        console.log(req.body.auctioneer)
+        db.collection('auctioneer').insertOne(req.body.auctioneer);
+        res.json({result:true})
       }
 
 /*     console.log(req.body.auctioneer)

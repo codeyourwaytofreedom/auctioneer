@@ -45,7 +45,7 @@ const Register = () => {
                 username: username.current.value,
                 email: email.current.value,
                 password: password.current.value,
-                confirmpassword:confirmpassword.current.value
+                //confirmpassword:confirmpassword.current.value
             }
     
             axios.post("http://localhost:9000/express_backend",

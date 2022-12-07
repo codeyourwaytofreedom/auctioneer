@@ -5,24 +5,23 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faWarning } from '@fortawesome/free-solid-svg-icons';
+import { useRef } from "react";
 
 
 const Login = () => {
     let navigate = useNavigate();
+    const email = useRef();
+    const password = useRef();
+
     const handle_login = (e) => {
         e.preventDefault();
-        console.log(88)
-/*         axios.get("http://localhost:9000/express_backend"
-                ).then(function (response) {
-                    console.log(response.data[0].name);
-                    if(response.data[0].name === "Can")
-                    {
-                        navigate("/");
-                    }
-                }).catch((error) => console.log(error)) */
 
+        const user = {
+                email: email.current.value,
+                password: password.current.value
+        }
         axios.post("http://localhost:9000/express_backend",
-        {user_loggingin: "Sophie"}
+        {user_loggingin: user}
         ).then(function (response) {
             console.log(response);
         }).catch((error) => console.log(error))
@@ -40,10 +39,10 @@ const Login = () => {
                 <div className="Login_shell_entries">
                     <form action="">
                         <div className="Login_shell_entries_email">
-                            <input type="text"  placeholder="Email..." />
+                            <input type="text"  placeholder="Email..." ref={email}/>
                         </div>
                         <div className="Login_shell_entries_password">
-                            <input type="text" placeholder="Password..." />
+                            <input type="text" placeholder="Password..." ref={password}/>
                         </div>
                         <div className="Login_shell_entries_button">
                             <button id="loginbutton" onClick={(e)=> handle_login(e)}>Login</button>
