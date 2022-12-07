@@ -89,7 +89,8 @@ app.post('/login', jsonParser, (req, res) => {
 
           console.log(req.body.user_loggingin.email)
   
-           db.collection('auctioneer').findOne({email:req.body.user_loggingin.email}).then(doc => {
+           db.collection('auctioneer').findOne({email:req.body.user_loggingin.email, 
+                                                password: req.body.user_loggingin.password}).then(doc => {
             console.log(doc)
             if(!doc)
             {
