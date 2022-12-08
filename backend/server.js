@@ -1,8 +1,9 @@
 const express = require('express'); //Line 1
 const app = express(); //Line 2
-
 const cors = require('cors');
 app.use(cors());
+
+const jwt = require("jsonwebtoken");
 
 const port = process.env.PORT || 9000; //Line 3
 
@@ -97,7 +98,9 @@ app.post('/login', jsonParser, (req, res) => {
               res.send("notin")
             }
             else{
-              res.send("in")
+              //res.send("in")
+              const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom")
+              res.json(access_token)
             }
           })   
   })

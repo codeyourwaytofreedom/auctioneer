@@ -70,7 +70,7 @@ const Login = () => {
                             <input type="text"  placeholder="Email..." ref={email}/>
                         </div>
                         <div className="Login_shell_entries_password">
-                            <input type="text" placeholder="Password..." ref={password}/>
+                            <input type="password" placeholder="Password..." ref={password}/>
                         </div>
                         <div className="Login_shell_entries_button">
                             <button id="loginbutton" onClick={(e)=> handle_login(e)}>
