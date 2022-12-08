@@ -99,8 +99,17 @@ app.post('/login', jsonParser, (req, res) => {
             }
             else{
               //res.send("in")
-              const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom")
+              const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
+                expiresIn: 60*60
+              })
+              res.cookie("auc_cok", access_token, {httpOnly: true, expiresIn: 60*60*60})
               res.json(access_token)
             }
           })   
+  })
+
+
+  app.get("/cook", jsonParser,( req, res) => {
+    res.setHeader("Set-Cookie", "avutioneer:true")
+    res.send("first cookie")
   })
