@@ -4,7 +4,8 @@ const cors = require('cors');
 app.use(cors());
 
 const jwt = require("jsonwebtoken");
-
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 const port = process.env.PORT || 9000; //Line 3
 
 
@@ -102,7 +103,9 @@ app.post('/login', jsonParser, (req, res) => {
               const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
                 expiresIn: 60*60
               })
-              res.cookie("auc_cok", access_token, {httpOnly: true, expiresIn: 60*60*60})
+              const cookies = req.cookies
+              console.log(cookies)
+
               res.json(access_token)
             }
           })   
@@ -110,6 +113,12 @@ app.post('/login', jsonParser, (req, res) => {
 
 
   app.get("/cook", jsonParser,( req, res) => {
-    res.setHeader("Set-Cookie", "avutioneer:true")
+    //res.setHeader("Set-Cookie", "avutioneer=true")
+    res.cookie("Cookie", "First cookie", {httpOnly:true})
     res.send("first cookie")
+  })
+
+  app.get("/seecook", jsonParser,( req, res) => {
+    const cookies = req.cookies
+    console.log(cookies)
   })
