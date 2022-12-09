@@ -44,25 +44,6 @@ app.get('/express_backend', (req, res) => { //Line 9
 
 //Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
-/*       if(req.body.user_loggingin)
-      {
-
-        db.collection('auctioneer').find({name:"Sophie"}).forEach(r=>
-              {
-                console.log(r.name, "from database");
-                console.log(req.body.user_loggingin.email, "from login form");
-                if(r.name === req.body.user_loggingin.email)
-                {
-                  console.log("matched");
-                   res.json(true);
-                }
-              }
-          )
-        console.log("This request is coming from Login page");
-        console.log(req.body.user_loggingin)
-      } */
-
-
       if(req.body.auctioneer)
       {
         console.log("Register form data received")
@@ -100,13 +81,12 @@ app.post('/login', jsonParser, (req, res) => {
             }
             else{
               //res.send("in")
-              const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
+              /* const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
                 expiresIn: 60*60
-              })
-              const cookies = req.cookies
-              console.log(cookies)
-
-              res.json(access_token)
+              }) */
+              res.setHeader("Postcookie", "Post cookie", {httpOnly:true})
+              //res.json(access_token)
+              res.json("token sent from post request")
             }
           })   
   })
@@ -114,6 +94,10 @@ app.post('/login', jsonParser, (req, res) => {
 
   app.get("/cook", jsonParser,( req, res) => {
     //res.setHeader("Set-Cookie", "avutioneer=true")
+    /* const access_token = jwt.sign({id: 5555, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
+                expiresIn: 60*60
+              })
+    res.cookie("jwt", access_token, {httpOnly:true}) */
     res.cookie("Cookie", "First cookie", {httpOnly:true})
     res.send("first cookie")
   })
@@ -121,4 +105,5 @@ app.post('/login', jsonParser, (req, res) => {
   app.get("/seecook", jsonParser,( req, res) => {
     const cookies = req.cookies
     console.log(cookies)
+    console.log(7)
   })

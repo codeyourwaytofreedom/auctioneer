@@ -44,9 +44,9 @@ const Login = () => {
                     else{
                         setResponse(false)
                         setFinal(true)
-                        setTimeout(() => {
+/*                         setTimeout(() => {
                             navigate("/")
-                        }, 2000);
+                        }, 2000); */
                     }
                 }).catch((error) => console.log(error))
             }
