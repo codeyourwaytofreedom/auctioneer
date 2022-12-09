@@ -30,8 +30,8 @@ const Login = () => {
             {
                 console.log("valid")
                 axios.post("http://localhost:9000/login",
-                {user_loggingin: user},
-                {headers: {"token": "this is token"}}
+                {user_loggingin: user},{withCredentials: true}
+                
                 ).then(function (response) {
                     console.log(response.data)
                     if(response.data === "notin")

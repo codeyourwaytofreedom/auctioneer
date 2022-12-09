@@ -15,6 +15,14 @@ function App() {
                   element={<>
                     <div className="Page_products">
                       <Navbar/>
+                    </div>
+                  </>}
+          />
+
+          <Route path="/bidding" 
+                  element={<>
+                    <div className="Page_products">
+                      <Navbar/>
                       <Header/>
                       <Products/>
                     </div>
