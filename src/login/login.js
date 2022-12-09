@@ -30,7 +30,8 @@ const Login = () => {
             {
                 console.log("valid")
                 axios.post("http://localhost:9000/login",
-                {user_loggingin: user}
+                {user_loggingin: user},
+                {headers: {"token": "this is token"}}
                 ).then(function (response) {
                     console.log(response.data)
                     if(response.data === "notin")
@@ -44,6 +45,7 @@ const Login = () => {
                     else{
                         setResponse(false)
                         setFinal(true)
+                        console.log(7)
 /*                         setTimeout(() => {
                             navigate("/")
                         }, 2000); */

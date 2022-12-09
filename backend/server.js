@@ -6,6 +6,8 @@ app.use(cors());
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+app.use(express.json());
+
 const port = process.env.PORT || 9000; //Line 3
 
 
@@ -69,9 +71,9 @@ app.post('/express_backend', jsonParser, (req, res) => {
 
 //Post route to handle login
 app.post('/login', jsonParser, (req, res) => {
+           console.log(req.body.user_loggingin.email)
+           console.log(req.headers)
 
-          console.log(req.body.user_loggingin.email)
-  
            db.collection('auctioneer').findOne({email:req.body.user_loggingin.email, 
                                                 password: req.body.user_loggingin.password}).then(doc => {
             console.log(doc)
@@ -80,16 +82,21 @@ app.post('/login', jsonParser, (req, res) => {
               res.send("notin")
             }
             else{
-              //res.send("in")
-              /* const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
+              const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
                 expiresIn: 60*60
-              }) */
-              res.setHeader("Postcookie", "Post cookie", {httpOnly:true})
-              //res.json(access_token)
-              res.json("token sent from post request")
+              })
+              res.cookie("Cookie", access_token, {httpOnly:true})
+              res.json({token: access_token})
             }
           })   
   })
+
+
+
+
+const auth = (res, req, next) => {
+
+}
 
 
   app.get("/cook", jsonParser,( req, res) => {
