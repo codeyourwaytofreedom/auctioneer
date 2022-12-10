@@ -101,3 +101,9 @@ app.post('/login', (req, res) => {
     res.send(req.cookies)
   })
 
+
+  app.post("/userauth",( req, res) => {
+    const jwt = req.cookies.jwt;
+    console.log(jwt)
+    res.send("verified")
+  })

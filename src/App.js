@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./header/header";
 import Login from "./login/login";
@@ -7,7 +10,15 @@ import Register from "./register/register";
 
 
 function App() {
-
+  const [verified, setVerified] = useState(false)
+  useEffect(()=> {
+    axios.post("http://localhost:9000/userauth",
+    {},
+    {withCredentials: true}
+    ).then(function (response) {
+        console.log(response.data)
+    }).catch((error) => console.log(error))
+  })
   return (
       <Router>
         <Routes>
