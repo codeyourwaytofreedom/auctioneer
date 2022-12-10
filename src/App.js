@@ -10,15 +10,6 @@ import Register from "./register/register";
 
 
 function App() {
-  const [verified, setVerified] = useState(false)
-  useEffect(()=> {
-    axios.post("http://localhost:9000/userauth",
-    {},
-    {withCredentials: true}
-    ).then(function (response) {
-        console.log(response.data)
-    }).catch((error) => console.log(error))
-  })
   return (
       <Router>
         <Routes>
@@ -29,7 +20,6 @@ function App() {
                     </div>
                   </>}
           />
-
           <Route path="/bidding" 
                   element={<>
                     <div className="Page_products">

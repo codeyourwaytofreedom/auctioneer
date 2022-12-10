@@ -103,7 +103,19 @@ app.post('/login', (req, res) => {
 
 
   app.post("/userauth",( req, res) => {
-    const jwt = req.cookies.jwt;
-    console.log(jwt)
-    res.send("verified")
+    const token = req.cookies.jwt;
+    if(token){
+        jwt.verify(token, "codeyourwaytofreedom", (err, decodedJwt) => {
+          if(err){
+            console.log(err.message)
+          }
+          else{
+              res.send("jwt available and verified")
+          }
+        })
+    }
+    else{
+      res.send(false)
+    }
+    console.log(token)
   })
