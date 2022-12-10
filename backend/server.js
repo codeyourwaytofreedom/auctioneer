@@ -108,6 +108,7 @@ app.post('/login', (req, res) => {
         jwt.verify(token, "codeyourwaytofreedom", (err, decodedJwt) => {
           if(err){
             console.log(err.message)
+            res.send(false)
           }
           else{
               res.send("jwt available and verified")
@@ -118,4 +119,9 @@ app.post('/login', (req, res) => {
       res.send(false)
     }
     console.log(token)
+  })
+
+  app.get("/logout", (req, res) => {
+    res.cookie("jwt", "", {maxAge:1})
+    res.send("logged out with fake jwt")
   })

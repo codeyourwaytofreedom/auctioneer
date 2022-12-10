@@ -51,7 +51,6 @@ html, body {
 }
 .Navbar_member {
   display: flex;
-  width: 300px;
   position: absolute;
   right: 40px;
   justify-content: end;
