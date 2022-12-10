@@ -83,13 +83,12 @@ app.post('/login', (req, res) => {
               const access_token = jwt.sign({id: doc.id, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
                 expiresIn: 60*60
               })
-/*               res.cookie("Cookie", access_token, {
+              res.cookie("jwt", access_token, {
                 httpOnly:true,
                 secure: true,
                 sameSite: "None",
                 maxAge: 10000 * 60 * 60 * 24
-              }) */
-              res.cookie('Finally', 'Bismillah', { maxAge: 900000, httpOnly: false});
+              })
               res.send({token: access_token})
             }
           })   
@@ -98,14 +97,7 @@ app.post('/login', (req, res) => {
 
 
   app.get("/cook",( req, res) => {
-    //res.setHeader("Set-Cookie", "avutioneer=true")
-    /* const access_token = jwt.sign({id: 5555, isAuthorized_to_bid: true}, "codeyourwaytofreedom", {
-                expiresIn: 60*60
-              })
-    res.cookie("jwt", access_token, {httpOnly:true}) */
-    res.cookie("Cookie", "First cookie", {httpOnly:true})
-    res.cookie('rememberme', 'yes', { maxAge: 900000, httpOnly: false});
-              res.cookie("mycookie", "1234567890", { secure:false, maxAge:120000, httpOnly: true });
-    res.send("first cookie")
+    console.log(req.cookies)
+    res.send(req.cookies)
   })
 
