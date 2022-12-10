@@ -45,6 +45,18 @@ function App() {
                   </div>
                   </>}
           />
+          <Route path="/howitworks" 
+                element={<>
+                  <div className="page_howitworks">
+                    <Navbar/>
+                    <h1>About Auctioneer</h1>
+                    <h1>About Auctioneer</h1>
+                    <h1>About Auctioneer</h1>
+                    <h1>About Auctioneer</h1>
+                    <h1>About Auctioneer</h1>
+                  </div>
+                  </>}
+          />
 
         </Routes>
       </Router>

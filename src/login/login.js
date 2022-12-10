@@ -46,9 +46,9 @@ const Login = () => {
                         setResponse(false)
                         setFinal(true)
                         console.log(7)
-/*                         setTimeout(() => {
-                            navigate("/")
-                        }, 2000); */
+                        setTimeout(() => {
+                            navigate("/bidding")
+                        }, 2000);
                     }
                 }).catch((error) => console.log(error))
             }
