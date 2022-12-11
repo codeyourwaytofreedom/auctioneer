@@ -5,9 +5,8 @@ import { useEffect } from "react";
 
 const Products = () => {
     let navigate = useNavigate();
-    useEffect(()=> {
-      axios.post("http://localhost:9000/userauth",
-      {},
+/*     useEffect(()=> {
+      axios.get("http://localhost:9000/userauth",
       {withCredentials: true}
       ).then(function (response) {
           console.log(response.data)
@@ -16,7 +15,7 @@ const Products = () => {
             navigate("/login")
           }
       }).catch((error) => console.log(error))
-    })
+    }) */
     return ( 
         <div className="Products">
             {

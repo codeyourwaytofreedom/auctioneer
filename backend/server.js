@@ -102,7 +102,7 @@ app.post('/login', (req, res) => {
   })
 
 
-  app.post("/userauth",( req, res) => {
+  app.get("/userauth",( req, res) => {
     const token = req.cookies.jwt;
     if(token){
         jwt.verify(token, "codeyourwaytofreedom", (err, decodedJwt) => {

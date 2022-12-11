@@ -7,7 +7,7 @@ import Login from "./login/login";
 import Navbar from "./navbar/navbar";
 import Products from "./products/products";
 import Register from "./register/register";
-
+import Check_login from "./check_logging";
 
 function App() {
   return (
@@ -20,15 +20,18 @@ function App() {
                     </div>
                   </>}
           />
-          <Route path="/bidding" 
-                  element={<>
-                    <div className="Page_products">
-                      <Navbar/>
-                      <Header/>
-                      <Products/>
-                    </div>
-                  </>}
+          <Route element={<Check_login/>}>
+                      <Route path="/bidding" 
+                        element={<>
+                          <div className="Page_products">
+                            <Navbar/>
+                            <Header/>
+                            <Products/>
+                          </div>
+                        </>}
           />
+          </Route>
+
 
           <Route path="/login" 
                   element={<>
