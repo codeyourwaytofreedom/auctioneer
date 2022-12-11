@@ -112,11 +112,13 @@ app.post('/login', (req, res) => {
           }
           else{
               res.send("jwt available and verified")
+              console.log("request received for verification")
           }
         })
     }
     else{
       res.send(false)
+      console.log("failed verification attempt")
     }
     console.log(token)
   })

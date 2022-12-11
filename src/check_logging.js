@@ -1,12 +1,22 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { Outlet } from "react-router-dom";
-
+import {  Outlet, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Check_login = () => {
-    const logged = true;
-    const location = useLocation();
+    const navigate = useNavigate();
+    useEffect(()=> {
+      axios.get("http://localhost:9000/userauth",
+      {withCredentials: true}
+      ).then(function (response) {
+          console.log(response.data)
+          if(!response.data)
+          {
+            navigate("/login")
+          }
+      }).catch((error) => console.log(error))
+    })
     return ( 
-        logged ? <Outlet/> : <Navigate to="/login" state={{from: location}} replace />
+        <Outlet/>
      );
 }
  
