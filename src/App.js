@@ -8,17 +8,20 @@ import Navbar from "./navbar/navbar";
 import Products from "./products/products";
 import Register from "./register/register";
 import Check_login from "./check_logging";
+import Home from "./home/home";
 
 function App() {
   return (
       <Router>
         <Routes>
           <Route path="/" 
-                  element={<>
-                    <div className="Page_products">
+                  element={
+                    <>
                       <Navbar/>
-                    </div>
-                  </>}
+                      <Home/>
+                    </>
+                   
+                }
           />
           <Route element={<Check_login/>}>
                       <Route path="/bidding" 
