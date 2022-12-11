@@ -22,12 +22,12 @@ const Navbar = () => {
             <div className="Navbar_icon">
                 <img src={auction} alt="auctions" />
             </div>
-            <div className="Navbar_motto">
+            <div className="Navbar_motto" onClick={()=> navigate("/")}>
                     auctioneer
             </div>
 
             <div className="Navbar_member">
-                <div className="Navbar_member_login">
+                <div className="Navbar_member_logout" style={{display: localStorage.getItem("auctioneer_active") ? "flex" : "none"}}>
                     <button onClick={handle_logout}>
                         <div className="Navbar_member_login_icon">
                             <FontAwesomeIcon icon={faSignIn} size={"2x"}/>

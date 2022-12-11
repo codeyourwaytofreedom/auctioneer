@@ -45,6 +45,7 @@ html, body {
   color: black;
   text-shadow: 1px 1px #80C4B7;
   font-size: 27px;
+  cursor: pointer;
 }
 .Navbar_bids {
   border: 2px solid black;
@@ -57,12 +58,12 @@ html, body {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-.Navbar_member_login, .Navbar_member_signup {
+.Navbar_member_login, .Navbar_member_logout, .Navbar_member_signup {
   display: flex;
   align-items: center;
   border-bottom: 2px solid black;
 }
-.Navbar_member_login button, .Navbar_member_signup button {
+.Navbar_member_login button, .Navbar_member_logout button, .Navbar_member_signup button {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -73,7 +74,7 @@ html, body {
   font-size: 17px;
   border-bottom: 1px solid #80C4B7;
 }
-.Navbar_member_login button span, .Navbar_member_signup button span {
+.Navbar_member_login button span, .Navbar_member_logout button span, .Navbar_member_signup button span {
   text-shadow: 0.5px 0.5px #80C4B7;
 }
 
@@ -97,14 +98,14 @@ html, body {
     width: -moz-fit-content;
     width: fit-content;
   }
-  .Navbar_member_login, .Navbar_member_signup {
+  .Navbar_member_login, .Navbar_member_logout, .Navbar_member_signup {
     border: none;
     padding: 0;
   }
-  .Navbar_member_login button, .Navbar_member_signup button {
+  .Navbar_member_login button, .Navbar_member_logout button, .Navbar_member_signup button {
     border: none;
   }
-  .Navbar_member_login button span, .Navbar_member_signup button span {
+  .Navbar_member_login button span, .Navbar_member_logout button span, .Navbar_member_signup button span {
     display: none;
   }
 }/*# sourceMappingURL=navbar.css.map */

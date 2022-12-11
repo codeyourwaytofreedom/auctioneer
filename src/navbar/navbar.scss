@@ -28,6 +28,7 @@
         color: black;
         text-shadow: 1px 1px $main_turq;
         font-size: 27px;
+        cursor: pointer;
     }
     &_bids{
         border: 2px solid black;
@@ -41,7 +42,7 @@
         right: 40px;
         justify-content: end;
         column-gap: 10px;
-        &_login, &_signup{
+        &_login, &_logout, &_signup{
             display: flex;
             align-items: center;
             border-bottom: 2px solid black;
@@ -90,7 +91,7 @@
             right: 5px;
             column-gap: 4px;
             width: fit-content;
-            &_login, &_signup{
+            &_login, &_logout, &_signup{
                 border: none;
                 padding: 0;
                 button{

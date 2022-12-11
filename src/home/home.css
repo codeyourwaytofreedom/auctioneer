@@ -23,4 +23,21 @@ html, body {
   position: relative;
   top: 70px;
   border: 3px solid olivedrab;
+}
+.home_intro_motto {
+  border: 2px solid red;
+}
+.home_intro_howitworks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.home_intro_howitworks_auction, .home_intro_howitworks_bidding {
+  display: flex;
+  border: 2px solid crimson;
+}
+.home_intro_howitworks_auction_text, .home_intro_howitworks_bidding_text {
+  border: 2px solid orange;
+}
+.home_intro_howitworks_auction_gear, .home_intro_howitworks_bidding_gear {
+  border: 2px solid green;
 }/*# sourceMappingURL=home.css.map */
