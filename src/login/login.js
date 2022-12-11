@@ -45,7 +45,7 @@ const Login = () => {
                     else{
                         setResponse(false)
                         setFinal(true)
-                        console.log(7)
+                        localStorage.setItem("auctioneer_active", true);
                         setTimeout(() => {
                             navigate("/bidding")
                         }, 2000);
