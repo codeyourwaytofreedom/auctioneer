@@ -84,16 +84,19 @@
                 width: 55vw;
                 max-width: 500px;
                 aspect-ratio: 1/1;
-                border-radius: 40% 80%;
-                background-image: linear-gradient(to right, #d57358, #b45237);
+                border-radius: 40% 40% 40% 40%;
+                background-image: linear-gradient(to right, #c7674c, #a64a31);
                 box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
                 display: grid;
                 justify-content: center;
                 align-items: center;
                 position: relative;
+                animation-name: w3;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
                 &_image{
                     position: relative;
-                    background-color: $main_turq;
+                    background-color: rgb(245, 245, 160);
                     width: 12vw;
                     aspect-ratio: 1/1;
                     display: grid;
@@ -106,7 +109,13 @@
                 }
             }
             
+            
         }
+        #test{
+                display: grid;
+                justify-content: space-evenly;
+                grid-template-columns: repeat(5, 1fr);
+            }
     }
 }
 

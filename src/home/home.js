@@ -6,6 +6,7 @@ import furniture from "../header/images/furniture.png";
 import handcraft from "../header/images/handcraft.png";
 import jewelry from "../header/images/jewelry.png";
 import painting from "../header/images/painting.png";
+import Test from "../test";
 
 const Home = () => {
     return ( 
@@ -77,13 +78,21 @@ const Home = () => {
                             
 
                 </div>
+                
                 <div>
                     Category goes here..
                 </div>
-                <div>
-                    Category goes here..
-                </div>
+                
+{/*                 <div id="test">
+                    <Test/>
+                    <Test/>
+                    <Test/>
+                    <Test/>
+                    <Test/>
+                </div> */}
             </div>
+            
+            
         </div>
      );
 }
