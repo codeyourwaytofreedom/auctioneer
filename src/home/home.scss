@@ -5,25 +5,70 @@
     position: relative;
     top: 70px;
     &_intro{
+        position: relative;
         &_motto{
             //border: 2px solid red;
-            padding: 20px 40px;
-            span{
+            padding: 20px 10vw;
+            display: grid;
+            #title, #competitive{
                 font-size: 40px;
                 font-family: $annie;
-                color: $main_orange;
+                color: #2772db;
                 font-weight: 900;
-                border-bottom: 2px solid silver;
+                text-decoration: underline;
+                position: relative;
+                //border-bottom: 2px solid $main_orange;
+            }
+            #detail{
+                position: relative;
+                z-index: 7 !important;
+                color: $main_orange;
+                font-size: 25px;
+                font-family: $annie;
             }
         }
         &_howitworks {
             display: flex;
-            height: 300px;
+            //height: 250px;
             //border: 4px solid purple;
+            position: relative;
+            z-index: 2 !important;
+            justify-content: center;
             img{
-                width: 100%;
+                width: 80%;
                 height: 100%;
                 object-fit: contain;
+                position: relative;
+                top:-40px;
+                z-index: 2 !important;
+                //border: 2px solid red;
+            }
+        }
+        &_explain{
+            //border:2px solid green;
+            display: flex;
+            justify-content: end;
+            padding-right: 10vw;
+            display: grid;
+            text-align: end;
+            position: relative;
+            top:-70px;
+            z-index: 7;
+            #title, #competitive{
+                font-size: 40px;
+                font-family: $annie;
+                color: #2772db;
+                font-weight: 900;
+                text-decoration: underline;
+                position: relative;
+                //border-bottom: 2px solid $main_orange;
+            }
+            #detail{
+                position: relative;
+                z-index: 7 !important;
+                color: $main_orange;
+                font-size: 25px;
+                font-family: $annie;
             }
         }
     }
@@ -38,13 +83,19 @@
         top: 70px;
         &_intro{
             &_motto{
+                padding: 20px 5vw;
                 span{
 
                 }
             }
             &_howitworks {
-                border: 2px solid blue;
-                height: auto;
+                //border: 2px solid blue;
+                img{
+                    width: 90%;
+                }
+            }
+            &_explain{
+                padding: 20px 5vw;
             }
         }
     }
@@ -55,12 +106,21 @@
     .home{
         &_intro{
             &_motto{
+                padding: 10px 20px;
                 span{
-
+                    font-size: 30px;
                 }
             }
             &_howitworks {
-                border: 2px solid red;
+                //border: 2px solid red;
+                img{
+                    top:0;
+                    width: 100%;
+                }
+            }
+            &_explain{
+                padding: 10px 20px;
+                top:0;
             }
         }
     }
@@ -68,7 +128,19 @@
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
-    
+    .home{
+        top: 50px;
+        span{
+            font-size: 22px !important;
+        }
+        &_intro{
+            &_motto{
+            }
+            &_howitworks {
+                //border: 2px solid green;
+            }
+        }
+    }
  }
 
 

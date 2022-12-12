@@ -6,16 +6,36 @@ const Home = () => {
         <div className="home">
             <div className="home_intro">
                 <div className="home_intro_motto" >
-                    <span>
-                         Auctioneer: Competitive Market Place!
+                    <span id="title">
+                         Auctioneer: <span id="competitive">Competitive</span> Market Place!
                     </span>
-                   
+                    <span id="detail">
+                        Want to buy more than you can afford to???
+                    </span>
+                    <span id="detail">
+                        Have strong gut feelings?
+                    </span>
+                    <span id="detail">
+                        Up for fun shopping?
+                    </span>
                 </div>
-                
                 <div className="home_intro_howitworks">
                         <img src={tugwar} alt="tugwar" />
                 </div>
-                
+                <div className="home_intro_explain">
+                    <span id="title">
+                        Explaination goes here..
+                    </span>
+                    <span id="detail">
+                        Want to buy more than you can afford to???
+                    </span>
+                    <span id="detail">
+                        Have strong gut feelings?
+                    </span>
+                    <span id="detail">
+                        Up for fun shopping?
+                    </span>
+                </div>
             </div>
         </div>
      );
