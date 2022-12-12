@@ -5,7 +5,7 @@ import car from "../header/images/car.png";
 import furniture from "../header/images/furniture.png";
 import handcraft from "../header/images/handcraft.png";
 import jewelry from "../header/images/jewelry.png";
-import painting from "../header/images/jewelry.png";
+import painting from "../header/images/painting.png";
 
 const Home = () => {
     return ( 
@@ -53,7 +53,7 @@ const Home = () => {
                             <img src={car} alt="tab" />
                         </span>
                     </div>
-                    <div className="home_categories_all_card">
+{/*                     <div className="home_categories_all_card">
                         <span className="home_categories_all_card_image">
                             <img src={furniture} alt="tab" />
                         </span>
@@ -72,7 +72,7 @@ const Home = () => {
                         <span className="home_categories_all_card_image">
                             <img src={painting} alt="tab" />
                         </span>
-                    </div>
+                    </div> */}
                     
                             
 

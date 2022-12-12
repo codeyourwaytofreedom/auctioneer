@@ -75,30 +75,31 @@
     &_categories{
         border: 2px solid chartreuse;
         display: grid;
+        background-color: #80C4B7;
+        background-image: linear-gradient(to right, #E3856B, #d26b4f);
         &_all{
             display: flex;
             justify-content: space-evenly;
             &_card{
-                width: 19vw;
-                max-width: 300px;
-                aspect-ratio: 2/3;
-                border-radius: 15px;
-                background-color: $main_turq;
+                width: 55vw;
+                max-width: 500px;
+                aspect-ratio: 1/1;
+                border-radius: 40% 80%;
+                background-image: linear-gradient(to right, #d57358, #b45237);
+                box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
                 display: grid;
                 justify-content: center;
                 align-items: center;
                 position: relative;
                 &_image{
                     position: relative;
-                    background-color: #fbfbcd;
+                    background-color: $main_turq;
                     width: 12vw;
                     aspect-ratio: 1/1;
-                    animation-name: wiggle;
-                    animation-duration: 4s;
-                    animation-iteration-count: infinite;
                     display: grid;
                     justify-content: center;
                     align-items: center;
+                    border-radius: 50%;
                     img{
                         width: 6vw;
                     }
