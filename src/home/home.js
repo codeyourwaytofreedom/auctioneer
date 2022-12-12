@@ -54,12 +54,17 @@ const Home = () => {
                             <img src={car} alt="tab" />
                         </span>
                     </div>
-{/*                     <div className="home_categories_all_card">
+
+
+
+{/*                      <div className="home_categories_all_card" id="furniture">
                         <span className="home_categories_all_card_image">
                             <img src={furniture} alt="tab" />
                         </span>
-                    </div>
-                    <div className="home_categories_all_card">
+                    </div> */}
+
+
+{/*                     <div className="home_categories_all_card">
                         <span className="home_categories_all_card_image">
                             <img src={handcraft} alt="tab" />
                         </span>
@@ -73,7 +78,7 @@ const Home = () => {
                         <span className="home_categories_all_card_image">
                             <img src={painting} alt="tab" />
                         </span>
-                    </div> */}
+                    </div>  */}
                     
                             
 
@@ -82,7 +87,7 @@ const Home = () => {
                 <div>
                     Category goes here..
                 </div>
-                
+
 {/*                 <div id="test">
                     <Test/>
                     <Test/>

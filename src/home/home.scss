@@ -76,15 +76,14 @@
         border: 2px solid chartreuse;
         display: grid;
         background-color: #80C4B7;
-        background-image: linear-gradient(to right, #E3856B, #d26b4f);
+        background-image: linear-gradient(to right, #e98d74, #d67357);
         &_all{
             display: flex;
-            justify-content: space-evenly;
+            padding: 20px 40px;
             &_card{
-                width: 55vw;
-                max-width: 500px;
+                width: 65vw;
+                max-width: 700px;
                 aspect-ratio: 1/1;
-                border-radius: 40% 40% 40% 40%;
                 background-image: linear-gradient(to right, #c7674c, #a64a31);
                 box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
                 display: grid;
@@ -102,14 +101,14 @@
                     display: grid;
                     justify-content: center;
                     align-items: center;
-                    border-radius: 50%;
+                    animation-name: w3;
+                    animation-duration: 8s;
+                    animation-iteration-count: infinite;
                     img{
                         width: 6vw;
                     }
                 }
-            }
-            
-            
+            }            
         }
         #test{
                 display: grid;

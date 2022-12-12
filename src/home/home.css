@@ -182,17 +182,16 @@ html, body {
   border: 2px solid chartreuse;
   display: grid;
   background-color: #80C4B7;
-  background-image: linear-gradient(to right, #E3856B, #d26b4f);
+  background-image: linear-gradient(to right, #e98d74, #d67357);
 }
 .home_categories_all {
   display: flex;
-  justify-content: space-evenly;
+  padding: 20px 40px;
 }
 .home_categories_all_card {
-  width: 55vw;
-  max-width: 500px;
+  width: 65vw;
+  max-width: 700px;
   aspect-ratio: 1/1;
-  border-radius: 40% 40% 40% 40%;
   background-image: linear-gradient(to right, #c7674c, #a64a31);
   box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
   display: grid;
@@ -214,7 +213,12 @@ html, body {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  -webkit-animation-name: w3;
+          animation-name: w3;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .home_categories_all_card_image img {
   width: 6vw;
