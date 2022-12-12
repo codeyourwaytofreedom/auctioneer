@@ -72,6 +72,41 @@
             }
         }
     }
+    &_categories{
+        border: 2px solid chartreuse;
+        display: grid;
+        &_all{
+            display: flex;
+            justify-content: space-evenly;
+            &_card{
+                width: 19vw;
+                max-width: 300px;
+                aspect-ratio: 2/3;
+                border-radius: 15px;
+                background-color: $main_turq;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                &_image{
+                    position: relative;
+                    background-color: #fbfbcd;
+                    width: 12vw;
+                    aspect-ratio: 1/1;
+                    animation-name: wiggle;
+                    animation-duration: 4s;
+                    animation-iteration-count: infinite;
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 6vw;
+                    }
+                }
+            }
+            
+        }
+    }
 }
 
 
@@ -131,17 +166,22 @@
     .home{
         top: 50px;
         span{
-            font-size: 22px !important;
+            font-size: 17px !important;
         }
         &_intro{
             &_motto{
+                #title, #competitive{
+                    font-size: 21px !important;
+                }
             }
             &_howitworks {
                 //border: 2px solid green;
             }
+            &_explain{
+                #title{
+                    font-size: 21px !important;
+                }
+            }
         }
     }
  }
-
-
-

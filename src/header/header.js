@@ -18,7 +18,6 @@ const Header = () => {
                         <span className="Header_tabs_tab_text">
                             Vintage Cars
                         </span>
-
                     </button>
 
                     <button className="Header_tabs_tab">

@@ -5,7 +5,6 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 * {
@@ -19,12 +18,81 @@ html, body {
   grid-auto-flow: column;
 }
 
+@-webkit-keyframes wiggle {
+  0% {
+    border-radius: 82% 102% 63% 100%;
+  }
+  25% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  50% {
+    border-radius: 79% 83% 103% 73%;
+  }
+  75% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  100% {
+    border-radius: 82% 102% 63% 100%;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    border-radius: 82% 102% 63% 100%;
+  }
+  25% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  50% {
+    border-radius: 79% 83% 103% 73%;
+  }
+  75% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  100% {
+    border-radius: 82% 102% 63% 100%;
+  }
+}
+@-webkit-keyframes wiggle_reverse {
+  0% {
+    border-radius: 79% 83% 103% 73%;
+  }
+  25% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  50% {
+    border-radius: 82% 102% 63% 100%;
+  }
+  75% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  100% {
+    border-radius: 82% 102% 63% 100%;
+  }
+}
+@keyframes wiggle_reverse {
+  0% {
+    border-radius: 79% 83% 103% 73%;
+  }
+  25% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  50% {
+    border-radius: 82% 102% 63% 100%;
+  }
+  75% {
+    border-radius: 109% 83% 123% 77%;
+  }
+  100% {
+    border-radius: 82% 102% 63% 100%;
+  }
+}
 .Navbar {
   position: fixed;
   width: 100vw;
   height: 70px;
   background-color: #E3856B;
-  z-index: 4;
+  z-index: 40;
   display: flex;
   align-items: center;
   padding-left: 44px;
