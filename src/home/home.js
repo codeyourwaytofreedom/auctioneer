@@ -46,7 +46,7 @@ const Home = () => {
             </div>
             <div className="home_categories">
                 <div className="home_categories_title">
-                    Flexibility feels amazing!
+                    <span id="flexibility">Flexibility </span><span id="feels">feels </span><span id="amazing">amazing! </span>
                 </div>
                 <div className="home_categories_all">
                     <div className="home_categories_all_card">
@@ -72,9 +72,6 @@ const Home = () => {
                         </span>
                     </div>
                 </div>
-                <div>
-                    Category goes here..
-                </div>
 
 {/*                 <div id="test">
                     <Test/>
@@ -91,8 +88,3 @@ const Home = () => {
 }
  
 export default Home;
-
-
-                       /*  <span className="home_categories_all_card_image">
-                            <img src={car} alt="tab" />
-                        </span> */

@@ -399,10 +399,25 @@ html, body {
   padding: 50px 0;
 }
 .home_categories_title {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 40px;
+}
+.home_categories_title #flexibility, .home_categories_title #feels, .home_categories_title #amazing {
   font-family: "Annie Use Your Telescope";
   font-size: 50px;
   color: rgb(245, 245, 160);
-  padding: 40px;
+}
+.home_categories_title #flexibility, .home_categories_title #amazing {
+  position: relative;
+  display: inline-block;
+  transform: rotate(-6deg);
+}
+.home_categories_title #feels {
+  position: relative;
+  display: inline-block;
+  transform: rotate(6deg);
 }
 .home_categories_all {
   padding: 20px 40px;
@@ -511,9 +526,6 @@ html, body {
   .home_intro_explain {
     padding: 20px 5vw;
   }
-  .home_categories {
-    border: 3px solid blue;
-  }
 }
 @media (max-width: 767.98px) {
   .home_intro_motto {
@@ -529,9 +541,6 @@ html, body {
   .home_intro_explain {
     padding: 10px 20px;
     top: 0;
-  }
-  .home_categories {
-    border: 3px solid red;
   }
   .home_categories_all {
     grid-template-columns: 1fr;
@@ -562,10 +571,21 @@ html, body {
     font-size: 21px !important;
   }
   .home_categories {
-    border: 3px solid green;
+    padding-bottom: 80px;
+  }
+  .home_categories_title {
+    padding-left: 20px;
+  }
+  .home_categories_title #flexibility, .home_categories_title #feels, .home_categories_title #amazing {
+    font-size: 25px !important;
+    position: relative;
+    top: -30px;
   }
   .home_categories_all_card {
     padding-top: 40px;
+  }
+  .home_categories_all_card #text {
+    font-size: 25px !important;
   }
   .home_categories_all_minis .mini {
     width: 24vw !important;

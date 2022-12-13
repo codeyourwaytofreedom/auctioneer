@@ -79,9 +79,23 @@
         background-image: linear-gradient(to right, #e98d74, #d67357);
         padding: 50px 0;
         &_title{
-            font-family: $annie;
-            font-size: 50px;
-            color: rgb(245, 245, 160);
+            display: flex;
+            column-gap: 10px;
+            #flexibility, #feels, #amazing{
+                font-family: $annie;
+                font-size: 50px;
+                color: rgb(245, 245, 160);
+            }
+            #flexibility, #amazing{
+                position: relative;
+                display: inline-block;
+                transform: rotate(-6deg);
+            }
+            #feels{
+                position: relative;
+                display: inline-block;
+                transform: rotate(6deg);
+            }
             padding: 40px;
         }
         &_all{
@@ -194,7 +208,7 @@
             }
         }
         &_categories{
-            border: 3px solid blue;
+            //border: 3px solid blue;
 
         }
     }
@@ -223,7 +237,7 @@
             }
         }
         &_categories{
-            border: 3px solid red;
+            //border: 3px solid red;
             &_all{
                 grid-template-columns: 1fr;
                 justify-self: center;
@@ -264,10 +278,22 @@
             }
         }
         &_categories{
-            border: 3px solid green;
+            //border: 3px solid green;
+            padding-bottom: 80px;
+            &_title{
+                padding-left: 20px;
+                #flexibility, #feels, #amazing{
+                    font-size: 25px !important;
+                    position: relative;
+                    top:-30px;
+                }
+            }
             &_all{
                 &_card{
                     padding-top: 40px;
+                    #text{
+                        font-size: 25px !important;
+                    }
                 }
                 &_minis{
                     .mini{
