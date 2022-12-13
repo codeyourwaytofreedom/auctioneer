@@ -73,7 +73,7 @@
         }
     }
     &_categories{
-        border: 2px solid chartreuse;
+        //border: 2px solid chartreuse;
         display: grid;
         position: relative;
         background-color: #80C4B7;
@@ -117,13 +117,12 @@
                 }
             }
             &_minis{
-                border: 2px solid black;
+                //border: 2px solid black;
                 display: flex;
                 position: relative;
                 .mini{
-                    border:3px solid white;
+                   // border:3px solid white;
                     position: absolute;
-                    width: 20vw;
                     aspect-ratio: 1/1;
                     border-radius: 50%;
                     display: grid;
@@ -131,15 +130,33 @@
                     align-items: center;
                     background-color: $main_turq;
                     box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
+                    margin: 5px;
+                }
+                #minione{
+                    animation: wiggle 8s infinite, move1 8s infinite;
+                    width: 15vw;
                 }
                 #minitwo{
                     right: 0;
-                    animation: w3 8s infinite;
-                    width: 250px; 
+                    animation: w4 8s infinite, move2 8s infinite;
+                    width: 19vw;
                 }
                 #minithree{
                     bottom: 0;
-
+                    animation: w3 8s infinite, move3 8s infinite;
+                    width: 20vw;
+                }
+                #minifour{
+                    animation: w4 8s infinite, move4 8s infinite;
+                    bottom: 0;
+                    right: 0;
+                    width: 17vw;
+                }
+                #minifive{
+                    animation: w3 8s infinite, move5 8s infinite;
+                    left: 30%;
+                    top:10%;
+                    width: 17vw;
                 }
             }            
         }
@@ -179,8 +196,8 @@
             border: 3px solid blue;
             &_all{
                 &_minis{
-                    #minitwo{
-                        width: 20vw; 
+                    .mini{
+                        width: 20vw;
                     }
                 }
             }

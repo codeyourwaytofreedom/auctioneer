@@ -56,13 +56,19 @@ const Home = () => {
                     </div>
                     <div className="home_categories_all_minis">
                         <span className="mini" id="minione">
-                            Flexible prices...
+                            ONE
                         </span>
                         <span className="mini" id="minitwo">
-                            Flexible prices...
+                            TWO
                         </span>
                         <span className="mini" id="minithree">
-                            Flexible prices...
+                            THREE
+                        </span>
+                        <span className="mini" id="minifour">
+                            FOUR
+                        </span>
+                        <span className="mini" id="minifive">
+                            FIVE
                         </span>
                     </div>
 
