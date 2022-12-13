@@ -214,6 +214,8 @@
             grid-template-columns: repeat(2, 1fr);
             padding-left: 10vw;
             padding-right: 10vw;
+            &_product{
+            }
         }
     }
  }
@@ -242,7 +244,7 @@
             grid-template-columns: repeat(2, 1fr);
             padding: 30px;
             &_product{
-
+                min-width: 300px;
             }
         }
     }

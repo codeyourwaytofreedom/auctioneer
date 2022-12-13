@@ -557,6 +557,9 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
     padding: 30px;
   }
+  .home_productsdemo_product {
+    min-width: 300px;
+  }
 }
 @media (max-width: 767.98px) {
   .home_intro_motto {
