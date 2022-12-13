@@ -181,16 +181,16 @@ html, body {
 .home_categories {
   border: 2px solid chartreuse;
   display: grid;
+  position: relative;
   background-color: #80C4B7;
   background-image: linear-gradient(to right, #e98d74, #d67357);
 }
 .home_categories_all {
-  display: flex;
   padding: 20px 40px;
+  display: grid;
+  grid-template-columns: 3fr 4fr;
 }
 .home_categories_all_card {
-  width: 65vw;
-  max-width: 700px;
   aspect-ratio: 1/1;
   background-image: linear-gradient(to right, #c7674c, #a64a31);
   box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
@@ -223,6 +223,37 @@ html, body {
 .home_categories_all_card_image img {
   width: 6vw;
 }
+.home_categories_all_card #text {
+  color: wheat;
+  font-family: "Annie Use Your Telescope";
+  font-size: 35px;
+}
+.home_categories_all_minis {
+  border: 2px solid black;
+  display: flex;
+  position: relative;
+}
+.home_categories_all_minis .mini {
+  border: 3px solid white;
+  position: absolute;
+  width: 20vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #80C4B7;
+  box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
+}
+.home_categories_all_minis #minitwo {
+  right: 0;
+  -webkit-animation: w3 8s infinite;
+          animation: w3 8s infinite;
+  width: 250px;
+}
+.home_categories_all_minis #minithree {
+  bottom: 0;
+}
 .home_categories #test {
   display: grid;
   justify-content: space-evenly;
@@ -242,6 +273,12 @@ html, body {
   .home_intro_explain {
     padding: 20px 5vw;
   }
+  .home_categories {
+    border: 3px solid blue;
+  }
+  .home_categories_all_minis #minitwo {
+    width: 20vw;
+  }
 }
 @media (max-width: 767.98px) {
   .home_intro_motto {
@@ -258,6 +295,9 @@ html, body {
     padding: 10px 20px;
     top: 0;
   }
+  .home_categories {
+    border: 3px solid red;
+  }
 }
 @media (max-width: 575.98px) {
   .home {
@@ -271,5 +311,8 @@ html, body {
   }
   .home_intro_explain #title {
     font-size: 21px !important;
+  }
+  .home_categories {
+    border: 3px solid green;
   }
 }/*# sourceMappingURL=home.css.map */

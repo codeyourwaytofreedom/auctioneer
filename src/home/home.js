@@ -50,8 +50,19 @@ const Home = () => {
                 </div>
                 <div className="home_categories_all">
                     <div className="home_categories_all_card">
-                        <span className="home_categories_all_card_image">
-                            <img src={car} alt="tab" />
+                        <span id="text">
+                            Flexible prices...
+                        </span>
+                    </div>
+                    <div className="home_categories_all_minis">
+                        <span className="mini" id="minione">
+                            Flexible prices...
+                        </span>
+                        <span className="mini" id="minitwo">
+                            Flexible prices...
+                        </span>
+                        <span className="mini" id="minithree">
+                            Flexible prices...
                         </span>
                     </div>
 
@@ -103,3 +114,8 @@ const Home = () => {
 }
  
 export default Home;
+
+
+                       /*  <span className="home_categories_all_card_image">
+                            <img src={car} alt="tab" />
+                        </span> */

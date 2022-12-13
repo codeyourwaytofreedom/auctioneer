@@ -75,14 +75,16 @@
     &_categories{
         border: 2px solid chartreuse;
         display: grid;
+        position: relative;
         background-color: #80C4B7;
         background-image: linear-gradient(to right, #e98d74, #d67357);
         &_all{
-            display: flex;
             padding: 20px 40px;
+            display: grid;
+            grid-template-columns: 3fr 4fr;
+            
             &_card{
-                width: 65vw;
-                max-width: 700px;
+                //max-width: 500px;
                 aspect-ratio: 1/1;
                 background-image: linear-gradient(to right, #c7674c, #a64a31);
                 box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
@@ -107,6 +109,37 @@
                     img{
                         width: 6vw;
                     }
+                }
+                #text{
+                    color: wheat;
+                    font-family: $annie;
+                    font-size: 35px;
+                }
+            }
+            &_minis{
+                border: 2px solid black;
+                display: flex;
+                position: relative;
+                .mini{
+                    border:3px solid white;
+                    position: absolute;
+                    width: 20vw;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $main_turq;
+                    box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
+                }
+                #minitwo{
+                    right: 0;
+                    animation: w3 8s infinite;
+                    width: 250px; 
+                }
+                #minithree{
+                    bottom: 0;
+
                 }
             }            
         }
@@ -142,6 +175,16 @@
                 padding: 20px 5vw;
             }
         }
+        &_categories{
+            border: 3px solid blue;
+            &_all{
+                &_minis{
+                    #minitwo{
+                        width: 20vw; 
+                    }
+                }
+            }
+        }
     }
  }
 
@@ -167,6 +210,9 @@
                 top:0;
             }
         }
+        &_categories{
+            border: 3px solid red;
+        }
     }
  }
 
@@ -191,6 +237,9 @@
                     font-size: 21px !important;
                 }
             }
+        }
+        &_categories{
+            border: 3px solid green;
         }
     }
  }
