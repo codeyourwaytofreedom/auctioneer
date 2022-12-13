@@ -17,7 +17,6 @@
                 font-weight: 900;
                 text-decoration: underline;
                 position: relative;
-                //border-bottom: 2px solid $main_orange;
             }
             #detail{
                 position: relative;
@@ -29,8 +28,6 @@
         }
         &_howitworks {
             display: flex;
-            //height: 250px;
-            //border: 4px solid purple;
             position: relative;
             z-index: 2 !important;
             justify-content: center;
@@ -41,7 +38,6 @@
                 position: relative;
                 top:-40px;
                 z-index: 2 !important;
-                //border: 2px solid red;
             }
         }
         &_explain{
@@ -61,7 +57,6 @@
                 font-weight: 900;
                 text-decoration: underline;
                 position: relative;
-                //border-bottom: 2px solid $main_orange;
             }
             #detail{
                 position: relative;
@@ -76,8 +71,11 @@
         //border: 2px solid chartreuse;
         display: grid;
         position: relative;
-        background-image: linear-gradient(to right, #e98d74, #d67357);
+        //background-image: linear-gradient(to right, #e98d74, #d67357);
         padding: 50px 0;
+        padding-top: 0;
+        background-color: $main_orange;
+        box-shadow: 0px -37px 18px 24px $main_orange, 0px 37px 18px 24px $main_orange ;
         &_title{
             display: flex;
             column-gap: 10px;
@@ -104,34 +102,15 @@
             grid-template-columns: 3fr 4fr;
             
             &_card{
-                //max-width: 500px;
+                max-width: 550px;
                 aspect-ratio: 1/1;
                 background-image: linear-gradient(to right, #c7674c, #a64a31);
                 box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
-                display: grid;
-                justify-content: center;
-                align-items: center;
+                @include grid-center;
                 position: relative;
-                animation-name: w3;
-                animation-duration: 8s;
-                animation-iteration-count: infinite;
-                &_image{
-                    position: relative;
-                    background-color: rgb(245, 245, 160);
-                    width: 12vw;
-                    aspect-ratio: 1/1;
-                    display: grid;
-                    justify-content: center;
-                    align-items: center;
-                    animation-name: w3;
-                    animation-duration: 8s;
-                    animation-iteration-count: infinite;
-                    img{
-                        width: 6vw;
-                    }
-                }
+                animation: w3 8s infinite, move1 8s infinite;
                 #text{
-                    color: wheat;
+                    color: rgb(245, 245, 160);
                     font-family: $annie;
                     font-size: 35px;
                 }
@@ -145,9 +124,7 @@
                     position: absolute;
                     aspect-ratio: 1/1;
                     border-radius: 50%;
-                    display: grid;
-                    justify-content: center;
-                    align-items: center;
+                    @include grid-center;
                     background-color: $main_turq;
                     box-shadow: 0px 4px 20px 4px rgb(244, 244, 146);
                 }
@@ -185,10 +162,61 @@
                 grid-template-columns: repeat(5, 1fr);
             }
     }
+    &_productsdemo{
+        background-color: $main_orange;
+        box-shadow: 0px -27px 18px 24px #80c4b7, 0px 27px 18px 24px #80c4b7 ;
+        box-shadow: 0px -37px 18px 24px $main_orange, 0px 37px 18px 24px $main_orange ;
+        position: relative;
+        top: 200px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 30px;
+        &_product{
+            aspect-ratio: 1/1;
+            //border: 2px solid black;
+            background-color: rgb(245, 245, 201);
+            border-radius: 20px;
+            display: grid;
+            padding: 10px;
+            &_image{
+                //border: 2px solid chartreuse;
+                height: 250px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+            &_details{
+                display: grid;
+                border: 3px solid crimson;
+            }
+        }
+    }
+    
+
+
+    &_rest{
+        height: 500px;
+        position: relative;
+        top: 300px;
+    }
 }
 
 
-
+@media (max-width: 1250.98px) { 
+    .home{
+        &_productsdemo{
+            grid-template-columns: repeat(2, 1fr);
+            padding-left: 10vw;
+            padding-right: 10vw;
+        }
+    }
+ }
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) { 
@@ -209,7 +237,13 @@
         }
         &_categories{
             //border: 3px solid blue;
+        }
+        &_productsdemo{
+            grid-template-columns: repeat(2, 1fr);
+            padding: 30px;
+            &_product{
 
+            }
         }
     }
  }
@@ -238,6 +272,8 @@
         }
         &_categories{
             //border: 3px solid red;
+            position: relative;
+            top:60px;
             &_all{
                 grid-template-columns: 1fr;
                 justify-self: center;
@@ -248,8 +284,14 @@
                 &_card{
                     align-content: start;
                     padding-top: 80px;
-                    animation: w3 8s infinite, move1 8s infinite;
                 }
+            }
+        }
+        &_productsdemo{
+            grid-template-columns: 1fr;
+            &_product{
+                width: 500px;
+                justify-self: center;
             }
         }
     }
@@ -279,7 +321,7 @@
         }
         &_categories{
             //border: 3px solid green;
-            padding-bottom: 80px;
+            padding-bottom: 100px;
             &_title{
                 padding-left: 20px;
                 #flexibility, #feels, #amazing{
@@ -300,6 +342,14 @@
                         width: 24vw !important;
                     }
                 }
+            }
+        }
+        &_productsdemo{
+            grid-template-columns: 1fr;
+            justify-items: center;
+            &_product{
+                width: 80vw;
+                aspect-ratio: 1/1;
             }
         }
     }

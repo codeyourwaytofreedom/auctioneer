@@ -395,8 +395,10 @@ html, body {
 .home_categories {
   display: grid;
   position: relative;
-  background-image: linear-gradient(to right, #e98d74, #d67357);
   padding: 50px 0;
+  padding-top: 0;
+  background-color: #E3856B;
+  box-shadow: 0px -37px 18px 24px #E3856B, 0px 37px 18px 24px #E3856B;
 }
 .home_categories_title {
   display: flex;
@@ -425,6 +427,7 @@ html, body {
   grid-template-columns: 3fr 4fr;
 }
 .home_categories_all_card {
+  max-width: 550px;
   aspect-ratio: 1/1;
   background-image: linear-gradient(to right, #c7674c, #a64a31);
   box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
@@ -432,33 +435,11 @@ html, body {
   justify-content: center;
   align-items: center;
   position: relative;
-  -webkit-animation-name: w3;
-          animation-name: w3;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-.home_categories_all_card_image {
-  position: relative;
-  background-color: rgb(245, 245, 160);
-  width: 12vw;
-  aspect-ratio: 1/1;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  -webkit-animation-name: w3;
-          animation-name: w3;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-.home_categories_all_card_image img {
-  width: 6vw;
+  -webkit-animation: w3 8s infinite, move1 8s infinite;
+          animation: w3 8s infinite, move1 8s infinite;
 }
 .home_categories_all_card #text {
-  color: wheat;
+  color: rgb(245, 245, 160);
   font-family: "Annie Use Your Telescope";
   font-size: 35px;
 }
@@ -512,7 +493,53 @@ html, body {
   justify-content: space-evenly;
   grid-template-columns: repeat(5, 1fr);
 }
+.home_productsdemo {
+  background-color: #E3856B;
+  box-shadow: 0px -27px 18px 24px #80c4b7, 0px 27px 18px 24px #80c4b7;
+  box-shadow: 0px -37px 18px 24px #E3856B, 0px 37px 18px 24px #E3856B;
+  position: relative;
+  top: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px;
+}
+.home_productsdemo_product {
+  aspect-ratio: 1/1;
+  background-color: rgb(245, 245, 201);
+  border-radius: 20px;
+  display: grid;
+  padding: 10px;
+}
+.home_productsdemo_product_image {
+  height: 250px;
+}
+.home_productsdemo_product_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.home_productsdemo_product_details {
+  display: grid;
+  border: 3px solid crimson;
+}
+.home_rest {
+  height: 500px;
+  position: relative;
+  top: 300px;
+}
 
+@media (max-width: 1250.98px) {
+  .home_productsdemo {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
 @media (max-width: 991.98px) {
   .home {
     top: 70px;
@@ -525,6 +552,10 @@ html, body {
   }
   .home_intro_explain {
     padding: 20px 5vw;
+  }
+  .home_productsdemo {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
   }
 }
 @media (max-width: 767.98px) {
@@ -542,6 +573,10 @@ html, body {
     padding: 10px 20px;
     top: 0;
   }
+  .home_categories {
+    position: relative;
+    top: 60px;
+  }
   .home_categories_all {
     grid-template-columns: 1fr;
     justify-self: center;
@@ -553,8 +588,13 @@ html, body {
   .home_categories_all_card {
     align-content: start;
     padding-top: 80px;
-    -webkit-animation: w3 8s infinite, move1 8s infinite;
-            animation: w3 8s infinite, move1 8s infinite;
+  }
+  .home_productsdemo {
+    grid-template-columns: 1fr;
+  }
+  .home_productsdemo_product {
+    width: 500px;
+    justify-self: center;
   }
 }
 @media (max-width: 575.98px) {
@@ -571,7 +611,7 @@ html, body {
     font-size: 21px !important;
   }
   .home_categories {
-    padding-bottom: 80px;
+    padding-bottom: 100px;
   }
   .home_categories_title {
     padding-left: 20px;
@@ -589,5 +629,13 @@ html, body {
   }
   .home_categories_all_minis .mini {
     width: 24vw !important;
+  }
+  .home_productsdemo {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .home_productsdemo_product {
+    width: 80vw;
+    aspect-ratio: 1/1;
   }
 }/*# sourceMappingURL=home.css.map */

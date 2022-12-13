@@ -6,7 +6,11 @@ import furniture from "../header/images/furniture.png";
 import handcraft from "../header/images/handcraft.png";
 import jewelry from "../header/images/jewelry.png";
 import painting from "../header/images/painting.png";
-import Test from "../test";
+import vcar1 from "./vcar1.png";
+import vcar2 from "./vcar2.png";
+import vcar3 from "./vcar3.png";
+
+
 
 const Home = () => {
     return ( 
@@ -81,7 +85,50 @@ const Home = () => {
                     <Test/>
                 </div> */}
             </div>
-            
+            <div className="home_productsdemo">
+                <div className="home_productsdemo_product">
+                        <div className="home_productsdemo_product_image">
+                            <img src={vcar1} alt="" />
+                        </div>
+                        <div className="home_productsdemo_product_details">
+                            Product details
+                        </div>
+                </div>
+
+
+                <div className="home_productsdemo_product">
+                        <div className="home_productsdemo_product_image">
+                            <img src={vcar2} alt="" />
+                        </div>
+                        <div className="home_productsdemo_product_details">
+                            Product details
+                        </div>
+                </div>
+
+                
+                <div className="home_productsdemo_product">
+                        <div className="home_productsdemo_product_image">
+                            <img src={vcar3} alt="" />
+                        </div>
+                        <div className="home_productsdemo_product_details">
+                            Product details
+                        </div>
+                </div>
+
+                <div className="home_productsdemo_product">
+                        Products
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div className="home_rest">
+                rest goes here...
+            </div>
             
         </div>
      );
