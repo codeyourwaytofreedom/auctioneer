@@ -276,7 +276,7 @@ html, body {
   }
   40% {
     left: 30%;
-    top: calc(10% - 60px);
+    top: calc(10% + 60px);
   }
   100% {
     left: 30%;
@@ -290,7 +290,7 @@ html, body {
   }
   40% {
     left: 30%;
-    top: calc(10% - 60px);
+    top: calc(10% + 60px);
   }
   100% {
     left: 30%;
@@ -395,8 +395,14 @@ html, body {
 .home_categories {
   display: grid;
   position: relative;
-  background-color: #80C4B7;
   background-image: linear-gradient(to right, #e98d74, #d67357);
+  padding: 50px 0;
+}
+.home_categories_title {
+  font-family: "Annie Use Your Telescope";
+  font-size: 50px;
+  color: rgb(245, 245, 160);
+  padding: 40px;
 }
 .home_categories_all {
   padding: 20px 40px;
@@ -453,39 +459,38 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: #80C4B7;
-  box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
-  margin: 5px;
+  box-shadow: 0px 4px 20px 4px rgb(244, 244, 146);
 }
 .home_categories_all_minis #minione {
   -webkit-animation: wiggle 8s infinite, move1 8s infinite;
           animation: wiggle 8s infinite, move1 8s infinite;
-  width: 15vw;
+  width: 13vw;
 }
 .home_categories_all_minis #minitwo {
   right: 0;
   -webkit-animation: w4 8s infinite, move2 8s infinite;
           animation: w4 8s infinite, move2 8s infinite;
-  width: 19vw;
+  width: 15vw;
 }
 .home_categories_all_minis #minithree {
   bottom: 0;
   -webkit-animation: w3 8s infinite, move3 8s infinite;
           animation: w3 8s infinite, move3 8s infinite;
-  width: 20vw;
+  width: 17vw;
 }
 .home_categories_all_minis #minifour {
   -webkit-animation: w4 8s infinite, move4 8s infinite;
           animation: w4 8s infinite, move4 8s infinite;
   bottom: 0;
   right: 0;
-  width: 17vw;
+  width: 14vw;
 }
 .home_categories_all_minis #minifive {
   -webkit-animation: w3 8s infinite, move5 8s infinite;
           animation: w3 8s infinite, move5 8s infinite;
   left: 30%;
   top: 10%;
-  width: 17vw;
+  width: 14vw;
 }
 .home_categories #test {
   display: grid;
@@ -509,9 +514,6 @@ html, body {
   .home_categories {
     border: 3px solid blue;
   }
-  .home_categories_all_minis .mini {
-    width: 20vw;
-  }
 }
 @media (max-width: 767.98px) {
   .home_intro_motto {
@@ -531,6 +533,20 @@ html, body {
   .home_categories {
     border: 3px solid red;
   }
+  .home_categories_all {
+    grid-template-columns: 1fr;
+    justify-self: center;
+    position: relative;
+    top: -50px;
+    width: 75vw;
+    max-width: 500px;
+  }
+  .home_categories_all_card {
+    align-content: start;
+    padding-top: 80px;
+    -webkit-animation: w3 8s infinite, move1 8s infinite;
+            animation: w3 8s infinite, move1 8s infinite;
+  }
 }
 @media (max-width: 575.98px) {
   .home {
@@ -547,5 +563,11 @@ html, body {
   }
   .home_categories {
     border: 3px solid green;
+  }
+  .home_categories_all_card {
+    padding-top: 40px;
+  }
+  .home_categories_all_minis .mini {
+    width: 24vw !important;
   }
 }/*# sourceMappingURL=home.css.map */

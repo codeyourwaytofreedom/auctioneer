@@ -76,8 +76,14 @@
         //border: 2px solid chartreuse;
         display: grid;
         position: relative;
-        background-color: #80C4B7;
         background-image: linear-gradient(to right, #e98d74, #d67357);
+        padding: 50px 0;
+        &_title{
+            font-family: $annie;
+            font-size: 50px;
+            color: rgb(245, 245, 160);
+            padding: 40px;
+        }
         &_all{
             padding: 20px 40px;
             display: grid;
@@ -129,34 +135,33 @@
                     justify-content: center;
                     align-items: center;
                     background-color: $main_turq;
-                    box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
-                    margin: 5px;
+                    box-shadow: 0px 4px 20px 4px rgb(244, 244, 146);
                 }
                 #minione{
                     animation: wiggle 8s infinite, move1 8s infinite;
-                    width: 15vw;
+                    width: 13vw;
                 }
                 #minitwo{
                     right: 0;
                     animation: w4 8s infinite, move2 8s infinite;
-                    width: 19vw;
+                    width: 15vw;
                 }
                 #minithree{
                     bottom: 0;
                     animation: w3 8s infinite, move3 8s infinite;
-                    width: 20vw;
+                    width: 17vw;
                 }
                 #minifour{
                     animation: w4 8s infinite, move4 8s infinite;
                     bottom: 0;
                     right: 0;
-                    width: 17vw;
+                    width: 14vw;
                 }
                 #minifive{
                     animation: w3 8s infinite, move5 8s infinite;
                     left: 30%;
                     top:10%;
-                    width: 17vw;
+                    width: 14vw;
                 }
             }            
         }
@@ -178,12 +183,8 @@
         &_intro{
             &_motto{
                 padding: 20px 5vw;
-                span{
-
-                }
             }
             &_howitworks {
-                //border: 2px solid blue;
                 img{
                     width: 90%;
                 }
@@ -194,13 +195,7 @@
         }
         &_categories{
             border: 3px solid blue;
-            &_all{
-                &_minis{
-                    .mini{
-                        width: 20vw;
-                    }
-                }
-            }
+
         }
     }
  }
@@ -229,6 +224,19 @@
         }
         &_categories{
             border: 3px solid red;
+            &_all{
+                grid-template-columns: 1fr;
+                justify-self: center;
+                position: relative;
+                top: -50px;
+                width: 75vw;
+                max-width: 500px;
+                &_card{
+                    align-content: start;
+                    padding-top: 80px;
+                    animation: w3 8s infinite, move1 8s infinite;
+                }
+            }
         }
     }
  }
@@ -257,6 +265,16 @@
         }
         &_categories{
             border: 3px solid green;
+            &_all{
+                &_card{
+                    padding-top: 40px;
+                }
+                &_minis{
+                    .mini{
+                        width: 24vw !important;
+                    }
+                }
+            }
         }
     }
  }

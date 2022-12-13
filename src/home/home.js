@@ -45,8 +45,8 @@ const Home = () => {
                 </div>
             </div>
             <div className="home_categories">
-                <div>
-                    Text goes here...
+                <div className="home_categories_title">
+                    Flexibility feels amazing!
                 </div>
                 <div className="home_categories_all">
                     <div className="home_categories_all_card">
@@ -56,51 +56,22 @@ const Home = () => {
                     </div>
                     <div className="home_categories_all_minis">
                         <span className="mini" id="minione">
-                            ONE
+                            <img src={car} alt="" />
                         </span>
                         <span className="mini" id="minitwo">
-                            TWO
+                            <img src={furniture} alt="" />
                         </span>
                         <span className="mini" id="minithree">
-                            THREE
+                            <img src={jewelry} alt="" />
                         </span>
                         <span className="mini" id="minifour">
-                            FOUR
+                            <img src={handcraft} alt="" />
                         </span>
                         <span className="mini" id="minifive">
-                            FIVE
+                            <img src={painting} alt="" />
                         </span>
                     </div>
-
-
-
-{/*                      <div className="home_categories_all_card" id="furniture">
-                        <span className="home_categories_all_card_image">
-                            <img src={furniture} alt="tab" />
-                        </span>
-                    </div> */}
-
-
-{/*                     <div className="home_categories_all_card">
-                        <span className="home_categories_all_card_image">
-                            <img src={handcraft} alt="tab" />
-                        </span>
-                    </div>
-                    <div className="home_categories_all_card">
-                        <span className="home_categories_all_card_image">
-                            <img src={jewelry} alt="tab" />
-                        </span>
-                    </div>
-                    <div className="home_categories_all_card">
-                        <span className="home_categories_all_card_image">
-                            <img src={painting} alt="tab" />
-                        </span>
-                    </div>  */}
-                    
-                            
-
                 </div>
-                
                 <div>
                     Category goes here..
                 </div>
