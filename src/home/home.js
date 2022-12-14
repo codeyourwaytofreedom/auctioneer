@@ -101,7 +101,7 @@ const Home = () => {
                         </div>
                         <div className="home_productsdemo_product_details">
                             <span id="auctionstarts">
-                                Actuion starts on 17th January 2022; 10:00 am.
+                                Auction starts on 17th January 2022; 10:00 am.
                             </span>
                             <span id="calltoaction">
                                 <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!
@@ -117,8 +117,8 @@ const Home = () => {
                             <img src={vcar2} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                        <span id="auctionstarts">
-                                Actuion starts on 04th February 2022; 14:00 pm.
+                            <span id="auctionstarts">
+                                Auction starts on 04th February 2022; 14:00 pm.
                             </span>
                             <span id="calltoaction">
                                 <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!
@@ -135,7 +135,7 @@ const Home = () => {
                         </div>
                         <div className="home_productsdemo_product_details">
                         <span id="auctionstarts">
-                                Actuion starts on 21th January 2022; 10:00 am.
+                                Auction starts on 21th January 2022; 10:00 am.
                             </span>
                             <span id="calltoaction">
                                 <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!

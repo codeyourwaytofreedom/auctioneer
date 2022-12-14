@@ -35,7 +35,7 @@ const Navbar = () => {
                         <span>Log out</span>
                     </button>
                 </div>
-                <div className="Navbar_member_login" onClick={()=> navigate("/login")}>
+                <div className="Navbar_member_login" onClick={()=> navigate("/login")}  style={{display: !localStorage.getItem("auctioneer_active") ? "flex" : "none"}}>
                     <button>
                         <div className="Navbar_member_login_icon">
                             <FontAwesomeIcon icon={faSignIn} size={"2x"}/>
@@ -43,7 +43,7 @@ const Navbar = () => {
                         <span>Log in</span>
                     </button>
                 </div>
-                <div className="Navbar_member_signup" onClick={()=> navigate("/register")}>
+                <div className="Navbar_member_signup" onClick={()=> navigate("/register")}  style={{display: !localStorage.getItem("auctioneer_active") ? "flex" : "none"}}>
                     <button>
                         <div className="Navbar_member_signup_icon">
                             <FontAwesomeIcon icon={faPlusCircle} size={"2x"} />
