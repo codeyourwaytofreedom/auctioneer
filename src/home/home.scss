@@ -131,6 +131,7 @@
                 #minione{
                     animation: wiggle 8s infinite, move1 8s infinite;
                     width: 13vw;
+                    max-width: 200px;
                 }
                 #minitwo{
                     right: 0;
@@ -169,8 +170,8 @@
         color: $main_orange;
     }
     &_productsdemo{
-        background-color: $main_orange;
-        box-shadow: 0px -20px 11px 24px $main_orange, 0px 20px 10px 24px $main_orange ;
+        background-color: rgb(238, 238, 238);
+        box-shadow: 0px -20px 11px 24px rgb(238, 238, 238), 0px 20px 10px 24px rgb(238, 238, 238);
         position: relative;
         top: 100px;
         display: grid;
@@ -179,8 +180,8 @@
         padding: 0 30px;
         &_product{
             //aspect-ratio: 1/1;
-            border: 2px solid rgb(245, 245, 201);
-            background-color: rgb(245, 245, 201);
+            border: 2px solid rgb(233, 233, 176);
+            background-color: rgb(233, 233, 176);
             border-radius: 20px;
             display: grid;
             //padding: 10px;
@@ -363,6 +364,7 @@
         &_categories{
             //border: 3px solid green;
             padding-bottom: 100px;
+            top:20px;
             &_title{
                 padding-left: 20px;
                 #flexibility, #feels, #amazing{

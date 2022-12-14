@@ -35,7 +35,7 @@ const Navbar = () => {
                         <span>Log out</span>
                     </button>
                 </div>
-                <div className="Navbar_member_login">
+                <div className="Navbar_member_login" onClick={()=> navigate("/login")}>
                     <button>
                         <div className="Navbar_member_login_icon">
                             <FontAwesomeIcon icon={faSignIn} size={"2x"}/>
@@ -43,7 +43,7 @@ const Navbar = () => {
                         <span>Log in</span>
                     </button>
                 </div>
-                <div className="Navbar_member_signup">
+                <div className="Navbar_member_signup" onClick={()=> navigate("/register")}>
                     <button>
                         <div className="Navbar_member_signup_icon">
                             <FontAwesomeIcon icon={faPlusCircle} size={"2x"} />

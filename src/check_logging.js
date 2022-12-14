@@ -13,7 +13,11 @@ const Check_login = () => {
           {
             navigate("/login")
           }
-      }).catch((error) => console.log(error))
+      }).catch((error) => 
+              {
+                console.log(error);
+                navigate("/login")
+              })
     })
     return ( 
         <Outlet/>
