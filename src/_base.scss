@@ -202,3 +202,17 @@ $main_turq: #80C4B7;
 
   }
 }
+
+
+
+@keyframes beat {
+  0%{
+    width: 50px;
+  }
+  50%{
+    width: 45px;
+  }
+  100%{
+    width: 50px;
+  }
+}

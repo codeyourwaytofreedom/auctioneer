@@ -325,6 +325,28 @@ html, body {
     bottom: 30px;
   }
 }
+@-webkit-keyframes beat {
+  0% {
+    width: 50px;
+  }
+  50% {
+    width: 45px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@keyframes beat {
+  0% {
+    width: 50px;
+  }
+  50% {
+    width: 45px;
+  }
+  100% {
+    width: 50px;
+  }
+}
 .Header {
   display: grid;
   height: calc(100vh - 70px);

@@ -9,6 +9,11 @@ import painting from "../header/images/painting.png";
 import vcar1 from "./vcar1.png";
 import vcar2 from "./vcar2.png";
 import vcar3 from "./vcar3.png";
+import handcraft1 from "./handcraft.jpeg";
+import jwl from "./jewelry.jpeg";
+import locked from "./lock.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -88,10 +93,18 @@ const Home = () => {
             <div className="home_productsdemo">
                 <div className="home_productsdemo_product">
                         <div className="home_productsdemo_product_image">
-                            <img src={vcar1} alt="" />
+                            <img src={handcraft1} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                            Product details
+                            <span>
+                                Actuion starts on 17th January 2022; 10:00 am.
+                            </span>
+                            <span id="calltoaction">
+                                <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!
+                            </span>
+                            <span id="locked">
+                                <img src={locked} alt="" />
+                            </span>
                         </div>
                 </div>
 
@@ -101,23 +114,39 @@ const Home = () => {
                             <img src={vcar2} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                            Product details
+                        <span>
+                                Actuion starts on 04th February 2022; 14:00 pm.
+                            </span>
+                            <span id="calltoaction">
+                                <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!
+                            </span>
+                            <span id="locked">
+                                <img src={locked} alt="" />
+                            </span>
                         </div>
                 </div>
 
                 
                 <div className="home_productsdemo_product">
                         <div className="home_productsdemo_product_image">
-                            <img src={vcar3} alt="" />
+                            <img src={jwl} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                            Product details
+                        <span>
+                                Actuion starts on 21th January 2022; 10:00 am.
+                            </span>
+                            <span id="calltoaction">
+                                <FontAwesomeIcon icon={faUser}/>  Sign up to see details and bid!
+                            </span>
+                            <span id="locked">
+                                <img src={locked} alt="" />
+                            </span>
                         </div>
                 </div>
 
-                <div className="home_productsdemo_product">
+{/*                 <div className="home_productsdemo_product">
                         Products
-                </div>
+                </div> */}
             </div>
 
 

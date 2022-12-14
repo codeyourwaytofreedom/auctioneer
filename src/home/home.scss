@@ -74,15 +74,15 @@
         //background-image: linear-gradient(to right, #e98d74, #d67357);
         padding: 50px 0;
         padding-top: 0;
-        background-color: $main_orange;
-        box-shadow: 0px -37px 18px 24px $main_orange, 0px 37px 18px 24px $main_orange ;
+        //background-color: $main_orange;
+        //box-shadow: 0px -37px 18px 24px $main_orange, 0px 37px 18px 24px $main_orange ;
         &_title{
             display: flex;
             column-gap: 10px;
             #flexibility, #feels, #amazing{
                 font-family: $annie;
                 font-size: 50px;
-                color: rgb(245, 245, 160);
+                color: $main_orange;
             }
             #flexibility, #amazing{
                 position: relative;
@@ -105,7 +105,7 @@
                 max-width: 550px;
                 aspect-ratio: 1/1;
                 background-image: linear-gradient(to right, #c7674c, #a64a31);
-                box-shadow: 0px 4px 20px 4px rgb(245, 245, 160);
+                box-shadow: 0px 4px 20px 4px $main_orange;
                 @include grid-center;
                 position: relative;
                 animation: w3 8s infinite, move1 8s infinite;
@@ -126,7 +126,7 @@
                     border-radius: 50%;
                     @include grid-center;
                     background-color: $main_turq;
-                    box-shadow: 0px 4px 20px 4px rgb(244, 244, 146);
+                    box-shadow: 0px 4px 20px 4px $main_orange;
                 }
                 #minione{
                     animation: wiggle 8s infinite, move1 8s infinite;
@@ -173,12 +173,12 @@
         gap: 30px;
         padding: 30px;
         &_product{
-            aspect-ratio: 1/1;
-            //border: 2px solid black;
+            //aspect-ratio: 1/1;
+            border: 2px solid rgb(245, 245, 201);
             background-color: rgb(245, 245, 201);
             border-radius: 20px;
             display: grid;
-            padding: 10px;
+            //padding: 10px;
             &_image{
                 //border: 2px solid chartreuse;
                 height: 250px;
@@ -193,7 +193,26 @@
             }
             &_details{
                 display: grid;
-                border: 3px solid crimson;
+                row-gap: 5px;
+                padding: 15px;
+                position: relative;
+                //border: 3px solid crimson;
+                #calltoaction{
+                    text-decoration: underline;
+                }
+                #locked{
+                    position: absolute;
+                    right: 15px;
+                    bottom: 15px;
+                    width: 50px;
+                    aspect-ratio: 1/1;
+                    animation: beat 2s infinite;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
             }
         }
     }
@@ -292,7 +311,7 @@
         &_productsdemo{
             grid-template-columns: 1fr;
             &_product{
-                width: 500px;
+                width: 400px;
                 justify-self: center;
             }
         }
@@ -351,7 +370,7 @@
             justify-items: center;
             &_product{
                 width: 80vw;
-                aspect-ratio: 1/1;
+                //aspect-ratio: 1/1;
             }
         }
     }
