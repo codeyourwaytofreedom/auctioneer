@@ -216,3 +216,15 @@ $main_turq: #80C4B7;
     width: 50px;
   }
 }
+
+@keyframes beatmobile {
+  0%{
+    width: 30px;
+  }
+  50%{
+    width: 25px;
+  }
+  100%{
+    width: 30px;
+  }
+}

@@ -347,6 +347,28 @@ html, body {
     width: 50px;
   }
 }
+@-webkit-keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+@keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
 .Navbar {
   position: fixed;
   width: 100vw;

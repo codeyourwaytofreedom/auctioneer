@@ -347,6 +347,28 @@ html, body {
     width: 50px;
   }
 }
+@-webkit-keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+@keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
 .home {
   display: grid;
   position: relative;
@@ -513,16 +535,21 @@ html, body {
   justify-content: space-evenly;
   grid-template-columns: repeat(5, 1fr);
 }
+.home_upcoming {
+  font-family: "Annie Use Your Telescope";
+  font-size: 50px;
+  padding: 0 40px;
+  color: #E3856B;
+}
 .home_productsdemo {
   background-color: #E3856B;
-  box-shadow: 0px -27px 18px 24px #80c4b7, 0px 27px 18px 24px #80c4b7;
-  box-shadow: 0px -37px 18px 24px #E3856B, 0px 37px 18px 24px #E3856B;
+  box-shadow: 0px -20px 11px 24px #E3856B, 0px 20px 10px 24px #E3856B;
   position: relative;
-  top: 200px;
+  top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 30px;
+  padding: 0 30px;
 }
 .home_productsdemo_product {
   border: 2px solid rgb(245, 245, 201);
@@ -550,6 +577,7 @@ html, body {
 }
 .home_productsdemo_product_details #calltoaction {
   text-decoration: underline;
+  color: red;
 }
 .home_productsdemo_product_details #locked {
   position: absolute;
@@ -566,10 +594,27 @@ html, body {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.home_rest {
-  height: 500px;
+.home_banner {
   position: relative;
   top: 300px;
+  height: 60px;
+  border-top: 1px solid rgb(220, 218, 218);
+  padding: 0 40px;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+  text-decoration: underline;
+  color: gray;
+}
+.home_banner #banner_double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.home_banner span {
+  color: gray;
 }
 
 @media (max-width: 1250.98px) {
@@ -672,11 +717,48 @@ html, body {
   .home_categories_all_minis .mini {
     width: 24vw !important;
   }
+  .home_upcoming {
+    font-size: 35px;
+    padding: 0 20px;
+    position: relative;
+    top: 30px;
+  }
   .home_productsdemo {
     grid-template-columns: 1fr;
     justify-items: center;
   }
   .home_productsdemo_product {
     width: 80vw;
+  }
+  .home_productsdemo_product_details #calltoaction {
+    text-decoration: underline;
+    font-size: 14px !important;
+  }
+  .home_productsdemo_product_details #locked {
+    right: 5px;
+    bottom: 5px;
+    width: 30px;
+    -webkit-animation: beatmobile 2s infinite;
+            animation: beatmobile 2s infinite;
+  }
+  .home_productsdemo_product_details #auctionstarts {
+    font-size: 14px !important;
+  }
+  .home_banner {
+    padding: 10px 20px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    position: relative;
+    align-items: start;
+  }
+  .home_banner span {
+    font-size: 14px !important;
+  }
+  .home_banner #banner_double {
+    display: grid;
+    grid-template-columns: 1fr;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
 }/*# sourceMappingURL=home.css.map */

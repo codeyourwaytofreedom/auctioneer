@@ -53,6 +53,7 @@ const Home = () => {
                     </span>
                 </div>
             </div>
+
             <div className="home_categories">
                 <div className="home_categories_title">
                     <span id="flexibility">Flexibility </span><span id="feels">feels </span><span id="amazing">amazing! </span>
@@ -90,13 +91,16 @@ const Home = () => {
                     <Test/>
                 </div> */}
             </div>
+            <div className="home_upcoming">
+                Upcoming Auctions!
+            </div>
             <div className="home_productsdemo">
                 <div className="home_productsdemo_product">
                         <div className="home_productsdemo_product_image">
                             <img src={handcraft1} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                            <span>
+                            <span id="auctionstarts">
                                 Actuion starts on 17th January 2022; 10:00 am.
                             </span>
                             <span id="calltoaction">
@@ -108,13 +112,12 @@ const Home = () => {
                         </div>
                 </div>
 
-
                 <div className="home_productsdemo_product">
                         <div className="home_productsdemo_product_image">
                             <img src={vcar2} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                        <span>
+                        <span id="auctionstarts">
                                 Actuion starts on 04th February 2022; 14:00 pm.
                             </span>
                             <span id="calltoaction">
@@ -125,14 +128,13 @@ const Home = () => {
                             </span>
                         </div>
                 </div>
-
                 
                 <div className="home_productsdemo_product">
                         <div className="home_productsdemo_product_image">
                             <img src={jwl} alt="" />
                         </div>
                         <div className="home_productsdemo_product_details">
-                        <span>
+                        <span id="auctionstarts">
                                 Actuion starts on 21th January 2022; 10:00 am.
                             </span>
                             <span id="calltoaction">
@@ -143,22 +145,22 @@ const Home = () => {
                             </span>
                         </div>
                 </div>
-
-{/*                 <div className="home_productsdemo_product">
-                        Products
-                </div> */}
             </div>
 
-
-
-
-
-
-
-            <div className="home_rest">
-                rest goes here...
+            <div className="home_banner">
+                <span>
+                    © 2022 Code Your Way to Freedom, Inc.
+                </span>
+                <div id="banner_double">
+                     <span>
+                        Contact us
+                    </span>
+                    <span id="questions">
+                        Questions
+                    </span>
+                </div>
             </div>
-            
+
         </div>
      );
 }
