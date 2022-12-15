@@ -2,7 +2,6 @@ import "./products.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
-import cons from "./undercons.jpg";
 import Product_carousel from "./product_carousel/product_carousel";
 
 const Products = () => {
@@ -19,7 +18,7 @@ const Products = () => {
       }).catch((error) => console.log(error))
     }) */
     return ( 
-        <div className="Products">
+        <div className="products">
             {
                 [...Array(20)].map( e =>
                     <Product_carousel/>

@@ -1,13 +1,17 @@
 
 import "./product_carousel.css";
+import cons from "./undercons.jpg";
 
 const Product_carousel = () => {
     return ( 
     
-    <div className="Products_carousel">
-        {/* <button>Cick me</button> */}
-        {/* <img src={cons} alt="construction" /> */}
-        Production Details
+    <div className="products_carousel">
+        <div className="products_carousel_image">
+            <img src={cons} alt="construction" />
+        </div>
+        <div className="products_carousel_details">
+            detailss
+        </div>
     </div>
     
     );
