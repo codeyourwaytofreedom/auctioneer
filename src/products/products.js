@@ -21,7 +21,7 @@ const Products = () => {
         <div className="products">
             {
                 [...Array(20)].map( e =>
-                    <Product_carousel/>
+                        <Product_carousel/>                    
                     )
             }
         </div>

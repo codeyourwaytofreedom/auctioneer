@@ -373,7 +373,8 @@ html, body {
 .products_carousel {
   position: relative;
   aspect-ratio: 10/11;
-  max-width: 550px;
+  max-width: 500px;
+  cursor: pointer;
 }
 .products_carousel_image {
   width: 100%;
@@ -391,5 +392,27 @@ html, body {
 .products_carousel_details {
   position: relative;
   top: 20px;
-  border: 3px solid black;
+  display: grid;
+  padding: 0 10px;
+}
+.products_carousel_details_title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.products_carousel_details_title span {
+  display: grid;
+  justify-content: start;
+  text-decoration: underline;
+}
+.products_carousel_details_info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.products_carousel_details_info span {
+  font-size: 14px;
+  color: gray;
+}
+.products_carousel_details_info #mindeposit {
+  color: crimson;
+  text-decoration: underline;
 }/*# sourceMappingURL=product_carousel.css.map */

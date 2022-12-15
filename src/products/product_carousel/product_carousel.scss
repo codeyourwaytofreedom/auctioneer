@@ -4,7 +4,8 @@
 .products_carousel{
     position: relative;
     aspect-ratio: 10/11;
-    max-width: 550px;
+    max-width: 500px;
+    cursor: pointer;
     &_image{
         //border: 2px solid salmon;
         width: 100%;
@@ -16,12 +17,35 @@
             object-fit:cover;
             border-radius: 15px;
             border-bottom-right-radius: 80px;
+            //border-bottom-left-radius: 80px;
         }
     } 
     &_details{
         position: relative;
         top: 20px;
-        border: 3px solid black;
+        display: grid;
+        padding: 0 10px;
+        &_title{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            span{
+                display: grid;
+                justify-content: start;
+                text-decoration: underline;
+            }
+        }
+        &_info{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            span{
+                font-size: 14px;
+                color: gray
+            };
+            #mindeposit{
+                color: crimson;
+                text-decoration: underline;
+            }
+        }
     }
 }
 
