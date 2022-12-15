@@ -4,6 +4,7 @@
     display: grid;
     height: calc(100vh - 70px);
     position: fixed;
+    width: 150px;
     &_tabs{
             font-family: $roboto;
             font-size: 16px;

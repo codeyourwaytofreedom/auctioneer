@@ -26,11 +26,11 @@ function App() {
           <Route element={<Check_login/>}>
                       <Route path="/bidding" 
                         element={<>
-                          <div className="Page_products">
+
                             <Navbar/>
                             <Header/>
                             <Products/>
-                          </div>
+
                         </>}
           />
           </Route>

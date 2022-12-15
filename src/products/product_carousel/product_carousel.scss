@@ -1,0 +1,21 @@
+
+@import '../../base';
+
+.Products_carousel{
+    position: relative;
+    width: auto;
+    border: 1px solid $main_turq;
+    background-color: wheat;
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: inherit;
+    }
+}
+

@@ -374,6 +374,7 @@ html, body {
   display: grid;
   height: calc(100vh - 70px);
   position: fixed;
+  width: 150px;
 }
 .Header_tabs {
   font-family: "Roboto Slab", serif;
