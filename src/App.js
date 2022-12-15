@@ -9,6 +9,7 @@ import Products from "./products/products";
 import Register from "./register/register";
 import Check_login from "./check_logging";
 import Home from "./home/home";
+import Auction from "./auction/auction";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           </Route>
 
           <Route element={<Check_login/>}>
-            <Route path="/bidding/:id" element={<h1>This is auction page</h1>}/>
+            <Route path="/bidding/:id" element={<Auction/>}/>
           </Route>
 
 
