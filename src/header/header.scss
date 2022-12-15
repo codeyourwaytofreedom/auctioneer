@@ -3,6 +3,7 @@
 .Header{
     display: grid;
     height: calc(100vh - 70px);
+    position: fixed;
     &_tabs{
             font-family: $roboto;
             font-size: 16px;
@@ -52,6 +53,8 @@
 @media (max-width: 991.98px) {
     .Header{
         position: relative;
+        height: 205px;
+        //border: 2px solid blue;
         &_tabs{
                 display: flex;
                 flex-direction: row;
@@ -76,7 +79,7 @@
                 border-radius: 20px;
                 height: 120px;
                 flex-direction: row;
-                top: 78px;
+                //top: 78px;
                 column-gap: 5px;
         }
     }
@@ -86,18 +89,20 @@
 @media (max-width: 575.98px) { 
     .Header{
         position: relative;
-        top:20px;
         overflow: hidden;
         width: 100vw;
-        top:-15px;
+        //border: 2px solid red;
+        top:50px;
+        height: 150px;
         &_tabs{
-                width: 100vw;
+                //width: 100vw;
                 padding: 0;
                 row-gap: 0;
                 display: flex;
                 overflow: scroll;
-                height: 107px;
                 column-gap: 0;
+                height: 105px;
+                top: 3px;
                 &_tab{
                     width: 25vw;
                 }

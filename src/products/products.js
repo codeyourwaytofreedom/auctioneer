@@ -2,6 +2,7 @@ import "./products.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
+import cons from "./undercons.jpg";
 
 const Products = () => {
     let navigate = useNavigate();
@@ -21,7 +22,8 @@ const Products = () => {
             {
                 [...Array(20)].map( e =>
                     <div className="Products_product">
-                        <button>Cick me</button>
+                       {/* <button>Cick me</button> */}
+                       <img src={cons} alt="construction" />
                     </div>
                     )
             }

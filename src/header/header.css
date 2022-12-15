@@ -5,6 +5,7 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -372,6 +373,7 @@ html, body {
 .Header {
   display: grid;
   height: calc(100vh - 70px);
+  position: fixed;
 }
 .Header_tabs {
   font-family: "Roboto Slab", serif;
@@ -424,6 +426,7 @@ html, body {
 @media (max-width: 991.98px) {
   .Header {
     position: relative;
+    height: 205px;
   }
   .Header_tabs {
     display: flex;
@@ -446,7 +449,6 @@ html, body {
     border-radius: 20px;
     height: 120px;
     flex-direction: row;
-    top: 78px;
     -moz-column-gap: 5px;
          column-gap: 5px;
   }
@@ -454,20 +456,20 @@ html, body {
 @media (max-width: 575.98px) {
   .Header {
     position: relative;
-    top: 20px;
     overflow: hidden;
     width: 100vw;
-    top: -15px;
+    top: 50px;
+    height: 150px;
   }
   .Header_tabs {
-    width: 100vw;
     padding: 0;
     row-gap: 0;
     display: flex;
     overflow: scroll;
-    height: 107px;
     -moz-column-gap: 0;
          column-gap: 0;
+    height: 105px;
+    top: 3px;
   }
   .Header_tabs_tab {
     width: 25vw;
