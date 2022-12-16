@@ -1,3 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&family=Roboto+Slab&family=Rubik+Distressed&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope&display=swap");
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    border-radius: 97% 90% 88% 75%;
+  }
+  25% {
+    border-radius: 68% 137% 63% 103%;
+  }
+  50% {
+    border-radius: 94% 212% 165% 200%;
+  }
+  75% {
+    border-radius: 68% 137% 63% 103%;
+  }
+  100% {
+    border-radius: 97% 90% 88% 75%;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    border-radius: 97% 90% 88% 75%;
+  }
+  25% {
+    border-radius: 68% 137% 63% 103%;
+  }
+  50% {
+    border-radius: 94% 212% 165% 200%;
+  }
+  75% {
+    border-radius: 68% 137% 63% 103%;
+  }
+  100% {
+    border-radius: 97% 90% 88% 75%;
+  }
+}
+@-webkit-keyframes w3 {
+  0% {
+    border-radius: 83% 103% 76% 91%;
+  }
+  15% {
+    border-radius: 105% 91% 96% 77%;
+  }
+  30% {
+    border-radius: 62% 68% 80% 67%;
+  }
+  40% {
+    border-radius: 58% 74% 61% 81%;
+  }
+  50% {
+    border-radius: 80% 74% 76% 63%;
+  }
+  60% {
+    border-radius: 58% 74% 61% 81%;
+  }
+  70% {
+    border-radius: 62% 68% 80% 67%;
+  }
+  85% {
+    border-radius: 105% 91% 96% 77%;
+  }
+  100% {
+    border-radius: 83% 103% 76% 91%;
+  }
+}
+@keyframes w3 {
+  0% {
+    border-radius: 83% 103% 76% 91%;
+  }
+  15% {
+    border-radius: 105% 91% 96% 77%;
+  }
+  30% {
+    border-radius: 62% 68% 80% 67%;
+  }
+  40% {
+    border-radius: 58% 74% 61% 81%;
+  }
+  50% {
+    border-radius: 80% 74% 76% 63%;
+  }
+  60% {
+    border-radius: 58% 74% 61% 81%;
+  }
+  70% {
+    border-radius: 62% 68% 80% 67%;
+  }
+  85% {
+    border-radius: 105% 91% 96% 77%;
+  }
+  100% {
+    border-radius: 83% 103% 76% 91%;
+  }
+}
+@-webkit-keyframes w4 {
+  0% {
+    border-radius: 40% 53% 47% 57%;
+  }
+  15% {
+    border-radius: 51% 62% 47% 45%;
+  }
+  30% {
+    border-radius: 96% 81% 89% 67%;
+  }
+  40% {
+    border-radius: 47% 44% 49% 44%;
+  }
+  50% {
+    border-radius: 68% 82% 75% 100%;
+  }
+  60% {
+    border-radius: 47% 44% 49% 44%;
+  }
+  70% {
+    border-radius: 96% 81% 89% 67%;
+  }
+  85% {
+    border-radius: 51% 62% 47% 45%;
+  }
+  100% {
+    border-radius: 40% 53% 47% 57%;
+  }
+}
+@keyframes w4 {
+  0% {
+    border-radius: 40% 53% 47% 57%;
+  }
+  15% {
+    border-radius: 51% 62% 47% 45%;
+  }
+  30% {
+    border-radius: 96% 81% 89% 67%;
+  }
+  40% {
+    border-radius: 47% 44% 49% 44%;
+  }
+  50% {
+    border-radius: 68% 82% 75% 100%;
+  }
+  60% {
+    border-radius: 47% 44% 49% 44%;
+  }
+  70% {
+    border-radius: 96% 81% 89% 67%;
+  }
+  85% {
+    border-radius: 51% 62% 47% 45%;
+  }
+  100% {
+    border-radius: 40% 53% 47% 57%;
+  }
+}
+@-webkit-keyframes move1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  30% {
+    top: -20px;
+    left: -30px;
+  }
+  60% {
+    top: -40px;
+    left: -10px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes move1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  30% {
+    top: -20px;
+    left: -30px;
+  }
+  60% {
+    top: -40px;
+    left: -10px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@-webkit-keyframes move2 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  40% {
+    top: -50px;
+    right: -30px;
+  }
+  60% {
+    top: -30px;
+    right: -40px;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes move2 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  40% {
+    top: -50px;
+    right: -30px;
+  }
+  60% {
+    top: -30px;
+    right: -40px;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+@-webkit-keyframes move3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  10% {
+    bottom: 60px;
+    left: 30px;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+@keyframes move3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  10% {
+    bottom: 60px;
+    left: 30px;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+@-webkit-keyframes move5 {
+  0% {
+    left: 30%;
+    top: 10%;
+  }
+  40% {
+    left: 30%;
+    top: calc(10% + 60px);
+  }
+  100% {
+    left: 30%;
+    top: 10%;
+  }
+}
+@keyframes move5 {
+  0% {
+    left: 30%;
+    top: 10%;
+  }
+  40% {
+    left: 30%;
+    top: calc(10% + 60px);
+  }
+  100% {
+    left: 30%;
+    top: 10%;
+  }
+}
+@-webkit-keyframes move4 {
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  10% {
+    right: 0;
+    bottom: 60px;
+  }
+  50% {
+    right: 60px;
+    bottom: 30px;
+  }
+}
+@keyframes move4 {
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  10% {
+    right: 0;
+    bottom: 60px;
+  }
+  50% {
+    right: 60px;
+    bottom: 30px;
+  }
+}
+@-webkit-keyframes beat {
+  0% {
+    width: 50px;
+  }
+  50% {
+    width: 45px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@keyframes beat {
+  0% {
+    width: 50px;
+  }
+  50% {
+    width: 45px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+@-webkit-keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+@keyframes beatmobile {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 30px;
+  }
+}
 .auction {
   border: 3px solid chartreuse;
   position: relative;
@@ -10,11 +382,16 @@
   border: 3px solid gray;
   width: calc(100vw - 300px);
   display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  padding: 5px;
 }
 .auction_item_row_images_big {
   width: 80%;
-  background-color: yellow;
-  aspect-ratio: 10/7;
+  aspect-ratio: 10/6;
+  padding: 5px;
+  border: 2px solid silver;
+  border-radius: 10px;
 }
 .auction_item_row_images_big img {
   width: 100%;
@@ -22,9 +399,28 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.auction_item_row_images_big img {
+  border-radius: 10px;
+}
 .auction_item_row_images_smalls {
-  background-color: aqua;
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1%;
+}
+.auction_item_row_images_smalls_small {
+  height: 33%;
+  border: 2px solid silver;
+  border-radius: 10px;
+}
+.auction_item_row_images_smalls_small img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.auction_item_row_images_smalls_small img {
+  border-radius: 10px;
 }
 .auction_item_row_details {
   border: 3px solid green;
@@ -41,23 +437,38 @@
   .auction_item_row_images {
     width: 100vw;
   }
-  .auction_item_row_images_big {
-    background-color: yellow;
-  }
   .auction_item_row_details {
     border: 3px solid green;
   }
 }
 @media (max-width: 767.98px) {
   .auction {
-    padding: 0 20px;
     border: 3px solid red;
   }
   .auction_item_row {
     display: grid;
   }
   .auction_item_row_images {
+    width: 99.5%;
+    flex-direction: column;
+  }
+  .auction_item_row_images_big {
+    order: 1;
     width: 100%;
+    height: 48%;
+  }
+  .auction_item_row_images_smalls {
+    flex-direction: row;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    justify-content: space-evenly;
+    order: 2;
+    width: 100%;
+    padding: 5px;
+  }
+  .auction_item_row_images_smalls_small {
+    height: 100%;
+    width: 33%;
   }
   .auction_item_row_details {
     width: 100%;
@@ -66,5 +477,6 @@
 @media (max-width: 575.98px) {
   .auction {
     border: 3px solid green;
+    top: 50px;
   }
 }/*# sourceMappingURL=auction.css.map */

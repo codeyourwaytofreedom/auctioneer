@@ -26,6 +26,15 @@ $main_turq: #80C4B7;
   align-items: center;
 }
 
+@mixin image-fit {
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+}
+
 * {
   font-family: "Oswald", sans-serif;
   color: black;

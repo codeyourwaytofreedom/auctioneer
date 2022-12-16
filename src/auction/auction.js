@@ -1,4 +1,5 @@
 import big from "./205.jpg";
+import small from "./suv.jpg";
 
 import "./auction.css";
 const Auction = () => {
@@ -7,7 +8,15 @@ const Auction = () => {
             <div className="auction_item_row">
                 <div className="auction_item_row_images">
                     <div className="auction_item_row_images_smalls">
-                        Small
+                        <div className="auction_item_row_images_smalls_small">
+                                <img src={small} alt="" />
+                        </div>
+                        <div className="auction_item_row_images_smalls_small">
+                                <img src={small} alt="" />
+                        </div>
+                        <div className="auction_item_row_images_smalls_small">
+                                <img src={small} alt="" />
+                        </div>
                     </div>
                     <div className="auction_item_row_images_big">
                         <img src={big} alt="" />
