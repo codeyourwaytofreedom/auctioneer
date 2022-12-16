@@ -1,3 +1,18 @@
 .auction {
   border: 3px solid blue;
+  position: relative;
+  top: 70px;
+  padding: 0 40px;
+}
+.auction_item_row {
+  display: flex;
+  height: 500px;
+}
+.auction_item_row_images {
+  width: 60vw;
+  border: 3px solid red;
+}
+.auction_item_row_details {
+  border: 3px solid green;
+  width: calc(40vw - 80px);
 }/*# sourceMappingURL=auction.css.map */

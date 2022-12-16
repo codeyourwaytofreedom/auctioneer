@@ -24,17 +24,22 @@ function App() {
                 }
           />
           <Route element={<Check_login/>}>
-                      <Route path="/bidding" 
-                        element={<>
-                            <Navbar/>
-                            <Header/>
-                            <Products/>
-                        </>}
-          />
+            <Route path="/bidding" 
+              element={<>
+                  <Navbar/>
+                  <Header/>
+                  <Products/>
+              </>}
+            />
           </Route>
 
           <Route element={<Check_login/>}>
-            <Route path="/bidding/:id" element={<Auction/>}/>
+            <Route path="/bidding/:id" 
+              element={ <>
+                <Navbar/>
+                <Auction/>
+              </> 
+              }/>
           </Route>
 
 
