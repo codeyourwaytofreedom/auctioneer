@@ -1,18 +1,60 @@
 .auction{
-    border: 3px solid blue;
+    border: 3px solid chartreuse;
     position: relative;
     top:70px;
     padding: 0 40px;
     &_item_row{
         display: flex;
-        height: 500px;
         &_images{
-            width: 60vw;
-            border: 3px solid red;
+            width: 55vw;
+            border: 3px solid gray;
+            display: grid;
+            grid-template-areas: "big big big s1"
+                                 "big big big s2"
+                                 "big big big s3"
+                                 "s4 s5 s6 s7";
+            .big{
+                grid-area: big;
+                background-color: yellow;
+            }
+            .small{
+                grid-area: s1;
+                background-color: salmon;
+            }
         }
         &_details{
             border:3px solid green;
-            width: calc(40vw - 80px);
+            width: calc(45vw - 80px);
         }
     }
 }
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    .auction{
+        border:3px solid blue;
+    }
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .auction{
+        padding: 0 20px;
+        border:3px solid red;
+        &_item_row{
+            display: grid;
+        }
+    }
+ }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .auction{
+        border:3px solid green;
+    }
+ }
+
+
+
