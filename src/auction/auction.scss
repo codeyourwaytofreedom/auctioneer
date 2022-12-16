@@ -2,29 +2,31 @@
     border: 3px solid chartreuse;
     position: relative;
     top:70px;
-    padding: 0 40px;
     &_item_row{
         display: flex;
         &_images{
-            width: 55vw;
             border: 3px solid gray;
-            display: grid;
-            grid-template-areas: "big big big s1"
-                                 "big big big s2"
-                                 "big big big s3"
-                                 "s4 s5 s6 s7";
-            .big{
-                grid-area: big;
+            width: calc(100vw - 300px);
+            display: flex;
+            &_big{
+                width: 80%;
                 background-color: yellow;
+                aspect-ratio: 10/7;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
-            .small{
-                grid-area: s1;
-                background-color: salmon;
+            &_smalls{
+                background-color: aqua;
+                width: 20%;
             }
+
         }
         &_details{
             border:3px solid green;
-            width: calc(45vw - 80px);
+            width: 300px;
         }
     }
 }
@@ -35,6 +37,21 @@
 @media (max-width: 991.98px) { 
     .auction{
         border:3px solid blue;
+        &_item_row{
+            display: grid;
+            &_images{
+                width: 100vw;
+                &_big{
+                    background-color: yellow;
+                }
+                &_smalls{
+                }
+    
+            }
+            &_details{
+                border:3px solid green;
+            }
+        }
     }
  }
 
@@ -45,6 +62,12 @@
         border:3px solid red;
         &_item_row{
             display: grid;
+            &_images{
+                width: 100%;
+            }
+            &_details{
+                width: 100%;
+            }
         }
     }
  }

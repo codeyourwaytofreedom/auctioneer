@@ -5,15 +5,32 @@ import car from "./images/car.png";
 import jewelry from "./images/jewelry.png";
 import handcraft from "./images/handcraft.png";
 import painting from "./images/painting.png";
+import axios from "axios";
+import { useState } from "react";
 
 const Header = () => {
+    const [response_image, setImage] = useState(car)
+    const handle_click = (e) => {
+        console.log(e.currentTarget.value)
+        axios.post("http://localhost:9000/category",
+            {"body":e.currentTarget.value},{withCredentials: true})
+            .then(response => 
+                {
+                 console.log(response)
+                 console.log(response.data);
+                 console.log(typeof(response.data));
+                 //setImage(response.data)
+                }
+                )
+            .catch(error => console.log(error))
+    }
     return ( 
         <div className="Header">
             <div className="Header_tabs">
                 
-                    <button className="Header_tabs_tab">
+                    <button className="Header_tabs_tab" value={"cars"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
-                            <img src={car} alt="tab" />
+                            <img src={response_image} alt="tab" />
                         </div>
                         <span className="Header_tabs_tab_text">
                             Vintage Cars

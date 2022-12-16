@@ -1,6 +1,8 @@
 const express = require('express'); //Line 1
 const app = express(); //Line 2
 const cors = require('cors');
+const path = require('path')
+
 app.use(cors({ origin: true, credentials: true }));
 
 const jwt = require("jsonwebtoken");
@@ -127,3 +129,11 @@ app.post('/login', (req, res) => {
     res.cookie("jwt", "", {maxAge:1})
     res.send("logged out with fake jwt")
   })
+
+
+  app.get("/category", (req, res) => {
+    console.log(req.body.body);
+    res.sendFile("/Users/waytofreedom/Desktop/auctioneer/backend/205.jpg");
+  })
+
+  
