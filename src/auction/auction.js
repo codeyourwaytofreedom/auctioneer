@@ -8,6 +8,11 @@ const Auction = () => {
             <div className="auction_item_row">
                 <div className="auction_item_row_images">
                     <div className="auction_item_row_images_smalls">
+                        <div className="auction_item_row_images_smalls_order">
+                            <button id="button-one">1</button>
+                            <button id="button-two">2</button>
+                            <button id="button-three">3</button>
+                        </div>
                         <div className="auction_item_row_images_smalls_small">
                                 <img src={small} alt="" />
                         </div>
@@ -24,12 +29,11 @@ const Auction = () => {
                 </div>
 
                 <div className="auction_item_row_details">
-                    Details goes here
+                        {[...Array(17)].map(e => 
+                                <div className="auction_item_row_details_row">Details</div>
+                            )}
                 </div>
 
-            </div> 
-            <div className="auction_item_row_suggestions">
-                    Suggestions
             </div> 
         </div>
      );

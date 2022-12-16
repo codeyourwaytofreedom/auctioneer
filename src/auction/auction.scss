@@ -1,24 +1,26 @@
 @import '../base';
 
 .auction{
-    border: 3px solid chartreuse;
+    //border: 3px solid chartreuse;
     position: relative;
     top:70px;
     &_item_row{
         display: flex;
+        padding: 10px;
+        column-gap: 5px;
         &_images{
-            border: 3px solid gray;
+            //border: 3px solid gray;
             width: calc(100vw - 300px);
             display: flex;
             column-gap: 5px;
-            padding: 5px;
+            //padding: 5px;
             &_big{
                 width: 80%;
                 aspect-ratio: 10/6;
                 @include image-fit;
                 img{border-radius: 10px;}
                 padding: 5px;
-                border: 2px solid silver;
+                //border: 2px solid silver;
                 border-radius: 10px;
             }
             &_smalls{
@@ -26,8 +28,29 @@
                 display: flex;
                 flex-direction: column;
                 row-gap: 1%;
+                position: relative;
+                button {
+                    border: none;   
+                    width: 25px;
+                    aspect-ratio: 1/1; 
+                    border-radius: 3px;
+                    color:white;
+                    cursor: pointer;
+                    background-color: black;
+                    &:focus{
+                        background-color: red;
+                    }
+                }
+
+                &_order{
+                    display: flex;
+                    position: absolute;
+                    column-gap: 5px;
+                    padding: 5px;
+                    right: 5px;
+                }
                 &_small{
-                    height: 33%;
+                    height: 33.5%;
                     @include image-fit;
                     img{border-radius: 10px;}
                     border: 2px solid silver;
@@ -37,8 +60,17 @@
 
         }
         &_details{
-            border:3px solid green;
+            //border:3px solid green;
             width: 300px;
+
+            position: relative;
+            display: grid;
+            padding: 5px;
+            &_row{
+                display: flex;
+                padding: 5px;
+                border-bottom: 1px solid silver;
+            }
         }
     }
 }
@@ -46,20 +78,24 @@
 
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) { 
+@media (max-width: 1251.98px) { 
     .auction{
-        border:3px solid blue;
+       // border:3px solid blue;
         &_item_row{
+            width: 100%;
             display: grid;
             &_images{
-                width: 100vw;
+                width: 100%;
                 &_big{
                 }
                 
     
             }
             &_details{
-                border:3px solid green;
+                //border:3px solid green;
+                top:20px;
+                width: 100%;
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
     }
@@ -68,17 +104,16 @@
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
     .auction{
-        border:3px solid red;
+        //border:3px solid red;
         &_item_row{
             display: grid;
             &_images{
-                width: 99.5%;
                 flex-direction: column;
+                display: grid;
+                justify-content: center;
                 &_big{
                     order: 1;
-                    width: 100%;
-                    height: 48%;
-
+                    width: 99.5%;
                 }
                 &_smalls{
                     flex-direction: row;
@@ -94,7 +129,7 @@
                 }
             }
             &_details{
-                width: 100%;
+                grid-template-columns: 1fr 1fr;
             }
         }
     }
@@ -103,12 +138,15 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
     .auction{
-        border:3px solid green;
+        //border:3px solid green;
         top:50px;
         &_item_row{
             &_images{
                 &_big{
                 }
+            }
+            &_details{
+                grid-template-columns: 1fr;
             }
         }
     }
