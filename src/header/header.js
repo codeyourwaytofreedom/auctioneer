@@ -12,14 +12,11 @@ const Header = () => {
     const [response_image, setImage] = useState(car)
     const handle_click = (e) => {
         console.log(e.currentTarget.value)
-        axios.post("http://localhost:9000/category",
-            {"body":e.currentTarget.value},{withCredentials: true})
+        axios.get("http://localhost:9000/category", {responseType: 'blob'})
             .then(response => 
                 {
-                 console.log(response)
-                 console.log(response.data);
-                 console.log(typeof(response.data));
-                 //setImage(response.data)
+                 let imgUrl = URL.createObjectURL(response.data)
+                 setImage(imgUrl)
                 }
                 )
             .catch(error => console.log(error))

@@ -449,9 +449,22 @@ html, body {
   padding: 5px;
 }
 .auction_item_row_details_row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
   padding: 5px;
-  border-bottom: 1px solid silver;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.auction_item_row_details_row #details {
+  font-size: 13px;
+  font-family: "Roboto Slab", serif;
+  color: rgb(51, 50, 50);
+  border-top: 1px solid gray;
+}
+.auction_item_row_details_row #title {
+  font-size: 14px;
+  font-family: "Roboto Slab", serif;
+  border-bottom: 1px solid gray;
 }
 
 @media (max-width: 1251.98px) {
@@ -466,6 +479,13 @@ html, body {
     top: 20px;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  .auction_item_row_details {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 767.98px) {

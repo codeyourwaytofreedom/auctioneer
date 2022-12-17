@@ -30,7 +30,14 @@ const Auction = () => {
 
                 <div className="auction_item_row_details">
                         {[...Array(17)].map(e => 
-                                <div className="auction_item_row_details_row">Details</div>
+                                <div className="auction_item_row_details_row">
+                                    <span id="title">
+                                        Title goes here.
+                                    </span>
+                                    <span id="details">
+                                        Details goes here...
+                                    </span>
+                                </div>
                             )}
                 </div>
 
