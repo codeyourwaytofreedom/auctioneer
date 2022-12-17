@@ -5,7 +5,7 @@ import car from "./images/car.png";
 import jewelry from "./images/jewelry.png";
 import handcraft from "./images/handcraft.png";
 import painting from "./images/painting.png";
-import initial from "./205.jpg";
+import initial from "./car.jpg";
 
 import axios from "axios";
 import { useState } from "react";
@@ -13,8 +13,10 @@ import Products from "../products/products";
 
 const Header = () => {
     const [response_image, setImage] = useState(initial)
+    const [category, setCategory] = useState("car");
     const handle_click = (e) => {
         console.log(e.currentTarget.value)
+        setCategory(e.currentTarget.value);
         const url = "http://localhost:9000/category";
         const config = {
             responseType: 'blob',
@@ -35,7 +37,7 @@ const Header = () => {
         <div className="Header">
             <div className="Header_tabs">
                 
-                    <button className="Header_tabs_tab" value={"cars"} onClick={(e)=>handle_click(e)}>
+                    <button className="Header_tabs_tab" value={"car"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
                             <img src={car} alt="tab" />
                         </div>
@@ -44,7 +46,7 @@ const Header = () => {
                         </span>
                     </button>
 
-                    <button className="Header_tabs_tab">
+                    <button className="Header_tabs_tab" value={"furniture"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
                             <img src={furniture} alt="tab" />
                         </div>
@@ -55,7 +57,7 @@ const Header = () => {
 
                     </button>
 
-                    <button className="Header_tabs_tab">
+                    <button className="Header_tabs_tab" value={"jewelry"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
                             <img src={jewelry} alt="tab" />
                         </div>
@@ -65,7 +67,7 @@ const Header = () => {
 
                     </button>
 
-                    <button className="Header_tabs_tab">
+                    <button className="Header_tabs_tab" value={"handcraft"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
                             <img src={handcraft} alt="tab" />
                         </div>
@@ -75,7 +77,7 @@ const Header = () => {
 
                     </button>
 
-                    <button className="Header_tabs_tab">
+                    <button className="Header_tabs_tab" value={"painting"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
                             <img src={painting} alt="tab"/>
                         </div>
@@ -135,7 +137,7 @@ const Header = () => {
                     </button>
             </div>
         </div>
-        <Products response_image={response_image}/>
+        <Products response_image={response_image} category={category}/>
         </>
      );
 }
