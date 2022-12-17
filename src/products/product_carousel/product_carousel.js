@@ -3,13 +3,13 @@ import "./product_carousel.css";
 import cons from "./undercons.jpg";
 import { useNavigate } from "react-router-dom";
 
-const Product_carousel = () => {
+const Product_carousel = ({response_image}) => {
     const nav = useNavigate();
     return ( 
     
     <div className="products_carousel" onClick={()=>nav("/bidding/xx") }>
         <div className="products_carousel_image">
-            <img src={cons} alt="construction" />
+            <img src={response_image ? response_image : cons} alt="construction" />
         </div>
         <div className="products_carousel_details">
             <div className="products_carousel_details_title" >

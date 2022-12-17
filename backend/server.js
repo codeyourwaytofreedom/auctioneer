@@ -132,8 +132,8 @@ app.post('/login', (req, res) => {
 
 
   app.get("/category", (req, res) => {
-    console.log(req.body.body);
-    res.sendFile("/Users/waytofreedom/Desktop/auctioneer/backend/205.jpg");
+    console.log(req.headers.query);
+    res.sendFile("/Users/waytofreedom/Desktop/auctioneer/backend/furniture.jpg");
   })
 
   

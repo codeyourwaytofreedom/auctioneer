@@ -28,7 +28,7 @@ function App() {
               element={<>
                   <Navbar/>
                   <Header/>
-                  <Products/>
+                  {/* <Products/> */}
               </>}
             />
           </Route>

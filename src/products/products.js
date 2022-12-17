@@ -4,24 +4,12 @@ import axios from "axios";
 import { useEffect } from "react";
 import Product_carousel from "./product_carousel/product_carousel";
 
-const Products = () => {
-    let navigate = useNavigate();
-/*     useEffect(()=> {
-      axios.get("http://localhost:9000/userauth",
-      {withCredentials: true}
-      ).then(function (response) {
-          console.log(response.data)
-          if(!response.data)
-          {
-            navigate("/login")
-          }
-      }).catch((error) => console.log(error))
-    }) */
+const Products = ({response_image}) => {
     return ( 
         <div className="products">
             {
                 [...Array(20)].map( e =>
-                        <Product_carousel/>                    
+                        <Product_carousel response_image={response_image}/>                    
                     )
             }
         </div>

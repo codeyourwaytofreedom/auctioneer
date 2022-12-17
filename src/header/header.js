@@ -5,14 +5,22 @@ import car from "./images/car.png";
 import jewelry from "./images/jewelry.png";
 import handcraft from "./images/handcraft.png";
 import painting from "./images/painting.png";
+import initial from "./205.jpg";
+
 import axios from "axios";
 import { useState } from "react";
+import Products from "../products/products";
 
 const Header = () => {
-    const [response_image, setImage] = useState(car)
+    const [response_image, setImage] = useState(initial)
     const handle_click = (e) => {
         console.log(e.currentTarget.value)
-        axios.get("http://localhost:9000/category", {responseType: 'blob'})
+        const url = "http://localhost:9000/category";
+        const config = {
+            responseType: 'blob',
+            headers: {"query": e.currentTarget.value}
+        }
+        axios.get(url,config)
             .then(response => 
                 {
                  let imgUrl = URL.createObjectURL(response.data)
@@ -22,12 +30,14 @@ const Header = () => {
             .catch(error => console.log(error))
     }
     return ( 
+        <>
+        
         <div className="Header">
             <div className="Header_tabs">
                 
                     <button className="Header_tabs_tab" value={"cars"} onClick={(e)=>handle_click(e)}>
                         <div id="icon">
-                            <img src={response_image} alt="tab" />
+                            <img src={car} alt="tab" />
                         </div>
                         <span className="Header_tabs_tab_text">
                             Vintage Cars
@@ -123,10 +133,10 @@ const Header = () => {
                             Paintings
                         </span>
                     </button>
-                    
-
             </div>
         </div>
+        <Products response_image={response_image}/>
+        </>
      );
 }
  
