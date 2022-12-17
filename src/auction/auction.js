@@ -3,8 +3,29 @@ import small from "./suv.jpg";
 
 import "./auction.css";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
 const Auction = () => {
     const {id} = useParams();
+    const [response_image, setImage] = useState(big)
+
+    useEffect(() => {
+        const url = "http://localhost:9000/item";
+        const config = {
+            responseType: 'blob',
+            headers: {"auctioned": id}
+        }
+        axios.get(url,config)
+            .then(response => 
+                {
+                 let imgUrl = URL.createObjectURL(response.data)
+                 setImage(imgUrl)
+                }
+                )
+            .catch(error => console.log(error))
+    }, []);
     return ( 
         <div className="auction">
             <div className="auction_item_row">
@@ -16,7 +37,7 @@ const Auction = () => {
                             <button id="button-three">3</button>
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={small} alt="" />
+                                <img src={response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
                                 <img src={small} alt="" />
@@ -26,7 +47,7 @@ const Auction = () => {
                         </div>
                     </div>
                     <div className="auction_item_row_images_big">
-                        <img src={big} alt="" />
+                        <img src={response_image} alt="response" />
                     </div>
                 </div>
 

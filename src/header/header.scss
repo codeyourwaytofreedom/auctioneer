@@ -23,6 +23,11 @@
                 cursor: pointer;
                 @include grid-center;
                 position: relative;
+                &:focus{
+                    span{
+                        color:green;
+                    }
+                }
                 #icon{
                     width: 60px;
                     aspect-ratio: 1/1;

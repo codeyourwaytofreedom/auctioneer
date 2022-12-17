@@ -400,6 +400,9 @@ html, body {
   align-items: center;
   position: relative;
 }
+.Header_tabs_tab:focus span {
+  color: green;
+}
 .Header_tabs_tab #icon {
   width: 60px;
   aspect-ratio: 1/1;

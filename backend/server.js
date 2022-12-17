@@ -132,8 +132,14 @@ app.post('/login', (req, res) => {
 
 
   app.get("/category", (req, res) => {
-    console.log(req.headers.query);
-    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/${req.headers.query}.jpg`);
+    if(req.headers.query)
+    {res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/${req.headers.query}.jpg`);}
+  })
+
+  app.get("/item", (req, res) => {
+    console.log(req.headers.auctioned);
+    const x = "painting"
+    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/${x}.jpg`);
   })
 
   
