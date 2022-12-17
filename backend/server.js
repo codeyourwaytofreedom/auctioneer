@@ -138,8 +138,7 @@ app.post('/login', (req, res) => {
 
   app.get("/item", (req, res) => {
     console.log(req.headers.auctioned);
-    const x = "painting"
-    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/${x}.jpg`);
+    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${req.headers.auctioned}.jpg`);
   })
 
   

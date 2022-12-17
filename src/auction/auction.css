@@ -379,6 +379,7 @@ html, body {
   padding: 10px;
   -moz-column-gap: 5px;
        column-gap: 5px;
+  height: 650px;
 }
 .auction_item_row_images {
   width: calc(100vw - 300px);
@@ -465,6 +466,7 @@ html, body {
   font-size: 14px;
   font-family: "Roboto Slab", serif;
   border-bottom: 1px solid gray;
+  font-weight: 900;
 }
 
 @media (max-width: 1251.98px) {

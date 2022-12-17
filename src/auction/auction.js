@@ -1,5 +1,6 @@
 import big from "./205.jpg";
 import small from "./suv.jpg";
+import loading from "./loading.jpg";
 
 import "./auction.css";
 import { useParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import axios from "axios";
 
 const Auction = () => {
     const {id} = useParams();
-    const [response_image, setImage] = useState(big)
+    const [response_image, setImage] = useState(loading)
 
     useEffect(() => {
         const url = "http://localhost:9000/item";
@@ -32,7 +33,7 @@ const Auction = () => {
                 <div className="auction_item_row_images">
                     <div className="auction_item_row_images_smalls">
                         <div className="auction_item_row_images_smalls_order">
-                            <button id="button-one">1 - {id}</button>
+                            <button id="button-one">1</button>
                             <button id="button-two">2</button>
                             <button id="button-three">3</button>
                         </div>
@@ -40,10 +41,10 @@ const Auction = () => {
                                 <img src={response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={small} alt="" />
+                                <img src={response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={small} alt="" />
+                                <img src={response_image} alt="" />
                         </div>
                     </div>
                     <div className="auction_item_row_images_big">
@@ -58,7 +59,7 @@ const Auction = () => {
                                         Title goes here.
                                     </span>
                                     <span id="details">
-                                        Details goes here...
+                                        Details go here...
                                     </span>
                                 </div>
                             )}
