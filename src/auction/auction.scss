@@ -21,7 +21,7 @@
                 @include image-fit;
                 img{border-radius: 10px;}
                 padding: 5px;
-                //border: 2px solid silver;
+                border: 2px solid silver;
                 border-radius: 10px;
             }
             &_smalls{
@@ -63,9 +63,8 @@
         &_details{
             //border:3px solid green;
             width: 300px;
-
+            min-width: 300px;
             position: relative;
-            display: grid;
             padding: 5px;
             &_row{
                 display: grid;

@@ -53,7 +53,7 @@ const Auction = () => {
                 </div>
 
                 <div className="auction_item_row_details">
-                        {[...Array(17)].map(e => 
+                        {[...Array(id.includes('car') ? 15 : 8)].map(e => 
                                 <div className="auction_item_row_details_row">
                                     <span id="title">
                                         Title goes here.
