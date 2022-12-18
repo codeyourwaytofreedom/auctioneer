@@ -20,7 +20,8 @@ var jsonParser = bodyParser.json()
 
 const {categories} = require("/Users/waytofreedom/Desktop/auctioneer/backend/dummy/dummy.js");
 
-console.log(categories)
+console.log(categories.find(x => x.item_id === "car0"))
+
 
 app.use(express.static(__dirname+'/images'));
 
@@ -148,6 +149,9 @@ app.post('/login', (req, res) => {
   
 
   app.get("/test", (req, res) => {
-    const a = "car0"
-    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${categories.image_name}.jpg`);
+    console.log(req.headers.auctioned)
+    res.send(categories.find(c => c.item_id === req.headers.auctioned).images)
+
+
+    //res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${categories.image_name}.jpg`);
   })

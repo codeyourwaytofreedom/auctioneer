@@ -11,9 +11,10 @@ import axios from "axios";
 const Auction = () => {
     const {id} = useParams();
     const [response_image, setImage] = useState(loading)
+    const [response_array, setArray] = useState();
 
     useEffect(() => {
-        const url = "http://localhost:9000/item";
+        /* const url = "http://localhost:9000/item";
         const config = {
             responseType: 'blob',
             headers: {"auctioned": id}
@@ -25,7 +26,17 @@ const Auction = () => {
                  setImage(imgUrl)
                 }
                 )
-            .catch(error => console.log(error))
+            .catch(error => console.log(error)) */
+
+            axios.get("http://localhost:9000/test",{headers: {"auctioned": id}})
+            .then(response => 
+                {
+                 console.log(response.data)
+                 setArray(response.data)
+                }
+                )
+            .catch(error => console.log(error)) 
+
     }, []);
     return ( 
         <div className="auction">
@@ -38,17 +49,17 @@ const Auction = () => {
                             <button id="button-three">3</button>
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={"http://localhost:9000/furniture0.jpg"} alt="" />
+                                <img src={response_array ? response_array[0] : response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={response_image} alt="" />
+                                <img src={response_array ? response_array[1] : response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={response_image} alt="" />
+                                <img src={response_array ? response_array[2] : response_image} alt="" />
                         </div>
                     </div>
                     <div className="auction_item_row_images_big">
-                        <img src={response_image} alt="response" />
+                        <img src={response_array ? response_array[0] : response_image} alt="response" />
                     </div>
                 </div>
 
