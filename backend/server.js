@@ -2,6 +2,7 @@ const express = require('express'); //Line 1
 const app = express(); //Line 2
 const cors = require('cors');
 const path = require('path')
+const fs = require('fs')
 
 app.use(cors({ origin: true, credentials: true }));
 
@@ -17,8 +18,11 @@ const port = process.env.PORT || 9000; //Line 3
 const bodyParser = require("body-parser")
 var jsonParser = bodyParser.json()
 
+const {categories} = require("/Users/waytofreedom/Desktop/auctioneer/backend/dummy/dummy.js");
 
+console.log(categories)
 
+app.use(express.static(__dirname+'/images'));
 
 
 let db;
@@ -142,3 +146,8 @@ app.post('/login', (req, res) => {
   })
 
   
+
+  app.get("/test", (req, res) => {
+    const a = "car0"
+    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${categories.image_name}.jpg`);
+  })

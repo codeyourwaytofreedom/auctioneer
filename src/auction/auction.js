@@ -38,7 +38,7 @@ const Auction = () => {
                             <button id="button-three">3</button>
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={response_image} alt="" />
+                                <img src={"http://localhost:9000/furniture0.jpg"} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
                                 <img src={response_image} alt="" />
