@@ -8,7 +8,7 @@ const Products = ({response_image, category}) => {
     return ( 
         <div className="products">
             {
-                [...Array(20)].map( (e, index )=>
+                [...Array(10)].map( (e, index )=>
                         <Product_carousel index={index} response_image={response_image} category={category}/>                    
                     )
             }

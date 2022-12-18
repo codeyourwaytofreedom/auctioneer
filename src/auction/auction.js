@@ -49,13 +49,13 @@ const Auction = () => {
                             <button id="button-three">3</button>
                         </div>
                         <div className="auction_item_row_images_smalls_small">
-                                <img src={response_array ? response_array[0] : response_image} alt="" />
-                        </div>
-                        <div className="auction_item_row_images_smalls_small">
                                 <img src={response_array ? response_array[1] : response_image} alt="" />
                         </div>
                         <div className="auction_item_row_images_smalls_small">
                                 <img src={response_array ? response_array[2] : response_image} alt="" />
+                        </div>
+                        <div className="auction_item_row_images_smalls_small">
+                                <img src={response_array ? response_array[3] : response_image} alt="" />
                         </div>
                     </div>
                     <div className="auction_item_row_images_big">
@@ -64,7 +64,7 @@ const Auction = () => {
                 </div>
 
                 <div className="auction_item_row_details">
-                        {[...Array(id.includes('car') ? 15 : 8)].map(e => 
+                        {[...Array(id.includes('car') ? 15 : 10)].map(e => 
                                 <div className="auction_item_row_details_row">
                                     <span id="title">
                                         Title goes here.
