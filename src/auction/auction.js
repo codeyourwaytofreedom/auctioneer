@@ -7,7 +7,7 @@ import available from "./available.png";
 
 import "./auction.css";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 
@@ -17,6 +17,8 @@ const Auction = () => {
     const [response_array, setArray] = useState();
     const [bigone, setBig] = useState();
     const [availability, setAvailibity] = useState([]);
+    const seats = useRef();
+    const [modalopen, setModal] = useState(false);
 
     useEffect(() => {
             axios.get("http://localhost:9000/getimages",{headers: {"auctioned": id}})
@@ -29,6 +31,12 @@ const Auction = () => {
                 )
             .catch(error => console.log(error)) 
     }, []);
+
+    const scrollToBottom = () => {
+        setModal(!modalopen)
+        seats.current.scrollIntoView({ behavior: "smooth" });
+    }
+
     return ( 
         <div className="auction">
             <div className="auction_item_row">
@@ -69,7 +77,8 @@ const Auction = () => {
 
             </div> 
             <div className="auction_booking">
-                <div className="auction_booking_seats">
+                <div className="booking_modal" style={{display: modalopen ? "block" : "none"}}></div>
+                <div className="auction_booking_seats" ref={seats}>
                     <div className="auction_booking_seats_tierone">
                         {
                             availability.slice(0,4).map ( seat => 
@@ -77,7 +86,7 @@ const Auction = () => {
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" />  
+                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
                                 </div>
                                 )
                         }
@@ -89,7 +98,7 @@ const Auction = () => {
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" />  
+                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
                                 </div>
                                 )
                         }
@@ -102,7 +111,7 @@ const Auction = () => {
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" />  
+                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
                                 </div>
                                 )
                         }
@@ -114,7 +123,7 @@ const Auction = () => {
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" />  
+                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
                                 </div>
                                 )
                         }

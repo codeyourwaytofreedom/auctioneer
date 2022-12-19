@@ -480,6 +480,12 @@ html, body {
   position: relative;
   padding: 50px 0;
 }
+.auction_booking .booking_modal {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: yellow;
+}
 .auction_booking_seats {
   display: grid;
   justify-items: center;
@@ -495,6 +501,9 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.auction_booking_seats_tierone_seat img, .auction_booking_seats_tiertwo_seat img, .auction_booking_seats_tierthree_seat img, .auction_booking_seats_tierfour_seat img {
+  z-index: 8 !important;
 }
 .auction_booking_seats_tierone_seat #available, .auction_booking_seats_tiertwo_seat #available, .auction_booking_seats_tierthree_seat #available, .auction_booking_seats_tierfour_seat #available {
   position: absolute;

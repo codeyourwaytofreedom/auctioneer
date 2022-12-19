@@ -146,9 +146,15 @@ app.post('/login', (req, res) => {
     res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${req.headers.auctioned}.jpg`);
   })
 
-  
+  function RandomSeat(max) {
+    return Math.floor(Math.random() * max);
+  }
 
   app.get("/getimages", (req, res) => {
     console.log(req.headers.auctioned)
-    res.send([categories.find(c => c.item_id === req.headers.auctioned).images, [1,1,1,1,1,1,0,0,0,0]])
+    const availability = [];
+    for (let i = 0; i < 10; i++) {
+      availability.push(RandomSeat(2))
+    }
+    res.send([categories.find(c => c.item_id === req.headers.auctioned).images, availability])
   })
