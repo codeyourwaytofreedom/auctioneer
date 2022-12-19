@@ -398,13 +398,16 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
 }
 .auction_item_row_images_big img {
   border-radius: 10px;
 }
 .auction_item_row_images_big img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .auction_item_row_images_smalls {
   width: 20%;
@@ -444,6 +447,9 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
 }
 .auction_item_row_images_smalls_small img {
   border-radius: 10px;
@@ -495,20 +501,32 @@ html, body {
   background: rgba(1, 15, 15, 0.9);
   position: relative;
   z-index: 78 !important;
-  width: 40vw;
-  height: 60%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 35%;
+  padding: 30px;
 }
-.auction_booking .booking_modal_shell button {
+.auction_booking .booking_modal_shell #closethemodal {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 30px;
   z-index: 79 !important;
+  background-color: transparent;
+  border: none;
+  font-size: 21px;
+  cursor: pointer;
+  color: white;
+  text-decoration: overline;
 }
 .auction_booking .booking_modal_shell_content {
   display: grid;
   position: relative;
-  grid-template-columns: 2fr 3fr;
+  grid-auto-flow: column;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   height: 90%;
+  top: 20px;
 }
 .auction_booking .booking_modal_shell_content #d-one, .auction_booking .booking_modal_shell_content #d-two {
   display: grid;
@@ -520,17 +538,39 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
 }
 .auction_booking .booking_modal_shell_content #d-one #taketheseat, .auction_booking .booking_modal_shell_content #d-two #taketheseat {
+  display: grid;
+}
+.auction_booking .booking_modal_shell_content #d-one #taketheseat span, .auction_booking .booking_modal_shell_content #d-two #taketheseat span {
   color: white;
+  font-size: 21px;
+}
+.auction_booking .booking_modal_shell_content #d-one #taketheseat button, .auction_booking .booking_modal_shell_content #d-two #taketheseat button {
+  display: grid;
+  justify-self: end;
+  border: none;
+  background: transparent;
+  background-image: linear-gradient(to right, rgb(178, 242, 178), rgb(41, 160, 41));
+  padding: 10px 7x;
+  border-radius: 7px;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
 }
 .auction_booking .booking_modal_shell_content #d-one #seattaken, .auction_booking .booking_modal_shell_content #d-two #seattaken {
-  color: red;
+  color: white;
+  font-size: 21px;
 }
 .auction_booking_seats {
   display: grid;
   justify-items: center;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 .auction_booking_seats_tierone_seat, .auction_booking_seats_tiertwo_seat, .auction_booking_seats_tierthree_seat, .auction_booking_seats_tierfour_seat {
   background: transparent;
@@ -545,6 +585,9 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
 }
 .auction_booking_seats_tierone_seat img, .auction_booking_seats_tiertwo_seat img, .auction_booking_seats_tierthree_seat img, .auction_booking_seats_tierfour_seat img {
   z-index: 8 !important;
@@ -561,6 +604,9 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
 }
 .auction_booking_seats_tierone_seat #available img, .auction_booking_seats_tiertwo_seat #available img, .auction_booking_seats_tierthree_seat #available img, .auction_booking_seats_tierfour_seat #available img {
   -o-object-fit: contain;
@@ -614,6 +660,11 @@ html, body {
   .auction_item_row_details {
     grid-template-columns: 1fr 1fr;
   }
+  .auction_booking .booking_modal_shell {
+    /*                     width: 80vw;
+                        max-width: 600px;
+                        height: 60%; */
+  }
 }
 @media (max-width: 767.98px) {
   .auction_item_row {
@@ -656,5 +707,25 @@ html, body {
   }
   .auction_item_row_details {
     grid-template-columns: 1fr;
+  }
+  .auction_booking_seats {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .auction_booking .booking_modal_shell {
+    /*                     width: 90vw;
+                        height: 80%; */
+  }
+  .auction_booking .booking_modal_shell #closethemodal {
+    font-size: 15px;
+  }
+  .auction_booking .booking_modal_shell_content #d-one #taketheseat span, .auction_booking .booking_modal_shell_content #d-two #taketheseat span {
+    font-size: 15px;
+  }
+  .auction_booking .booking_modal_shell_content #d-one #taketheseat button, .auction_booking .booking_modal_shell_content #d-two #taketheseat button {
+    font-size: 15px;
+  }
+  .auction_booking .booking_modal_shell_content #d-one #seattaken, .auction_booking .booking_modal_shell_content #d-two #seattaken {
+    font-size: 15px;
   }
 }/*# sourceMappingURL=auction.css.map */

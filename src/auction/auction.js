@@ -22,18 +22,29 @@ const Auction = () => {
     const seats = useRef();
     const [modalopen, setModal] = useState(false);
     const [taken, setTaken] = useState(null);
+    const core = useRef();
 
     useEffect(() => {
             axios.get("http://localhost:9000/getimages",{headers: {"auctioned": id}})
             .then(response => 
                 {
-                 console.log(response.data[1])
+                 //console.log(response.data[1])
                  setArray(response.data[0]);
                  setAvailibity(response.data[1])
                 }
                 )
             .catch(error => console.log(error)) 
     }, []);
+
+    useEffect(()=>{
+        const outside_core = (event) => {
+                    if(!core.current.contains(event.target))
+                    {
+                        setModal(false)
+                    }
+        }
+        document.addEventListener("mousedown", outside_core)
+    },[]);
 
     const scrollToBottom = (seat) => {
         setModal(!modalopen)
@@ -85,12 +96,12 @@ const Auction = () => {
 
             </div> 
             <div className="auction_booking">
-                <div className="booking_modal" style={{display: modalopen ? "grid" : "none"}}>
+                <div className="booking_modal" style={{display: modalopen ? "grid" : "none"}} ref={core}>
                     <div className="booking_modal_shell">
-                        <button onClick={()=> setModal(false)}>Close</button>
+                        <button id="closethemodal" onClick={()=> setModal(false)}>Close</button>
                         <div className="booking_modal_shell_content">
                                 <div id="d-one">
-                                    <div style={{width:"90px"}}>
+                                    <div style={{width:"90%"}}>
                                         <img src={taken ? banned : free} alt="occup" />
                                     </div>
                                     
@@ -100,7 +111,13 @@ const Auction = () => {
                                         taken ? <span id="seattaken"> Seat taken! <br /> Please choose another one! </span> 
                                               :
                                                 <div id="taketheseat">
-                                                    Take the seat
+                                                    <span>
+                                                        Attendance Fee: £6 (refundable)
+                                                    </span>                                                   
+                                                    <button>
+                                                        Pay & Book
+                                                    </button>
+
                                                 </div>
                                     }
                                     
