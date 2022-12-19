@@ -148,10 +148,7 @@ app.post('/login', (req, res) => {
 
   
 
-  app.get("/test", (req, res) => {
+  app.get("/getimages", (req, res) => {
     console.log(req.headers.auctioned)
-    res.send(categories.find(c => c.item_id === req.headers.auctioned).images)
-
-
-    //res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${categories.image_name}.jpg`);
+    res.send([categories.find(c => c.item_id === req.headers.auctioned).images, [1,1,1,1,1,1,0,0,0,0]])
   })

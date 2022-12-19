@@ -92,55 +92,51 @@
     }
     &_booking{
         position: relative;
-        border:3px solid brown;
+        //border:3px solid brown;
         padding: 50px 0;
         &_seats{
             display: grid;
             justify-items: center;
+            &_tierone, &_tiertwo, &_tierthree, &_tierfour{
+                &_seat{
+                    @include image-fit;
+                    display: grid;
+                    justify-content: center;
+                    cursor: pointer;
+                    position: relative;
+                    #available{
+                        position: absolute;
+                        width: 30%;
+                        height: 30%;
+                        left: 35%;
+                        top: 10%;
+                        @include image-fit;
+                    }
+                }
+            }
             &_tierone{
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 width: 70vw;
                 max-width: 600px;
-                &_seat{
-                    //width: 20vw;
-                    @include image-fit;
-                    display: grid;
-                    justify-content: center;
-                }
             }
             &_tiertwo{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 width: 50vw;
                 max-width: 400px;
-                &_seat{
-                    @include image-fit;
-                    display: grid;
-                    justify-content: center;
-                }
             }
             &_tierthree{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 width: 30vw;
                 max-width: 250px;
-                &_seat{
-                    @include image-fit;
-                    display: grid;
-                    justify-content: center;
-                }
             }
             &_tierfour{
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 width: 15vw;
-                max-width: 100px;
-                &_seat{
-                    @include image-fit;
-                    display: grid;
-                    justify-content: center;
-                }
+                max-width: 120px;
             }
         }
     }

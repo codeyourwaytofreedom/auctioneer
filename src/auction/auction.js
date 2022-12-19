@@ -2,6 +2,8 @@ import big from "./205.jpg";
 import small from "./suv.jpg";
 import loading from "./loading.jpg";
 import spotlight from "./spotlight.svg";
+import occupied from "./occupied.png";
+import available from "./available.png";
 
 import "./auction.css";
 import { useParams } from "react-router-dom";
@@ -14,31 +16,18 @@ const Auction = () => {
     const [response_image, setImage] = useState(loading)
     const [response_array, setArray] = useState();
     const [bigone, setBig] = useState();
+    const [availability, setAvailibity] = useState([]);
 
     useEffect(() => {
-        /* const url = "http://localhost:9000/item";
-        const config = {
-            responseType: 'blob',
-            headers: {"auctioned": id}
-        }
-        axios.get(url,config)
+            axios.get("http://localhost:9000/getimages",{headers: {"auctioned": id}})
             .then(response => 
                 {
-                 let imgUrl = URL.createObjectURL(response.data)
-                 setImage(imgUrl)
-                }
-                )
-            .catch(error => console.log(error)) */
-
-            axios.get("http://localhost:9000/test",{headers: {"auctioned": id}})
-            .then(response => 
-                {
-                 console.log(response.data)
-                 setArray(response.data)
+                 console.log(response.data[1])
+                 setArray(response.data[0]);
+                 setAvailibity(response.data[1])
                 }
                 )
             .catch(error => console.log(error)) 
-
     }, []);
     return ( 
         <div className="auction">
@@ -82,42 +71,53 @@ const Auction = () => {
             <div className="auction_booking">
                 <div className="auction_booking_seats">
                     <div className="auction_booking_seats_tierone">
-                        <div className="auction_booking_seats_tierone_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tierone_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tierone_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tierone_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
+                        {
+                            availability.slice(0,4).map ( seat => 
+                                <div className="auction_booking_seats_tierone_seat">
+                                    <span id="available">
+                                        <img src={seat === 1 ? occupied : available} alt="" />
+                                    </span>
+                                    <img src={spotlight} alt="" />  
+                                </div>
+                                )
+                        }
                     </div>
                     <div className="auction_booking_seats_tiertwo">
-                        <div className="auction_booking_seats_tiertwo_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tiertwo_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tiertwo_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
+                        {
+                            availability.slice(4,7).map ( seat => 
+                                <div className="auction_booking_seats_tiertwo_seat">
+                                    <span id="available">
+                                        <img src={seat === 1 ? occupied : available} alt="" />
+                                    </span>
+                                    <img src={spotlight} alt="" />  
+                                </div>
+                                )
+                        }
                     </div>
+
                     <div className="auction_booking_seats_tierthree">
-                        <div className="auction_booking_seats_tierthree_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
-                        <div className="auction_booking_seats_tierthree_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
+                        {
+                            availability.slice(7,9).map ( seat => 
+                                <div className="auction_booking_seats_tierthree_seat">
+                                    <span id="available">
+                                        <img src={seat === 1 ? occupied : available} alt="" />
+                                    </span>
+                                    <img src={spotlight} alt="" />  
+                                </div>
+                                )
+                        }
                     </div>
                     <div className="auction_booking_seats_tierfour">
-                        <div className="auction_booking_seats_tierfour_seat">
-                            <img src={spotlight} alt="" />  
-                        </div>
+                        {
+                            availability.slice(9,10).map ( seat => 
+                                <div className="auction_booking_seats_tierfour_seat">
+                                    <span id="available">
+                                        <img src={seat === 1 ? occupied : available} alt="" />
+                                    </span>
+                                    <img src={spotlight} alt="" />  
+                                </div>
+                                )
+                        }
                     </div>
                 </div>
             </div>
