@@ -93,18 +93,53 @@
     &_booking{
         position: relative;
         //border:3px solid brown;
-        padding: 50px 0;
         .booking_modal{
             position: absolute;
             width: 100vw;
             height: 100%;
-            background-color: yellow;
+            background:rgba(255, 191, 0, 0.4);
+            z-index: 77 !important;
+            @include grid-center;
+            &_shell{
+                border: 2px solid black;
+                border-radius: 20px;
+                background:rgba(1, 15, 15, 0.9);
+                position: relative;
+                z-index: 78 !important;
+                width: 40vw;
+                height: 60%;
+                button{
+                    position: absolute;
+                    top:20px;
+                    left: 20px;
+                    z-index: 79 !important;
+                }
+                &_content{
+                    display: grid;
+                    position: relative;
+                    grid-template-columns: 2fr 3fr;
+                    height: 90%;
+                    #d-one, #d-two {
+                        @include image-fit;
+                        @include grid-center;
+                        #taketheseat{
+                            color:white;
+                        }
+                        #seattaken{
+                            color:red;
+                        }
+                    }
+                }
+            }
         }
         &_seats{
             display: grid;
             justify-items: center;
+            padding-top: 50px;
             &_tierone, &_tiertwo, &_tierthree, &_tierfour{
                 &_seat{
+                    background: transparent;
+                    border: none;
                     @include image-fit;
                     display: grid;
                     justify-content: center;
@@ -118,6 +153,7 @@
                         left: 35%;
                         top: 10%;
                         @include image-fit;
+                        img{object-fit: contain;}
                     }
                 }
             }

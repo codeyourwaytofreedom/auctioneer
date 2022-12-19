@@ -4,6 +4,8 @@ import loading from "./loading.jpg";
 import spotlight from "./spotlight.svg";
 import occupied from "./occupied.png";
 import available from "./available.png";
+import banned from "./banned.png";
+import free from "./free.png";
 
 import "./auction.css";
 import { useParams } from "react-router-dom";
@@ -19,6 +21,7 @@ const Auction = () => {
     const [availability, setAvailibity] = useState([]);
     const seats = useRef();
     const [modalopen, setModal] = useState(false);
+    const [taken, setTaken] = useState(null);
 
     useEffect(() => {
             axios.get("http://localhost:9000/getimages",{headers: {"auctioned": id}})
@@ -32,8 +35,13 @@ const Auction = () => {
             .catch(error => console.log(error)) 
     }, []);
 
-    const scrollToBottom = () => {
+    const scrollToBottom = (seat) => {
         setModal(!modalopen)
+        if(seat === 1)
+        {
+            setTaken(true)
+        }
+        else{setTaken(false)}
         seats.current.scrollIntoView({ behavior: "smooth" });
     }
 
@@ -77,29 +85,52 @@ const Auction = () => {
 
             </div> 
             <div className="auction_booking">
-                <div className="booking_modal" style={{display: modalopen ? "block" : "none"}}></div>
+                <div className="booking_modal" style={{display: modalopen ? "grid" : "none"}}>
+                    <div className="booking_modal_shell">
+                        <button onClick={()=> setModal(false)}>Close</button>
+                        <div className="booking_modal_shell_content">
+                                <div id="d-one">
+                                    <div style={{width:"90px"}}>
+                                        <img src={taken ? banned : free} alt="occup" />
+                                    </div>
+                                    
+                                </div>
+                                <div id="d-two" style={{color:"red",fontSize:"2vw"}}>
+                                    {
+                                        taken ? <span id="seattaken"> Seat taken! <br /> Please choose another one! </span> 
+                                              :
+                                                <div id="taketheseat">
+                                                    Take the seat
+                                                </div>
+                                    }
+                                    
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="auction_booking_seats" ref={seats}>
                     <div className="auction_booking_seats_tierone">
                         {
                             availability.slice(0,4).map ( seat => 
-                                <div className="auction_booking_seats_tierone_seat">
+                                <button className="auction_booking_seats_tierone_seat">
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
-                                </div>
+                                    <img src={spotlight} alt="" onClick={() => scrollToBottom(seat)}/>  
+                                </button>
                                 )
                         }
                     </div>
                     <div className="auction_booking_seats_tiertwo">
                         {
                             availability.slice(4,7).map ( seat => 
-                                <div className="auction_booking_seats_tiertwo_seat">
+                                <button className="auction_booking_seats_tiertwo_seat">
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
-                                </div>
+                                    <img src={spotlight} alt="" onClick={() => scrollToBottom(seat)}/>  
+                                </button>
                                 )
                         }
                     </div>
@@ -107,12 +138,12 @@ const Auction = () => {
                     <div className="auction_booking_seats_tierthree">
                         {
                             availability.slice(7,9).map ( seat => 
-                                <div className="auction_booking_seats_tierthree_seat">
+                                <button className="auction_booking_seats_tierthree_seat">
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
-                                </div>
+                                    <img src={spotlight} alt="" onClick={() => scrollToBottom(seat)}/>  
+                                </button>
                                 )
                         }
                     </div>
@@ -123,7 +154,7 @@ const Auction = () => {
                                     <span id="available">
                                         <img src={seat === 1 ? occupied : available} alt="" />
                                     </span>
-                                    <img src={spotlight} alt="" onClick={scrollToBottom}/>  
+                                    <img src={spotlight} alt="" onClick={() => scrollToBottom(seat)}/>  
                                 </div>
                                 )
                         }

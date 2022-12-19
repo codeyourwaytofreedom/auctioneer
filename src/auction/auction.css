@@ -478,19 +478,63 @@ html, body {
 }
 .auction_booking {
   position: relative;
-  padding: 50px 0;
 }
 .auction_booking .booking_modal {
   position: absolute;
   width: 100vw;
   height: 100%;
-  background-color: yellow;
+  background: rgba(255, 191, 0, 0.4);
+  z-index: 77 !important;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.auction_booking .booking_modal_shell {
+  border: 2px solid black;
+  border-radius: 20px;
+  background: rgba(1, 15, 15, 0.9);
+  position: relative;
+  z-index: 78 !important;
+  width: 40vw;
+  height: 60%;
+}
+.auction_booking .booking_modal_shell button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 79 !important;
+}
+.auction_booking .booking_modal_shell_content {
+  display: grid;
+  position: relative;
+  grid-template-columns: 2fr 3fr;
+  height: 90%;
+}
+.auction_booking .booking_modal_shell_content #d-one, .auction_booking .booking_modal_shell_content #d-two {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.auction_booking .booking_modal_shell_content #d-one img, .auction_booking .booking_modal_shell_content #d-two img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.auction_booking .booking_modal_shell_content #d-one #taketheseat, .auction_booking .booking_modal_shell_content #d-two #taketheseat {
+  color: white;
+}
+.auction_booking .booking_modal_shell_content #d-one #seattaken, .auction_booking .booking_modal_shell_content #d-two #seattaken {
+  color: red;
 }
 .auction_booking_seats {
   display: grid;
   justify-items: center;
+  padding-top: 50px;
 }
 .auction_booking_seats_tierone_seat, .auction_booking_seats_tiertwo_seat, .auction_booking_seats_tierthree_seat, .auction_booking_seats_tierfour_seat {
+  background: transparent;
+  border: none;
   display: grid;
   justify-content: center;
   cursor: pointer;
@@ -517,6 +561,10 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.auction_booking_seats_tierone_seat #available img, .auction_booking_seats_tiertwo_seat #available img, .auction_booking_seats_tierthree_seat #available img, .auction_booking_seats_tierfour_seat #available img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .auction_booking_seats_tierone {
   display: grid;
