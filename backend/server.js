@@ -174,6 +174,7 @@ app.get("/getimages", (req, res) => {
 // lets go with async way this time
 app.post("/checkout", async (req, res) => {
   try {
+    console.log("this is params", req.headers.auctioned)
     const session = await stripe.checkout.sessions.create({
       "payment_method_types": [
         "card"
@@ -188,13 +189,12 @@ app.post("/checkout", async (req, res) => {
           },
           quantity: 1
         }],
-      "success_url": "https://example.com/success",
-      "cancel_url": "https://example.com/cancel",
+      "success_url": `${process.env.SERVER_URL}/checkout-success`,
+      "cancel_url": `${process.env.SERVER_URL}/bidding/${req.headers.auctioned}`,
     })
     res.send(session.url)
   }
   catch {
     res.send("Oops! Something went wrong..")
   }
-  
 })

@@ -5,7 +5,7 @@ const Buttton_clicked = () => {
     return (  
         
        <div className="outer_animation" onClick={()=> setOpacity(1)}>
-         <div class="rotate" style={{opacity: opacity}}></div>
+         <div className="rotate" style={{opacity: opacity}}></div>
        </div>
     );
 }

@@ -64,7 +64,7 @@ const Auction = () => {
     const handle_click = () => {
         axios.post("http://localhost:9000/checkout", 
                 {fee: "fee_attendance"},
-                {withCredentials: true, headers: "headers info"}
+                {withCredentials: true,headers:{"auctioned": id}}
         ).then( (response) => {
                 window.location = response.data
                 console.log(response.data)

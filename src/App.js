@@ -80,6 +80,7 @@ function App() {
                   </div>
                   </>}
           />
+          <Route path="/checkout-success" element={<h1>Payment Successful</h1>} />
 
         </Routes>
       </Router>
