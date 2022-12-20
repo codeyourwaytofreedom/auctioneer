@@ -45,6 +45,9 @@ const Auction = () => {
                     }
         }
         document.addEventListener("mousedown", outside_core)
+        return () => {
+            document.removeEventListener("mousedown", outside_core);
+          }; 
     },[]);
 
     const scrollToBottom = (seat) => {
@@ -55,6 +58,15 @@ const Auction = () => {
         }
         else{setTaken(false)}
         seats.current.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const handle_click = () => {
+        axios.post("http://localhost:9000/checkout", 
+                {fee: "fee_attendance"},
+                {withCredentials: true, headers: "headers info"}
+        ).then( (response) => {
+                console.log(response.data)
+        }).catch(error => console.log(error))
     }
 
     return ( 
@@ -115,7 +127,7 @@ const Auction = () => {
                                                     <span>
                                                         Attendance Fee: £6 (refundable)
                                                     </span>                                                   
-                                                    <button onClick={()=> navigate("/payment")}>
+                                                    <button onClick={handle_click}>
                                                         Pay & Book
                                                     </button>
 

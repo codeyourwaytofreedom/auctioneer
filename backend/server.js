@@ -1,33 +1,44 @@
-const express = require('express'); //Line 1
-const app = express(); //Line 2
+require ("dotenv").config();
+
+
+
+//basic configuration
+const express = require('express'); 
+const app = express();
 const cors = require('cors');
-const path = require('path')
-const fs = require('fs')
 
-app.use(cors({ origin: true, credentials: true }));
-
+//token operation and parsers
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
-app.use(cookieParser());
-app.use(express.json());
-
-const port = process.env.PORT || 9000; //Line 3
-
+const port = process.env.PORT || 9000;
 
 // to parse request object when receiving post request
 const bodyParser = require("body-parser")
 var jsonParser = bodyParser.json()
 
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors({ origin: true, credentials: true }));
+
+
+const stripe = require("stripe")(process.env.PAYMENT_KEY)
+const fees = new Map(
+  [
+   {fee_attendance: 6000}
+  ],
+  [
+   {fee_deposit:300000}
+  ]
+)
+
+
 const {categories} = require("/Users/waytofreedom/Desktop/auctioneer/backend/dummy/dummy.js");
 
-console.log(categories.find(x => x.item_id === "car0"))
-
-
+// to send images to the client side
 app.use(express.static(__dirname+'/images'));
 
 
 let db;
-
 const { connectToDb, getDb } = require("./db");
 connectToDb( (err) => {
         if(!err){
@@ -103,58 +114,87 @@ app.post('/login', (req, res) => {
 
 
 
-  app.get("/cook",( req, res) => {
-    console.log(req.cookies)
-    res.send(req.cookies)
-  })
+app.get("/cook",( req, res) => {
+  console.log(req.cookies)
+  res.send(req.cookies)
+})
 
 
-  app.get("/userauth",( req, res) => {
-    const token = req.cookies.jwt;
-    if(token){
-        jwt.verify(token, "codeyourwaytofreedom", (err, decodedJwt) => {
-          if(err){
-            console.log(err.message)
-            res.send(false)
-          }
-          else{
-              res.send("jwt available and verified")
-              console.log("request received for verification")
-          }
-        })
-    }
-    else{
-      res.send(false)
-      console.log("failed verification attempt")
-    }
-    console.log(token)
-  })
-
-  app.get("/logout", (req, res) => {
-    res.cookie("jwt", "", {maxAge:1})
-    res.send("logged out with fake jwt")
-  })
-
-
-  app.get("/category", (req, res) => {
-    if(req.headers.query)
-    {res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/cats/${req.headers.query}.jpg`);}
-  })
-
-  app.get("/item", (req, res) => {
-    console.log(req.headers.auctioned);
-    res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${req.headers.auctioned}.jpg`);
-  })
-
-  function RandomSeat(max) {
-    return Math.floor(Math.random() * max);
+app.get("/userauth",( req, res) => {
+  const token = req.cookies.jwt;
+  if(token){
+      jwt.verify(token, "codeyourwaytofreedom", (err, decodedJwt) => {
+        if(err){
+          console.log(err.message)
+          res.send(false)
+        }
+        else{
+            res.send("jwt available and verified")
+            console.log("request received for verification")
+        }
+      })
   }
+  else{
+    res.send(false)
+    console.log("failed verification attempt")
+  }
+  console.log(token)
+})
 
-  app.get("/getimages", (req, res) => {
-    console.log(req.headers.auctioned)
-    const availability = [];
-    for (let i = 0; i < 10; i++) {
-      availability.push(RandomSeat(2))
-    }
-    res.send([categories.find(c => c.item_id === req.headers.auctioned).images, availability])
-  })
+app.get("/logout", (req, res) => {
+  res.cookie("jwt", "", {maxAge:1})
+  res.send("logged out with fake jwt")
+})
+
+
+app.get("/category", (req, res) => {
+  if(req.headers.query)
+  {res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/cats/${req.headers.query}.jpg`);}
+})
+
+app.get("/item", (req, res) => {
+  console.log(req.headers.auctioned);
+  res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${req.headers.auctioned}.jpg`);
+})
+
+function RandomSeat(max) {
+  return Math.floor(Math.random() * max);
+}
+
+app.get("/getimages", (req, res) => {
+  console.log(req.headers.auctioned)
+  const availability = [];
+  for (let i = 0; i < 10; i++) {
+    availability.push(RandomSeat(2))
+  }
+  res.send([categories.find(c => c.item_id === req.headers.auctioned).images, availability])
+})
+
+
+// lets go with async way this time
+app.post("/checkout", async (req, res) => {
+  try {
+    const session = await stripe.checkout.sessions.create({
+      "payment_method_types": [
+        "card"
+      ],
+      "mode": "payment",
+      "currency": "gbp",
+      "line_items": [{
+          price_data: {
+            currency:"gbp",
+            product_data: {name:"Aution "},
+            unit_amount: 600
+          },
+          quantity: 1
+        }],
+      "success_url": "https://example.com/success",
+      "cancel_url": "https://example.com/cancel",
+    })
+    res.send(session.url)
+  }
+  catch {
+    res.send("Oops! Something went wrong..")
+  }
+  
+})
