@@ -1,16 +1,16 @@
-import big from "./205.jpg";
-import small from "./suv.jpg";
-import loading from "./loading.jpg";
-import spotlight from "./spotlight.svg";
-import occupied from "./occupied.png";
-import available from "./available.png";
-import banned from "./banned.png";
-import free from "./free.png";
+
+import loading from "./auction_images/loading.jpg";
+import spotlight from "./auction_images/spotlight.svg";
+import occupied from "./auction_images/occupied.png";
+import available from "./auction_images/available.png";
+import banned from "./auction_images/banned.png";
+import free from "./auction_images/free.png";
 
 import "./auction.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 
 const Auction = () => {
@@ -23,6 +23,7 @@ const Auction = () => {
     const [modalopen, setModal] = useState(false);
     const [taken, setTaken] = useState(null);
     const core = useRef();
+    const navigate = useNavigate();
 
     useEffect(() => {
             axios.get("http://localhost:9000/getimages",{headers: {"auctioned": id}})
@@ -114,7 +115,7 @@ const Auction = () => {
                                                     <span>
                                                         Attendance Fee: £6 (refundable)
                                                     </span>                                                   
-                                                    <button>
+                                                    <button onClick={()=> navigate("/payment")}>
                                                         Pay & Book
                                                     </button>
 

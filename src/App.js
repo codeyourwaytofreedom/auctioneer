@@ -10,6 +10,7 @@ import Register from "./register/register";
 import Check_login from "./check_logging";
 import Home from "./home/home";
 import Auction from "./auction/auction";
+import Payment from "./payment/payment";
 
 function App() {
   return (
@@ -38,6 +39,14 @@ function App() {
               element={ <>
                 <Navbar/>
                 <Auction/>
+              </> 
+              }/>
+          </Route>
+          <Route element={<Check_login/>}>
+            <Route path="/payment" 
+              element={ <>
+                <Navbar/>
+                <Payment/>
               </> 
               }/>
           </Route>

@@ -715,6 +715,7 @@ html, body {
   .auction_booking .booking_modal_shell {
     /*                     width: 90vw;
                         height: 80%; */
+    height: 50%;
   }
   .auction_booking .booking_modal_shell #closethemodal {
     font-size: 15px;
