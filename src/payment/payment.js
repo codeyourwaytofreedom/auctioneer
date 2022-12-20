@@ -1,11 +1,17 @@
 import "./payment.css";
-
+import success from "./success.jpg";
 
 const Payment = () => {
     return ( <div className="payment">
-        Payment page goes here
+        <div className="payment_shell">
+            <div>
+                <img src={success} alt="aaa" />
+                <span id="successful_payment">
+                    Payment Successful...
+                </span>
+            </div>
+        </div>
     </div> );
 }
  
-export default Payment;<div className="payment">
-Payment page goes here</div>
+export default Payment;

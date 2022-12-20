@@ -371,8 +371,39 @@ html, body {
   }
 }
 .payment {
-  background-color: wheat;
   position: relative;
   top: 70px;
   height: 500px;
+  height: calc(100vh - 70px);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.payment_shell {
+  position: relative;
+}
+.payment_shell img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
+}
+.payment_shell #successful_payment {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  font-family: "Annie Use Your Telescope";
+  color: green;
+  font-size: 35px;
+}
+
+@media (max-width: 575.98px) {
+  .payment_shell #successful_payment {
+    top: -30px;
+    left: 9%;
+    font-size: 27px;
+  }
 }/*# sourceMappingURL=payment.css.map */

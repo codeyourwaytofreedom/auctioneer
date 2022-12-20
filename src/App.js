@@ -42,15 +42,6 @@ function App() {
               </> 
               }/>
           </Route>
-          <Route element={<Check_login/>}>
-            <Route path="/payment" 
-              element={ <>
-                <Navbar/>
-                <Payment/>
-              </> 
-              }/>
-          </Route>
-
 
           <Route path="/login" 
                   element={<>
@@ -80,7 +71,16 @@ function App() {
                   </div>
                   </>}
           />
-          <Route path="/checkout-success" element={<h1>Payment Successful</h1>} />
+
+          <Route element={<Check_login/>}>
+            <Route path="/checkout-success" element={
+                <>
+                  <Navbar/>
+                  <Payment/>
+                </>      
+            }/>
+          </Route>
+          
 
         </Routes>
       </Router>

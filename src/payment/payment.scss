@@ -1,8 +1,35 @@
 @import "../base";
 
 .payment{
-    background-color: wheat;
     position: relative;
     top: 70px;
     height: 500px;
+    height: calc(100vh - 70px);
+    @include grid-center;
+    &_shell{
+        @include image-fit;
+        position: relative;
+        #successful_payment{
+            position: absolute;
+            top:0;
+            left:2%;
+            font-family: $annie;
+            color: green;
+            font-size:35px;
+        }
+    }
 }
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .payment{
+        &_shell{
+            #successful_payment{
+                top: -30px;
+                left: 9%;
+                font-size: 27px;
+            }
+        }
+    }
+ }

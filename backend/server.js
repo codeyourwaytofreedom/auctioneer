@@ -184,7 +184,7 @@ app.post("/checkout", async (req, res) => {
       "line_items": [{
           price_data: {
             currency:"gbp",
-            product_data: {name:"Aution Attendance Fee"},
+            product_data: {name:"Auction Attendance Fee"},
             unit_amount: 600
           },
           quantity: 1
