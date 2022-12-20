@@ -10,7 +10,8 @@ import "./auction.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+
+import Buttton_clicked from "../toolkit/button_clicked_animation";
 
 
 const Auction = () => {
@@ -65,6 +66,7 @@ const Auction = () => {
                 {fee: "fee_attendance"},
                 {withCredentials: true, headers: "headers info"}
         ).then( (response) => {
+                window.location = response.data
                 console.log(response.data)
         }).catch(error => console.log(error))
     }
@@ -129,6 +131,7 @@ const Auction = () => {
                                                     </span>                                                   
                                                     <button onClick={handle_click}>
                                                         Pay & Book
+                                                        <Buttton_clicked/>
                                                     </button>
 
                                                 </div>
