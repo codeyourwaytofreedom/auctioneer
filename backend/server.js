@@ -218,7 +218,7 @@ app.post('/webhook',express.raw({type: 'application/json'}), async (request, res
   const sig_header = request.headers['stripe-signature']
 
   try {
-    event = stripe.webhooks.constructEvent(request.body, sig_header, "whsec_d266c5015d082f7e3ba05564dcf6ec268eba4bafa16177dbab7dcddbc5e7173a");
+    event = stripe.webhooks.constructEvent(request.body, sig_header, "");
     console.log(event)
   } 
   catch (err) {
