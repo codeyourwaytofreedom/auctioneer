@@ -198,3 +198,17 @@ app.post("/checkout", async (req, res) => {
     res.send("Oops! Something went wrong..")
   }
 })
+
+
+
+/* app.post('/webhook', async (request, response) => {
+  //const payload = request.body;
+  console.log("Got payload: ");
+  response.status(200);
+}); */
+
+app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (request, response) => {
+  const payload = request.body;
+
+  console.log("Got payload: " + payload);
+});
