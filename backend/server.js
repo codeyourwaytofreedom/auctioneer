@@ -88,7 +88,7 @@ app.post('/express_backend', jsonParser, (req, res) => {
 
 
 //Post route to handle login
-app.post('/login', (req, res) => {
+app.post('/login',jsonParser, (req, res) => {
 
            db.collection('auctioneer').findOne({email:req.body.user_loggingin.email, 
                                                 password: req.body.user_loggingin.password}).then(doc => {
@@ -200,15 +200,6 @@ app.post("/checkout", async (req, res) => {
 })
 
 
-
-
-/* app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (request, response) => {
-  const payload = request.body;
-
-  console.log("Webhook result: " + request);
-}); */
-
-
 app.post('/webhook',express.raw({type: 'application/json'}), async (request, response) => {
   const payload = request.body;
   /* console.log(request.headers)
@@ -218,12 +209,20 @@ app.post('/webhook',express.raw({type: 'application/json'}), async (request, res
   const sig_header = request.headers['stripe-signature']
 
   try {
-    event = stripe.webhooks.constructEvent(request.body, sig_header, "whsec_d266c5015d082f7e3ba05564dcf6ec268eba4bafa16177dbab7dcddbc5e7173a");
-    console.log(event)
+    event = stripe.webhooks.constructEvent(request.body, sig_header, process.env.SECRETKEY_WEBHOOK);
+    //console.log(event)
+    //console.log(event.data.object.id)
+    //console.log(event.status)
+    //console.log(event.data.object.status)
   } 
   catch (err) {
     console.log(err.message)
     return response.status(400).send(`Webhook Error: ${err.message}`);
+  }
+  if (event.type === 'checkout.session.completed') {
+    console.log("transaction done")
+    const session = event.data.object
+    console.log(session)
   }
 
   response.status(200);
