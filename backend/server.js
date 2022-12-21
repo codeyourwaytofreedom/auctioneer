@@ -17,7 +17,7 @@ const bodyParser = require("body-parser")
 var jsonParser = bodyParser.json()
 
 app.use(cookieParser());
-app.use(express.json());
+//app.use(express.json());
 app.use(cors({ origin: true, credentials: true }));
 
 
@@ -115,7 +115,7 @@ app.post('/login', (req, res) => {
 
 
 app.get("/cook",( req, res) => {
-  console.log(req.cookies)
+  //console.log(req.cookies)
   res.send(req.cookies)
 })
 
@@ -130,7 +130,7 @@ app.get("/userauth",( req, res) => {
         }
         else{
             res.send("jwt available and verified")
-            console.log("request received for verification")
+            //console.log("request received for verification")
         }
       })
   }
@@ -138,7 +138,7 @@ app.get("/userauth",( req, res) => {
     res.send(false)
     console.log("failed verification attempt")
   }
-  console.log(token)
+  //console.log(token)
 })
 
 app.get("/logout", (req, res) => {
@@ -153,7 +153,7 @@ app.get("/category", (req, res) => {
 })
 
 app.get("/item", (req, res) => {
-  console.log(req.headers.auctioned);
+  //console.log(req.headers.auctioned);
   res.sendFile(`/Users/waytofreedom/Desktop/auctioneer/backend/images/${req.headers.auctioned}.jpg`);
 })
 
@@ -162,7 +162,7 @@ function RandomSeat(max) {
 }
 
 app.get("/getimages", (req, res) => {
-  console.log(req.headers.auctioned)
+  //console.log(req.headers.auctioned)
   const availability = [];
   for (let i = 0; i < 10; i++) {
     availability.push(RandomSeat(2))
@@ -174,7 +174,7 @@ app.get("/getimages", (req, res) => {
 // lets go with async way this time
 app.post("/checkout", async (req, res) => {
   try {
-    console.log("this is params", req.headers.auctioned)
+    //console.log("this is params", req.headers.auctioned)
     const session = await stripe.checkout.sessions.create({
       "payment_method_types": [
         "card"
@@ -201,14 +201,30 @@ app.post("/checkout", async (req, res) => {
 
 
 
-/* app.post('/webhook', async (request, response) => {
-  //const payload = request.body;
-  console.log("Got payload: ");
-  response.status(200);
-}); */
 
-app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (request, response) => {
+/* app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (request, response) => {
   const payload = request.body;
 
-  console.log("Got payload: " + payload);
+  console.log("Webhook result: " + request);
+}); */
+
+
+app.post('/webhook',express.raw({type: 'application/json'}), async (request, response) => {
+  const payload = request.body;
+  /* console.log(request.headers)
+  console.log(request.headers['stripe-signature']) */
+  
+  let event;
+  const sig_header = request.headers['stripe-signature']
+
+  try {
+    event = stripe.webhooks.constructEvent(request.body, sig_header, "whsec_d266c5015d082f7e3ba05564dcf6ec268eba4bafa16177dbab7dcddbc5e7173a");
+    console.log(event)
+  } 
+  catch (err) {
+    console.log(err.message)
+    return response.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  response.status(200);
 });
