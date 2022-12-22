@@ -441,7 +441,6 @@ html, body {
   color: blue;
 }
 .user_profile_details {
-  border: 3px solid blue;
   width: calc(100vw - 400px);
   display: grid;
   padding-top: 50px;
@@ -453,6 +452,32 @@ html, body {
   border-radius: 15px;
   width: 70%;
   min-width: 590px;
+  display: grid;
+  row-gap: 20px;
+}
+.user_profile_details_shell_history, .user_profile_details_shell_edit, .user_profile_details_shell_booked {
+  display: flex;
+  grid-auto-flow: column;
+  align-items: center;
+}
+.user_profile_details_shell_history img, .user_profile_details_shell_edit img, .user_profile_details_shell_booked img {
+  height: 60px;
+}
+.user_profile_details_shell_history_content, .user_profile_details_shell_edit_content, .user_profile_details_shell_booked_content {
+  width: 90%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  font-family: "Annie Use Your Telescope";
+  font-size: 27px;
+  font-weight: bolder;
+  color: navy;
+  padding: 0 20px;
+  text-decoration: underline;
+}
+.user_profile_details_shell_history #right, .user_profile_details_shell_edit #right, .user_profile_details_shell_booked #right {
+  justify-content: end;
 }
 
 @media (max-width: 991.98px) {
@@ -492,7 +517,7 @@ html, body {
     width: 250px;
   }
   .user_profile_details {
-    width: 50vw;
+    width: 100%;
   }
 }
 @media (max-width: 767.98px) {
@@ -509,6 +534,13 @@ html, body {
   .user_profile_profile-picture_badge-details span {
     font-size: 24px !important;
   }
+  .user_profile_details {
+    width: 90vw;
+  }
+  .user_profile_details_shell {
+    min-width: unset;
+    width: 500px;
+  }
 }
 @media (max-width: 575.98px) {
   .user_profile {
@@ -523,5 +555,12 @@ html, body {
   }
   .user_profile_profile-picture #user {
     display: grid;
+  }
+  .user_profile_details {
+    width: 100vw;
+    padding: 0;
+  }
+  .user_profile_details_shell {
+    width: 90vw;
   }
 }/*# sourceMappingURL=user_profile.css.map */
