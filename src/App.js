@@ -11,6 +11,7 @@ import Check_login from "./check_logging";
 import Home from "./home/home";
 import Auction from "./auction/auction";
 import Payment from "./payment/payment";
+import User_profile from "./profile/user_profile";
 
 function App() {
   return (
@@ -77,6 +78,14 @@ function App() {
                 <>
                   <Navbar/>
                   <Payment/>
+                </>      
+            }/>
+          </Route>
+          <Route element={<Check_login/>}>
+            <Route path="/userprofile/:userid" element={
+                <>
+                  <Navbar/>
+                  <User_profile/>
                 </>      
             }/>
           </Route>

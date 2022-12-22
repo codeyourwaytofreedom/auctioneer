@@ -22,15 +22,6 @@ app.use(cors({ origin: true, credentials: true }));
 
 
 const stripe = require("stripe")(process.env.PAYMENT_KEY)
-const fees = new Map(
-  [
-   {fee_attendance: 6000}
-  ],
-  [
-   {fee_deposit:300000}
-  ]
-)
-
 
 const {categories} = require("/Users/waytofreedom/Desktop/auctioneer/backend/dummy/dummy.js");
 
@@ -80,10 +71,8 @@ app.post('/express_backend', jsonParser, (req, res) => {
           else{
             res.send("in")
           }
-          
         })
       }
-      
 })
 
 
