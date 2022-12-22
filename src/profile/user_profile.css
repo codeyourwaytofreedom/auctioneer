@@ -373,23 +373,19 @@ html, body {
 .user_profile {
   position: relative;
   top: 70px;
-  height: 500px;
   display: flex;
   border: 3px solid saddlebrown;
 }
 .user_profile_profile-picture {
   border: 2px solid red;
+  width: 20vw;
+  width: 400px;
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  position: relative;
 }
-.user_profile_profile-picture #photo {
-  border: 2px solid green;
-  height: 200px;
-  width: 200px;
-}
-.user_profile_profile-picture #photo img {
+.user_profile_profile-picture img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -397,4 +393,67 @@ html, body {
   display: block;
   max-width: 900px;
   max-height: 600px;
+}
+.user_profile_profile-picture #user {
+  display: none;
+}
+.user_profile_profile-picture_badge-details {
+  border: 1px solid orange;
+  position: absolute;
+  top: 45%;
+  left: 16%;
+  width: 270px;
+  height: 165px;
+  padding-left: 10px;
+}
+.user_profile_profile-picture_badge-details_title {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  font-family: "Annie Use Your Telescope";
+  font-size: 21px;
+  font-weight: bolder !important;
+}
+.user_profile_profile-picture_badge-details_username, .user_profile_profile-picture_badge-details_email, .user_profile_profile-picture_badge-details_active {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 27px;
+  justify-content: start;
+  display: flex;
+  -moz-column-gap: 3px;
+       column-gap: 3px;
+}
+.user_profile_profile-picture_badge-details_username span, .user_profile_profile-picture_badge-details_email span, .user_profile_profile-picture_badge-details_active span {
+  font-family: "Annie Use Your Telescope";
+  font-size: 21px;
+}
+.user_profile_profile-picture_badge-details_username #one, .user_profile_profile-picture_badge-details_email #one, .user_profile_profile-picture_badge-details_active #one {
+  width: 37%;
+  font-weight: bolder !important;
+}
+.user_profile_profile-picture_badge-details_username #one_email, .user_profile_profile-picture_badge-details_email #one_email, .user_profile_profile-picture_badge-details_active #one_email {
+  width: 14%;
+  font-weight: bolder !important;
+}
+.user_profile_profile-picture_badge-details_username #three, .user_profile_profile-picture_badge-details_email #three, .user_profile_profile-picture_badge-details_active #three {
+  padding-left: 5px;
+  color: blue;
+}
+.user_profile_details {
+  border: 3px solid blue;
+}
+
+@media (max-width: 991.98px) {
+  .user_profile {
+    border: 4px solid blue;
+  }
+  .user_profile_profile-picture #badge {
+    display: none;
+  }
+  .user_profile_profile-picture #user {
+    display: block;
+    width: 20vw;
+  }
 }/*# sourceMappingURL=user_profile.css.map */

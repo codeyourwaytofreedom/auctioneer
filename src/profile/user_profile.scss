@@ -3,18 +3,92 @@
 .user_profile{
     position: relative;
     top:70px;
-    height: 500px;
     display: flex;
     border: 3px solid saddlebrown;
     &_profile-picture{
         border: 2px solid red;
+        width: 20vw;
+        width: 400px;
+        @include image-fit;
         @include grid-center;
-        padding: 20px;
-        #photo{
-            border: 2px solid green;
-            @include image-fit;
-            height: 200px;
-            width: 200px;
+        position: relative;
+        #user{
+            display: none;
+        }
+        &_badge-details{
+            border:1px solid orange;
+            position: absolute;
+            top:45%;
+            left: 16%;
+            width: 270px;
+            height: 165px;
+            padding-left: 10px;
+            &_title{
+                //border: 1px solid red;
+                @include grid-center;
+                height: 45px;
+                font-family: $annie;
+                font-size: 21px;
+                font-weight: bolder !important;
+            }
+            &_username, &_email, &_active{
+                //border: 1px solid red;
+                @include grid-center;
+                height: 27px;
+                justify-content: start;
+                display: flex;
+                column-gap: 3px;
+                span{
+                    font-family: $annie;
+                    font-size: 21px;
+                }
+                #one{
+                    width: 37%;
+                    font-weight: bolder !important;
+                }
+                #one_email{
+                    width: 14%;
+                    font-weight: bolder !important;
+                }
+                #three{
+                    padding-left: 5px;
+                    color: blue;
+                }
+            }
         }
     }
+    &_details{
+        border: 3px solid blue;
+    }
 }
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    .user_profile{
+        border: 4px solid blue;
+        &_profile-picture{
+            #badge{
+                display: none;
+            }
+            #user{
+                display: block;
+                width: 20vw;
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    
+ }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    
+ }
+
+
+
+
