@@ -4,6 +4,7 @@ import badge from "./badge.jpg";
 import history from "./history.png";
 import edit from "./edit.png";
 import booked from "./booked.png";
+import auction from "./auction.png";
 
 const User_profile = () => {
     return ( 
@@ -34,19 +35,93 @@ const User_profile = () => {
                                     Bidding History
                             </div>
                         </div>
-                        <div>
-                            Biddings go here
+                        <div className="user_profile_details_shell_info">
+                            <div className="bid_history">
+                                <span>
+                                    <img src={auction} alt="" />
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended for </span>
+                                    <span>Item Code here</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended on </span>
+                                    <span>12th Dec. 2022</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction result </span>
+                                    <span>Negative</span>
+                                </span>
+                            </div>
+                            <div className="bid_history">
+                                <span>
+                                    <img src={auction} alt="" />
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended for </span>
+                                    <span>Item Code here</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended on </span>
+                                    <span>12th Dec. 2022</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction result </span>
+                                    <span>Negative</span>
+                                </span>
+                            </div>
+                            <div className="bid_history">
+                                <span>
+                                    <img src={auction} alt="" />
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended for </span>
+                                    <span>Item Code here</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction attended on </span>
+                                    <span>12th Dec. 2022</span>
+                                </span>
+                                <span id="double">
+                                    <span>Auction result </span>
+                                    <span>Negative</span>
+                                </span>
+                            </div>
                         </div>
+
+                        
                         <div className="user_profile_details_shell_booked">
                             <div className="user_profile_details_shell_history_content" id="right">
                                     Auction Bookings
                             </div>
                             <img src={booked} alt="booked" />
                         </div>
+                        <div className="user_profile_details_shell_info">
+                            <div>
+                                Bidding history
+                            </div>
+                            <div>
+                                Bidding history
+                            </div>
+                            <div>
+                                Bidding history
+                            </div>
+                        </div>
                         <div className="user_profile_details_shell_edit">
                             <img src={edit} alt="edit" />
                             <div className="user_profile_details_shell_history_content">
                                     Edit profile
+                            </div>
+                        </div>
+                        <div className="user_profile_details_shell_info">
+                            <div>
+                                Bidding history
+                            </div>
+                            <div>
+                                Bidding history
+                            </div>
+                            <div>
+                                Bidding history
                             </div>
                         </div>
                 </div>            

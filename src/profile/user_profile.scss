@@ -10,8 +10,9 @@
         width: 20vw;
         width: 400px;
         @include image-fit;
+        img{object-fit: contain}
         @include grid-center;
-        position: relative;
+        position: fixed;
         #user{
             display: none;
         }
@@ -65,9 +66,11 @@
         display: grid;
         padding-top: 50px;
         justify-content: center;
+        position: relative;
+        left: 370px;
         &_shell{
             position: relative;
-            border: 1px solid $main_orange;
+            //border: 1px solid $main_orange;
             border-radius: 15px;
             width: 70%;
             min-width: 590px;
@@ -76,7 +79,6 @@
             &_history, &_edit, &_booked {
                 display: flex;
                 grid-auto-flow: column;
-                align-items: center;
                 img{height: 60px;}
                 &_content{
                     //border: 2px solid red;
@@ -96,6 +98,23 @@
                     }
 
             }
+            &_info{
+                border: 2px solid gold;
+                border-radius: 5px;
+                padding: 10px;
+                display: grid;
+                row-gap: 20px;
+                .bid_history{
+                    display: flex;
+                    column-gap: 20px;
+                    #double{
+                        display: grid;
+                    }
+                    span{
+                        font-family: $oswald;
+                    }
+                }
+            }
         }
     }
 }
@@ -108,6 +127,7 @@
         padding: 30px;
         display: grid;
         &_profile-picture{
+            position: relative;
             display: flex;
             column-gap: 1%;
             justify-content: start;
@@ -144,6 +164,7 @@
         }
         &_details{
             width: 100%;
+            left: 0;
         }
     }
  }

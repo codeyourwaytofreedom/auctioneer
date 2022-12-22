@@ -381,7 +381,7 @@ html, body {
   display: grid;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
 }
 .user_profile_profile-picture img {
   width: 100%;
@@ -391,6 +391,10 @@ html, body {
   display: block;
   max-width: 900px;
   max-height: 600px;
+}
+.user_profile_profile-picture img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .user_profile_profile-picture #user {
   display: none;
@@ -445,10 +449,11 @@ html, body {
   display: grid;
   padding-top: 50px;
   justify-content: center;
+  position: relative;
+  left: 370px;
 }
 .user_profile_details_shell {
   position: relative;
-  border: 1px solid #E3856B;
   border-radius: 15px;
   width: 70%;
   min-width: 590px;
@@ -458,7 +463,6 @@ html, body {
 .user_profile_details_shell_history, .user_profile_details_shell_edit, .user_profile_details_shell_booked {
   display: flex;
   grid-auto-flow: column;
-  align-items: center;
 }
 .user_profile_details_shell_history img, .user_profile_details_shell_edit img, .user_profile_details_shell_booked img {
   height: 60px;
@@ -479,6 +483,24 @@ html, body {
 .user_profile_details_shell_history #right, .user_profile_details_shell_edit #right, .user_profile_details_shell_booked #right {
   justify-content: end;
 }
+.user_profile_details_shell_info {
+  border: 2px solid gold;
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  row-gap: 20px;
+}
+.user_profile_details_shell_info .bid_history {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.user_profile_details_shell_info .bid_history #double {
+  display: grid;
+}
+.user_profile_details_shell_info .bid_history span {
+  font-family: "Oswald", sans-serif;
+}
 
 @media (max-width: 991.98px) {
   .user_profile {
@@ -486,6 +508,7 @@ html, body {
     display: grid;
   }
   .user_profile_profile-picture {
+    position: relative;
     display: flex;
     -moz-column-gap: 1%;
          column-gap: 1%;
@@ -518,6 +541,7 @@ html, body {
   }
   .user_profile_details {
     width: 100%;
+    left: 0;
   }
 }
 @media (max-width: 767.98px) {
