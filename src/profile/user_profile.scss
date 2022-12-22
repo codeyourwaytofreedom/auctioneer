@@ -101,9 +101,10 @@
             &_info{
                 border: 2px solid gold;
                 border-radius: 5px;
-                padding: 10px;
+                padding: 20px;
                 display: grid;
                 row-gap: 20px;
+                background-color: rgb(242, 242, 242);
                 .bid_history{
                     display: flex;
                     column-gap: 20px;
@@ -112,6 +113,21 @@
                     }
                     span{
                         font-family: $oswald;
+                    }
+                }
+                .coupon{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    &_holder{
+                        width: 180px;
+                        aspect-ratio: 2/1;
+                        @include image-fit;
+                        position: relative;
+                        &_reservation{
+                            position: absolute;
+                            top: 20%; left:12%;
+                            div{color: white;}
+                        }
                     }
                 }
             }

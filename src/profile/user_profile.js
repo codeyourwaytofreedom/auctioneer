@@ -5,6 +5,7 @@ import history from "./history.png";
 import edit from "./edit.png";
 import booked from "./booked.png";
 import auction from "./auction.png";
+import coupon from "./coupon.png";
 
 const User_profile = () => {
     return ( 
@@ -97,15 +98,31 @@ const User_profile = () => {
                             <img src={booked} alt="booked" />
                         </div>
                         <div className="user_profile_details_shell_info">
-                            <div>
-                                Bidding history
+                            <div className="coupon">
+                                <div className="coupon_holder">
+                                    <img src={coupon} alt="" />
+                                    <div className="coupon_holder_reservation">
+                                        <div>
+                                            Reservation No
+                                        </div>
+                                        <div>
+                                            AU98367846
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="coupon_holder">
+                                    <img src={coupon} alt="" />
+                                    <div className="coupon_holder_reservation">
+                                        <div>
+                                            Reservation No
+                                        </div>
+                                        <div>
+                                            AU68976322
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                Bidding history
-                            </div>
-                            <div>
-                                Bidding history
-                            </div>
+
                         </div>
                         <div className="user_profile_details_shell_edit">
                             <img src={edit} alt="edit" />
