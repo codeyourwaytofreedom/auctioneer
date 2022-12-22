@@ -6,7 +6,7 @@ import { faPlusCircle, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
 
-const Navbar = () => {
+const Navbar = ({bg,auctioncolor}) => {
     const navigate = useNavigate();
 
     const handle_logout = () => {
@@ -18,11 +18,11 @@ const Navbar = () => {
                 navigate("/login")
     }
     return ( 
-        <div className="Navbar">
+        <div className="Navbar" style={{backgroundColor:bg}}>
             <div className="Navbar_icon">
                 <img src={auction} alt="auctions" />
             </div>
-            <div className="Navbar_motto" onClick={()=> navigate("/")}>
+            <div className="Navbar_motto" onClick={()=> navigate("/")} style={{color:auctioncolor}}>
                     auctioneer
             </div>
 

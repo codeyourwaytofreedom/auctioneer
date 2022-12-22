@@ -374,10 +374,8 @@ html, body {
   position: relative;
   top: 70px;
   display: flex;
-  border: 3px solid saddlebrown;
 }
 .user_profile_profile-picture {
-  border: 2px solid red;
   width: 20vw;
   width: 400px;
   display: grid;
@@ -398,7 +396,6 @@ html, body {
   display: none;
 }
 .user_profile_profile-picture_badge-details {
-  border: 1px solid orange;
   position: absolute;
   top: 45%;
   left: 16%;
@@ -410,10 +407,12 @@ html, body {
   display: grid;
   justify-content: center;
   align-items: center;
+  justify-content: start;
   height: 45px;
   font-family: "Annie Use Your Telescope";
   font-size: 21px;
   font-weight: bolder !important;
+  padding-top: 8px;
 }
 .user_profile_profile-picture_badge-details_username, .user_profile_profile-picture_badge-details_email, .user_profile_profile-picture_badge-details_active {
   display: grid;
@@ -443,17 +442,86 @@ html, body {
 }
 .user_profile_details {
   border: 3px solid blue;
+  width: calc(100vw - 400px);
+  display: grid;
+  padding-top: 50px;
+  justify-content: center;
+}
+.user_profile_details_shell {
+  position: relative;
+  border: 1px solid #E3856B;
+  border-radius: 15px;
+  width: 70%;
+  min-width: 590px;
 }
 
 @media (max-width: 991.98px) {
   .user_profile {
-    border: 4px solid blue;
+    padding: 30px;
+    display: grid;
+  }
+  .user_profile_profile-picture {
+    display: flex;
+    -moz-column-gap: 1%;
+         column-gap: 1%;
+    justify-content: start;
+    width: 100%;
+  }
+  .user_profile_profile-picture_badge-details {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    left: calc((100% - 600px) / 2);
+  }
+  .user_profile_profile-picture_badge-details_title {
+    font-size: 27px;
+    padding-bottom: 40px;
+  }
+  .user_profile_profile-picture_badge-details_email #one_email {
+    width: 37%;
+  }
+  .user_profile_profile-picture_badge-details span {
+    font-size: 27px !important;
   }
   .user_profile_profile-picture #badge {
     display: none;
   }
   .user_profile_profile-picture #user {
     display: block;
-    width: 20vw;
+    width: 250px;
+  }
+  .user_profile_details {
+    width: 50vw;
+  }
+}
+@media (max-width: 767.98px) {
+  .user_profile {
+    padding-right: 0;
+  }
+  .user_profile_profile-picture #user {
+    width: 200px;
+  }
+  .user_profile_profile-picture_badge-details {
+    width: 330px;
+    left: calc((100% - 500px) / 2);
+  }
+  .user_profile_profile-picture_badge-details span {
+    font-size: 24px !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .user_profile {
+    padding: 0;
+  }
+  .user_profile_profile-picture {
+    display: grid;
+    justify-content: center;
+  }
+  .user_profile_profile-picture_badge-details {
+    left: 0;
+  }
+  .user_profile_profile-picture #user {
+    display: grid;
   }
 }/*# sourceMappingURL=user_profile.css.map */

@@ -24,7 +24,9 @@ const User_profile = () => {
                 </div>
         </div>
         <div className="user_profile_details">
-                Profile details             
+                <div className="user_profile_details_shell">
+                        Details shell
+                </div>            
         </div>
 
     </div> )

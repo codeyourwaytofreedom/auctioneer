@@ -84,7 +84,7 @@ function App() {
           <Route element={<Check_login/>}>
             <Route path="/userprofile/:userid" element={
                 <>
-                  <Navbar/>
+                  <Navbar bg={"gold"}/>
                   <User_profile/>
                 </>      
             }/>
