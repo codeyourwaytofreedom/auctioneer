@@ -53,9 +53,23 @@ app.get('/express_backend', (req, res) => { //Line 9
 });
 
 // create a POST route 
-app.post("/edituser",jsonParser, (req, res) => {
-  console.log(req.body)
-  res.send("new response")
+app.patch("/edituser",jsonParser, (req, res) => {
+  console.log(req.body.user_to_be_edited)
+  console.log(req.body.user_email)
+  db.collection("auctioneer").updateOne({email:req.body.user_email}, {$set: {username:req.body.user_to_be_edited}})
+      .then(
+    auc => 
+      {
+        if(auc.modifiedCount ===1)
+        {
+          res.send(true)
+        }
+        else{
+          res.send(false)
+        }
+        
+      }
+  ).catch(err=> {res.send(err)})
 })
 
 

@@ -6,23 +6,33 @@ import edit from "./edit.png";
 import booked from "./booked.png";
 import auction from "./auction.png";
 import coupon from "./coupon.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-import e from "cors";
 import axios from "axios";
+import {note_user} from "../redux/userSlice";
 
 
 const User_profile = () => {
     const user_in = useSelector((state) => state.userSlice.email)
     const username = useRef();
+    const dispatch = useDispatch();
 
     const handle_edit = (e) => {
-        axios.post("http://localhost:9000/edituser",
-        {user_to_be_edited: username.current.value}
-        ).then ( response =>
-            console.log(response.data)
-        ).catch(err => console.log(err))
+        if(/^[A-Za-z0-9]*$/.test(username.current.value) && username.current.value.length===8)
+        {
+            axios.patch("http://localhost:9000/edituser",
+            {user_to_be_edited: username.current.value, user_email: user_in.email}
+            ).then ( response =>
+                {
+                    console.log(response.data);
+                    if(response.data){
+                        dispatch(note_user({username:username.current.value, email:user_in.email}))
+                    }
+                }
+                
+            ).catch(err => console.log(err))
+        }
         e.preventDefault()
     }
 
