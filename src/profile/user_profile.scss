@@ -72,10 +72,10 @@
             position: relative;
             //border: 1px solid $main_orange;
             border-radius: 15px;
-            width: 70%;
             min-width: 590px;
             display: grid;
-            row-gap: 20px;padding-bottom: 50px;
+            row-gap: 10px;
+            padding-bottom: 50px;
             &_history, &_edit, &_booked {
                 display: flex;
                 grid-auto-flow: column;
@@ -88,7 +88,7 @@
                     font-family: $annie;
                     font-size: 27px;
                     font-weight: bolder;
-                    color: navy;
+                    //color: navy;
                     padding: 0 20px;
                     text-decoration: underline;
                     
@@ -99,20 +99,19 @@
 
             }
             &_info{
-                border: 1px solid black;
-                border-radius: 5px;
+/*                 border: 1px solid black;
+                border-radius: 5px; */
                 padding: 20px;
                 display: grid;
                 row-gap: 20px;
                 background-color: rgb(242, 242, 242);
+                background-image: linear-gradient(to left, rgb(242, 242, 242), rgb(232, 232, 201));
+                margin-bottom: 30px;
                 .bid_history{
                     display: flex;
                     column-gap: 20px;
                     #double{
                         display: grid;
-                    }
-                    span{
-                        font-family: $oswald;
                     }
                 }
                 .coupon{
@@ -125,9 +124,38 @@
                         position: relative;
                         &_reservation{
                             position: absolute;
-                            top: 20%; left:12%;
-                            div{color: white;}
+                            top: 20%; left:37%;
                         }
+                    }
+                }
+                #edit_form{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    .double{
+                        display: grid;
+                        justify-content: center;
+                        row-gap: 10px;
+                        input{
+                            border: none;
+                            width: 100%;
+                            font-size: 16px;
+                            padding: 5px;
+                            border-radius: 5px;
+                            border: 1px solid silver;
+                            &:focus{
+                                outline: none;
+                            }
+                        }
+                        button{
+                            background: transparent;
+                            padding: 5px;
+                            border-radius: 5px;
+                            background-image: radial-gradient(circle at center center, rgb(243, 229, 148) 0%, rgb(246, 224, 99)  27.5%, rgb(249, 222, 72)   40%, rgb(246, 217, 50)  57.5%, rgb(248, 215, 28) 75%, gold 100%) !important;
+
+                        }
+                    }
+                    #left{
+                        height: fit-content;
                     }
                 }
             }

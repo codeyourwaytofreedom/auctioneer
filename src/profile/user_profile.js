@@ -16,6 +16,9 @@ import {note_user} from "../redux/userSlice";
 const User_profile = () => {
     const user_in = useSelector((state) => state.userSlice.email)
     const username = useRef();
+    const password = useRef();
+    const new_password = useRef();
+
     const dispatch = useDispatch();
 
     const handle_edit = (e) => {
@@ -36,9 +39,25 @@ const User_profile = () => {
         e.preventDefault()
     }
 
-    useEffect(() => {
-        
-    }, []);
+    const handle_edit_password = (e) => {
+        if(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password.current.value)
+            && /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(new_password.current.value)
+        )
+        {
+            axios.patch("http://localhost:9000/edituser",
+            {old_password: password.current.value, new_password: new_password.current.value, user_email: user_in.email}
+            ).then ( response =>
+                {
+                    console.log(response.data);
+                    if(response.data){
+                       console.log(response.data)
+                    }
+                }
+                
+            ).catch(err => console.log(err))
+        }
+        e.preventDefault()
+    }
 
 
     return ( 
@@ -164,20 +183,26 @@ const User_profile = () => {
                             </div>
                         </div>
                         <div className="user_profile_details_shell_info">
+                           <form action=""> 
                             <div id="edit_form">
-                                <form action="">
-                                    <div>
-                                        <input type="text" placeholder={user_in ? user_in.username : "....." }
-                                        ref={username}/>
-                                    </div>          
-                                    <div>
-                                        <button onClick={(e)=>handle_edit(e)}>
-                                            Change Username
-                                        </button>
-                                    </div>                          
-                                </form>
-
-                            </div>
+                                        <div className="double" id="left">
+                                            <input type="text" placeholder={user_in ? user_in.username : "....." }
+                                            ref={username}/>
+                                            <button onClick={(e)=>handle_edit(e)}>
+                                                    Change Username
+                                            </button>
+                                        </div>      
+                                        <div className="double">
+                                            <input type="password" placeholder="current password"
+                                            ref={password}/>
+                                            <input type="password" placeholder="new password"
+                                            ref={new_password}/>
+                                            <button onClick={(e)=>handle_edit_password(e)}>
+                                                    Change Password
+                                            </button>
+                                        </div>                             
+                                </div>
+                            </form>
                         </div>
                 </div>            
         </div>

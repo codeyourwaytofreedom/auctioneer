@@ -455,10 +455,9 @@ html, body {
 .user_profile_details_shell {
   position: relative;
   border-radius: 15px;
-  width: 70%;
   min-width: 590px;
   display: grid;
-  row-gap: 20px;
+  row-gap: 10px;
   padding-bottom: 50px;
 }
 .user_profile_details_shell_history, .user_profile_details_shell_edit, .user_profile_details_shell_booked {
@@ -477,7 +476,6 @@ html, body {
   font-family: "Annie Use Your Telescope";
   font-size: 27px;
   font-weight: bolder;
-  color: navy;
   padding: 0 20px;
   text-decoration: underline;
 }
@@ -485,12 +483,14 @@ html, body {
   justify-content: end;
 }
 .user_profile_details_shell_info {
-  border: 1px solid black;
-  border-radius: 5px;
+  /*                 border: 1px solid black;
+                  border-radius: 5px; */
   padding: 20px;
   display: grid;
   row-gap: 20px;
   background-color: rgb(242, 242, 242);
+  background-image: linear-gradient(to left, rgb(242, 242, 242), rgb(232, 232, 201));
+  margin-bottom: 30px;
 }
 .user_profile_details_shell_info .bid_history {
   display: flex;
@@ -499,9 +499,6 @@ html, body {
 }
 .user_profile_details_shell_info .bid_history #double {
   display: grid;
-}
-.user_profile_details_shell_info .bid_history span {
-  font-family: "Oswald", sans-serif;
 }
 .user_profile_details_shell_info .coupon {
   display: grid;
@@ -524,10 +521,38 @@ html, body {
 .user_profile_details_shell_info .coupon_holder_reservation {
   position: absolute;
   top: 20%;
-  left: 12%;
+  left: 37%;
 }
-.user_profile_details_shell_info .coupon_holder_reservation div {
-  color: white;
+.user_profile_details_shell_info #edit_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.user_profile_details_shell_info #edit_form .double {
+  display: grid;
+  justify-content: center;
+  row-gap: 10px;
+}
+.user_profile_details_shell_info #edit_form .double input {
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+.user_profile_details_shell_info #edit_form .double input:focus {
+  outline: none;
+}
+.user_profile_details_shell_info #edit_form .double button {
+  background: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  background-image: radial-gradient(circle at center center, rgb(243, 229, 148) 0%, rgb(246, 224, 99) 27.5%, rgb(249, 222, 72) 40%, rgb(246, 217, 50) 57.5%, rgb(248, 215, 28) 75%, gold 100%) !important;
+}
+.user_profile_details_shell_info #edit_form #left {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media (max-width: 991.98px) {
