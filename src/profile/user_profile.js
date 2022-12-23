@@ -6,8 +6,18 @@ import edit from "./edit.png";
 import booked from "./booked.png";
 import auction from "./auction.png";
 import coupon from "./coupon.png";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
 
 const User_profile = () => {
+    const user_in = useSelector((state) => state.userSlice.email)
+
+    useEffect(() => {
+        console.log(user_in)
+    }, [user_in]);
+    console.log("Successfully received",user_in)
+
     return ( 
     <div className="user_profile">
         <div className="user_profile_profile-picture">

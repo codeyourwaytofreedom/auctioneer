@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faWarning } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { note_user } from "../redux/userSlice";
 
 
 const Login = () => {
@@ -17,6 +19,7 @@ const Login = () => {
 
     const [login_response, setResponse] = useState(false);
     const [final_animation, setFinal] = useState(false);
+    const dispatch = useDispatch()
 
     const handle_login = (e) => {
         e.preventDefault();
@@ -33,7 +36,7 @@ const Login = () => {
                 {user_loggingin: user},{withCredentials: true}
                 
                 ).then(function (response) {
-                    console.log(response.data)
+                    //console.log(response.data)
                     if(response.data === "notin")
                     {
                         setResponse(true)
@@ -43,6 +46,8 @@ const Login = () => {
                         }, 3000);
                     }
                     else{
+                        //console.log(response.data.email)
+                        dispatch(note_user(response.data.email))
                         setResponse(false)
                         setFinal(true)
                         localStorage.setItem("auctioneer_active", true);
