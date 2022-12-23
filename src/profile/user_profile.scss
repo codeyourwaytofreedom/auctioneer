@@ -75,7 +75,7 @@
             width: 70%;
             min-width: 590px;
             display: grid;
-            row-gap: 20px;
+            row-gap: 20px;padding-bottom: 50px;
             &_history, &_edit, &_booked {
                 display: flex;
                 grid-auto-flow: column;

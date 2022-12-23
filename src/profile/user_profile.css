@@ -459,6 +459,7 @@ html, body {
   min-width: 590px;
   display: grid;
   row-gap: 20px;
+  padding-bottom: 50px;
 }
 .user_profile_details_shell_history, .user_profile_details_shell_edit, .user_profile_details_shell_booked {
   display: flex;

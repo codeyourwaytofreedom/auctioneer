@@ -96,7 +96,7 @@ app.post('/login',jsonParser, (req, res) => {
                 sameSite: "None",
                 maxAge: 10000 * 60 * 60 * 24
               })
-              res.send({token: access_token})
+              res.send({email: doc.email})
             }
           })   
   })
