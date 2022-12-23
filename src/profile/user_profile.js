@@ -7,16 +7,29 @@ import booked from "./booked.png";
 import auction from "./auction.png";
 import coupon from "./coupon.png";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useState } from "react";
+import e from "cors";
+import axios from "axios";
 
 
 const User_profile = () => {
     const user_in = useSelector((state) => state.userSlice.email)
+    const username = useRef();
+
+    const handle_edit = (e) => {
+        axios.post("http://localhost:9000/edituser",
+        {user_to_be_edited: username.current.value}
+        ).then ( response =>
+            console.log(response.data)
+        ).catch(err => console.log(err))
+        e.preventDefault()
+    }
 
     useEffect(() => {
-        console.log(user_in)
-    }, [user_in]);
-    console.log("Successfully received",user_in)
+        
+    }, []);
+
 
     return ( 
     <div className="user_profile">
@@ -28,13 +41,13 @@ const User_profile = () => {
                         Profile Details
                     </div>
                     <div className="user_profile_profile-picture_badge-details_username">
-                         <span id="one">User Name</span><span id="two">:</span><span id="three">mrmoody7</span>
+                         <span id="one">User Name</span><span id="two">:</span><span id="three">{user_in ? user_in.username : "....."}</span>
                     </div>
                     <div className="user_profile_profile-picture_badge-details_active">
                         <span id="one">Member since</span><span id="two">:</span><span id="three">22.12.2022</span>
                     </div>
                     <div className="user_profile_profile-picture_badge-details_email">
-                        <span id="one_email">Email</span><span id="two">:</span><span id="three">can6@gmail.com</span>
+                        <span id="one_email">Email</span><span id="two">:</span><span id="three">{user_in ? user_in.email : "....."}</span>
                     </div>
                 </div>
         </div>
@@ -141,14 +154,19 @@ const User_profile = () => {
                             </div>
                         </div>
                         <div className="user_profile_details_shell_info">
-                            <div>
-                                Bidding history
-                            </div>
-                            <div>
-                                Bidding history
-                            </div>
-                            <div>
-                                Bidding history
+                            <div id="edit_form">
+                                <form action="">
+                                    <div>
+                                        <input type="text" placeholder={user_in ? user_in.username : "....." }
+                                        ref={username}/>
+                                    </div>          
+                                    <div>
+                                        <button onClick={(e)=>handle_edit(e)}>
+                                            Change Username
+                                        </button>
+                                    </div>                          
+                                </form>
+
                             </div>
                         </div>
                 </div>            

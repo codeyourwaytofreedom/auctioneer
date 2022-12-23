@@ -52,6 +52,13 @@ app.get('/express_backend', (req, res) => { //Line 9
           })
 });
 
+// create a POST route 
+app.post("/edituser",jsonParser, (req, res) => {
+  console.log(req.body)
+  res.send("new response")
+})
+
+
 
 //Post route to receive form data for resgistering new acutioneer
 app.post('/express_backend', jsonParser, (req, res) => {
@@ -96,7 +103,7 @@ app.post('/login',jsonParser, (req, res) => {
                 sameSite: "None",
                 maxAge: 10000 * 60 * 60 * 24
               })
-              res.send({email: doc.email})
+              res.send({email: doc.email, username: doc.username})
             }
           })   
   })

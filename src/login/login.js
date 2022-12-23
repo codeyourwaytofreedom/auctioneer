@@ -47,7 +47,7 @@ const Login = () => {
                     }
                     else{
                         //console.log(response.data.email)
-                        dispatch(note_user(response.data.email))
+                        dispatch(note_user(response.data))
                         setResponse(false)
                         setFinal(true)
                         localStorage.setItem("auctioneer_active", true);

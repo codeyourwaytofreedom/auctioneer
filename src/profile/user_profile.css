@@ -485,7 +485,7 @@ html, body {
   justify-content: end;
 }
 .user_profile_details_shell_info {
-  border: 2px solid gold;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
   display: grid;
