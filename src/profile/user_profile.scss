@@ -113,6 +113,14 @@
                     #double{
                         display: grid;
                     }
+                    span{
+                        font-family: $annie;
+                        font-size: 21px;
+                        .up{
+                            font-weight: bolder;
+                            text-decoration: underline;
+                        }
+                    }
                 }
                 .coupon{
                     display: grid;
@@ -245,6 +253,13 @@
             &_shell{
                 min-width: unset;
                 width: 500px;
+                &_info{
+                    .bid_history{
+                        span{
+                            font-size: 19px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -259,11 +274,13 @@
             display: grid;
             justify-content: center;
             #user{
-
+                width: 130px;
+                justify-self: end;
             }
             &_badge-details{
                 //border: 2px solid red;
                 left: 0;
+                top:-60px;
             }
             #badge{
             }
@@ -274,8 +291,32 @@
         &_details{
             width: 100vw;
             padding: 0;
+            top:-60px;
             &_shell{
                 width: 90vw;
+                &_info{
+                    .coupon{
+                        column-gap: 10px;
+                        &_holder{
+                            width: 100%;
+                            div{
+                                font-size: 14px;
+                                left: 35%;
+                            }
+                        }
+                    }
+                    .bid_history{
+                        //border: 2px solid red;
+                        column-gap: 5px;
+                        display: grid;
+                        #double{
+                            grid-auto-flow: column;
+                        }
+                    }
+                    #edit_form{
+                        column-gap: 10px;
+                    }
+                }
             }
         }
     }

@@ -500,6 +500,14 @@ html, body {
 .user_profile_details_shell_info .bid_history #double {
   display: grid;
 }
+.user_profile_details_shell_info .bid_history span {
+  font-family: "Annie Use Your Telescope";
+  font-size: 21px;
+}
+.user_profile_details_shell_info .bid_history span .up {
+  font-weight: bolder;
+  text-decoration: underline;
+}
 .user_profile_details_shell_info .coupon {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -623,6 +631,9 @@ html, body {
     min-width: unset;
     width: 500px;
   }
+  .user_profile_details_shell_info .bid_history span {
+    font-size: 19px;
+  }
 }
 @media (max-width: 575.98px) {
   .user_profile {
@@ -632,8 +643,13 @@ html, body {
     display: grid;
     justify-content: center;
   }
+  .user_profile_profile-picture #user {
+    width: 130px;
+    justify-self: end;
+  }
   .user_profile_profile-picture_badge-details {
     left: 0;
+    top: -60px;
   }
   .user_profile_profile-picture #user {
     display: grid;
@@ -641,8 +657,32 @@ html, body {
   .user_profile_details {
     width: 100vw;
     padding: 0;
+    top: -60px;
   }
   .user_profile_details_shell {
     width: 90vw;
+  }
+  .user_profile_details_shell_info .coupon {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .user_profile_details_shell_info .coupon_holder {
+    width: 100%;
+  }
+  .user_profile_details_shell_info .coupon_holder div {
+    font-size: 14px;
+    left: 35%;
+  }
+  .user_profile_details_shell_info .bid_history {
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    display: grid;
+  }
+  .user_profile_details_shell_info .bid_history #double {
+    grid-auto-flow: column;
+  }
+  .user_profile_details_shell_info #edit_form {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
 }/*# sourceMappingURL=user_profile.css.map */

@@ -139,15 +139,15 @@ const User_profile = () => {
                                     <img src={auction} alt="" />
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended for </span>
+                                    <span className="up">Auction attended for </span>
                                     <span>Item Code here</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended on </span>
+                                    <span className="up">Auction attended on </span>
                                     <span>12th Dec. 2022</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction result </span>
+                                    <span className="up">Auction result </span>
                                     <span>Negative</span>
                                 </span>
                             </div>
@@ -156,15 +156,15 @@ const User_profile = () => {
                                     <img src={auction} alt="" />
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended for </span>
+                                    <span className="up">Auction attended for </span>
                                     <span>Item Code here</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended on </span>
+                                    <span className="up">Auction attended on </span>
                                     <span>12th Dec. 2022</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction result </span>
+                                    <span className="up">Auction result </span>
                                     <span>Negative</span>
                                 </span>
                             </div>
@@ -173,15 +173,15 @@ const User_profile = () => {
                                     <img src={auction} alt="" />
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended for </span>
+                                    <span className="up">Auction attended for </span>
                                     <span>Item Code here</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction attended on </span>
+                                    <span className="up">Auction attended on </span>
                                     <span>12th Dec. 2022</span>
                                 </span>
                                 <span id="double">
-                                    <span>Auction result </span>
+                                    <span className="up">Auction result </span>
                                     <span>Negative</span>
                                 </span>
                             </div>
@@ -221,6 +221,8 @@ const User_profile = () => {
                             </div>
 
                         </div>
+
+
                         <div className="user_profile_details_shell_edit">
                             <img src={edit} alt="edit" />
                             <div className="user_profile_details_shell_history_content">
@@ -252,6 +254,8 @@ const User_profile = () => {
                                 </div>
                             </form>
                         </div>
+
+
                 </div>            
         </div>
 
