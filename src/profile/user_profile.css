@@ -538,16 +538,17 @@ html, body {
 }
 .user_profile_details_shell_info #edit_form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 }
 .user_profile_details_shell_info #edit_form .double {
   display: grid;
   justify-content: center;
   row-gap: 10px;
+  width: 100%;
 }
 .user_profile_details_shell_info #edit_form .double input {
   border: none;
-  width: 100%;
+  width: 250px;
   font-size: 16px;
   padding: 5px;
   border-radius: 5px;
@@ -634,6 +635,9 @@ html, body {
   .user_profile_details_shell_info .bid_history span {
     font-size: 19px;
   }
+  .user_profile_details_shell #edit_form .double input {
+    width: 200px;
+  }
 }
 @media (max-width: 575.98px) {
   .user_profile {
@@ -674,8 +678,6 @@ html, body {
     left: 35%;
   }
   .user_profile_details_shell_info .bid_history {
-    -moz-column-gap: 5px;
-         column-gap: 5px;
     display: grid;
   }
   .user_profile_details_shell_info .bid_history #double {
@@ -684,5 +686,8 @@ html, body {
   .user_profile_details_shell_info #edit_form {
     -moz-column-gap: 10px;
          column-gap: 10px;
+  }
+  .user_profile_details_shell_info #edit_form .double input {
+    width: 100%;
   }
 }/*# sourceMappingURL=user_profile.css.map */

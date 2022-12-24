@@ -26,7 +26,7 @@ function App() {
           <Route element={<Check_login/>}>
             <Route path="/bidding" 
               element={<>
-                  <Navbar/>
+                  <Navbar  bg={"#80C4B7"}/>
                   <Header/>
                   {/* <Products/> */}
               </>}

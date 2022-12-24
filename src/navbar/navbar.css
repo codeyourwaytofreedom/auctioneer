@@ -393,10 +393,21 @@ html, body {
      object-fit: contain;
 }
 .Navbar_motto {
-  padding: 0 20px;
+  padding: 0 10px;
   color: black;
   text-shadow: 1px 1px #80C4B7;
   font-size: 27px;
+  cursor: pointer;
+}
+.Navbar_bid_page {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.Navbar_bid_page span {
+  text-shadow: 1px 1px #80C4B7;
+  font-size: 25px;
   cursor: pointer;
 }
 .Navbar_bids {
@@ -458,6 +469,9 @@ html, body {
     border: none;
   }
   .Navbar_member_login button span, .Navbar_member_logout button span, .Navbar_member_signup button span {
+    display: none;
+  }
+  .Navbar_bid_page #bid_now {
     display: none;
   }
 }/*# sourceMappingURL=navbar.css.map */

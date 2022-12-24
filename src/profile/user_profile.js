@@ -34,6 +34,9 @@ const User_profile = () => {
                     if(response.data == true){
                         dispatch(note_user({username:username.current.value, email:user_in.email}))
                         setErrormessage(<span style={{color:"green", textDecoration: "underline"}}>Username updated...</span>)
+                        setTimeout(() => {
+                            setErrormessage(null)
+                        }, 2000);
                     }
                     if(response.data === false)
                     {
@@ -45,12 +48,6 @@ const User_profile = () => {
                 }
                 
             ).catch(err => console.log(err))
-        }
-        if(username.current.value === user_in.username)
-        {
-            setErrormessage(<span style={{color:"crimson"}}> <span style={{color:"crimson",textDecoration: "underline"}}>Could not update the username </span> 
-                                <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* can't change it to the same user name! </span>
-                                </span>)
         }
         else{
             setErrormessage(<span style={{color:"crimson"}}> <span style={{color:"crimson",textDecoration: "underline"}}>Could not update the username </span> 

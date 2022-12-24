@@ -144,14 +144,16 @@
                 }
                 #edit_form{
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
+                    display: flex;
+                    //grid-template-columns: 1fr 1fr;
                     .double{
                         display: grid;
                         justify-content: center;
                         row-gap: 10px;
+                        width: 100%;
                         input{
                             border: none;
-                            width: 100%;
+                            width: 250px;
                             font-size: 16px;
                             padding: 5px;
                             border-radius: 5px;
@@ -260,6 +262,13 @@
                         }
                     }
                 }
+                #edit_form{
+                    .double{
+                        input{
+                            width: 200px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -306,8 +315,6 @@
                         }
                     }
                     .bid_history{
-                        //border: 2px solid red;
-                        column-gap: 5px;
                         display: grid;
                         #double{
                             grid-auto-flow: column;
@@ -315,6 +322,11 @@
                     }
                     #edit_form{
                         column-gap: 10px;
+                        .double{
+                            input{
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }

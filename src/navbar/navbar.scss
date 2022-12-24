@@ -24,11 +24,21 @@
     }
     &_motto{
         //border: 2px solid red;
-        padding: 0 20px;
+        padding: 0 10px;
         color: black;
         text-shadow: 1px 1px $main_turq;
         font-size: 27px;
         cursor: pointer;
+    }
+    &_bid_page{
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        span{
+            text-shadow: 1px 1px $main_turq;
+            font-size: 25px;
+            cursor: pointer;
+        }
     }
     &_bids{
         border: 2px solid black;
@@ -101,6 +111,11 @@
                     }
                 }
     
+            }
+        }
+        &_bid_page{
+            #bid_now{
+                display: none;
             }
         }
     }
