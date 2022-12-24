@@ -56,6 +56,18 @@ app.get('/express_backend', (req, res) => { //Line 9
 app.patch("/edituser",jsonParser, (req, res) => {
   if(req.body.old_password)
   {
+    db.collection("auctioneer").updateOne({email:req.body.user_email, password:req.body.old_password }, {$set: {password: req.body.new_password}}).then(
+      auc =>{ 
+              console.log(auc)
+              if(auc.modifiedCount ===1)
+                {
+                  res.send(true)
+                }
+                else{
+                  res.send(false)
+                }
+            }
+    )
     console.log("Request received for password update")
   }
   if(req.body.user_to_be_edited)

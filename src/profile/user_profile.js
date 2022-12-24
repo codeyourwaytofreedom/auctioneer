@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { useState } from "react";
 import axios from "axios";
 import {note_user} from "../redux/userSlice";
+import { useNavigate } from "react-router-dom";
 
 
 const User_profile = () => {
@@ -18,23 +19,43 @@ const User_profile = () => {
     const username = useRef();
     const password = useRef();
     const new_password = useRef();
+    const [error_message, setErrormessage] = useState(null);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handle_edit = (e) => {
-        if(/^[A-Za-z0-9]*$/.test(username.current.value) && username.current.value.length===8)
+        if(/^[A-Za-z0-9]*$/.test(username.current.value) && username.current.value.length===8 && username.current.value !== user_in.username)
         {
             axios.patch("http://localhost:9000/edituser",
             {user_to_be_edited: username.current.value, user_email: user_in.email}
             ).then ( response =>
                 {
-                    console.log(response.data);
-                    if(response.data){
+                    if(response.data == true){
                         dispatch(note_user({username:username.current.value, email:user_in.email}))
+                        setErrormessage(<span style={{color:"green", textDecoration: "underline"}}>Username updated...</span>)
+                    }
+                    if(response.data === false)
+                    {
+                        console.log(response.data)
+                        setErrormessage(<span style={{color:"crimson"}}> <span style={{color:"crimson",textDecoration: "underline"}}>Could not update the username </span> 
+                                <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* Username must be 8 characters-long and must include only letters and numbers!" </span>
+                                </span>)
                     }
                 }
                 
             ).catch(err => console.log(err))
+        }
+        if(username.current.value === user_in.username)
+        {
+            setErrormessage(<span style={{color:"crimson"}}> <span style={{color:"crimson",textDecoration: "underline"}}>Could not update the username </span> 
+                                <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* can't change it to the same user name! </span>
+                                </span>)
+        }
+        else{
+            setErrormessage(<span style={{color:"crimson"}}> <span style={{color:"crimson",textDecoration: "underline"}}>Could not update the username </span> 
+                                <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* Username must be 8 characters-long and must include only letters and numbers!" </span>
+                                </span>)
         }
         e.preventDefault()
     }
@@ -48,13 +69,37 @@ const User_profile = () => {
             {old_password: password.current.value, new_password: new_password.current.value, user_email: user_in.email}
             ).then ( response =>
                 {
-                    console.log(response.data);
-                    if(response.data){
-                       console.log(response.data)
+                    if(response.data === false){
+                       setErrormessage(<span style={{color:"crimson", textDecoration: "underline"}}>Could not update the password 
+                                                                            <br /> * Please make sure that current password is correct!
+                                                                            <br /> * Password must be 8 characters long minimum and must include at least one letter and one number!" 
+                                                                            <br /> * Can't change it to the same password!
+                                                                            </span>
+                                                                             )
+                    }
+                    if(response.data === true)
+                    {
+                        setErrormessage(<span style={{color:"green", textDecoration: "underline"}}>Password update successful..</span>)
+                        
+                        setTimeout(() => {
+                            axios.get("http://localhost:9000/logout",{withCredentials: true}
+                            ).then(function (response) {
+                                console.log(response);
+                            }).catch((error) => console.log(error))
+                            localStorage.removeItem("auctioneer_active");
+                            navigate("/login")
+                        }, 2000);
                     }
                 }
                 
             ).catch(err => console.log(err))
+        }
+        else{
+            setErrormessage(<span style={{color:"crimson", textDecoration: "underline"}}>Could not update the password 
+                                                                            <br /> * Please make sure that current password is correct!
+                                                                            <br /> * Password must be 8 characters long minimum and must include at least one letter and one number!" 
+                                                                            </span>
+                                                                             )
         }
         e.preventDefault()
     }
@@ -184,6 +229,9 @@ const User_profile = () => {
                         </div>
                         <div className="user_profile_details_shell_info">
                            <form action=""> 
+                           <div id="error" style={{display: error_message ? "grid" : "none"}}>
+                                {error_message}
+                           </div>
                             <div id="edit_form">
                                         <div className="double" id="left">
                                             <input type="text" placeholder={user_in ? user_in.username : "....." }

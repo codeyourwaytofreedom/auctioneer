@@ -523,6 +523,11 @@ html, body {
   top: 20%;
   left: 37%;
 }
+.user_profile_details_shell_info #error {
+  display: grid;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 .user_profile_details_shell_info #edit_form {
   display: grid;
   grid-template-columns: 1fr 1fr;
