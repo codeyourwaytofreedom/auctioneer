@@ -2,7 +2,7 @@ import "./navbar.css";
 import auction from "./auction.png";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle, faSignIn, faUser, faGavel } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faSignIn, faUser, faGavel, faWifi } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
 
@@ -36,6 +36,14 @@ const Navbar = ({bg,auctioncolor}) => {
                             <FontAwesomeIcon icon={faSignIn} size={"2x"}/>
                         </div>
                         <span>Log out</span>
+                    </button>
+                </div>
+                <div className="Navbar_member_login" onClick={()=> navigate("/liveroom")}  style={{display: localStorage.getItem("auctioneer_active") ? "flex" : "none"}}>
+                    <button>
+                        <div className="Navbar_member_login_icon">
+                            <FontAwesomeIcon icon={faWifi} size={"2x"}/>
+                        </div>
+                        <span>Live</span>
                     </button>
                 </div>
                 <div className="Navbar_member_login" onClick={()=> navigate("/userprofile/xxxx")}  style={{display: localStorage.getItem("auctioneer_active") ? "flex" : "none"}}>

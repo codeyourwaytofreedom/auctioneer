@@ -67,10 +67,10 @@ const User_profile = () => {
             ).then ( response =>
                 {
                     if(response.data === false){
-                       setErrormessage(<span style={{color:"crimson", textDecoration: "underline"}}>Could not update the password 
-                                                                            <br /> * Please make sure that current password is correct!
-                                                                            <br /> * Password must be 8 characters long minimum and must include at least one letter and one number!" 
-                                                                            <br /> * Can't change it to the same password!
+                       setErrormessage(<span> <span style={{color:"crimson", textDecoration: "underline"}}>Could not update the password </span> 
+                                                                            <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>Please make sure that current password is correct!</span>* 
+                                                                            <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* Password must be 8 characters long minimum and must include at least one letter and one number!" </span>
+                                                                            <br /> <span  style={{color:"crimson",textDecoration: "none !important"}}>* Can't change it to the same password!</span>
                                                                             </span>
                                                                              )
                     }

@@ -9,6 +9,7 @@ import Home from "./home/home";
 import Auction from "./auction/auction";
 import Payment from "./payment/payment";
 import User_profile from "./profile/user_profile";
+import Live from "./live/live";
 
 
 function App() {
@@ -50,6 +51,15 @@ function App() {
                     </div>
                   </>}
           />
+          <Route element={<Check_login/>}>
+              <Route path="/liveroom" 
+                      element={<>
+                          <Navbar bg={"crimson"}/>
+                          <Live/>
+                      </>}
+              />
+          </Route>
+
           <Route path="/register" 
                 element={<>
                   <div className="page_register">
