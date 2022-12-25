@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { useState } from "react";
 import screen from "./screen.png";
 import product from "./product.jpg";
+import product1 from "./product1.jpg";
+import product2 from "./product2.jpg";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -47,12 +49,12 @@ const Live = () => {
         }
         
     }
-    const [test_array, setTestarray] = useState(["one", "two", "three", "four", "five", "six"])
+    const [test_array, setTestarray] = useState([product, product1, product2, product, product1, product2])
     const [cover, setCover] = useState(1)
     const [pos, setPos] = useState("relative")
     const [l, setL] = useState(0)
 
-    useEffect(() => {
+/*     useEffect(() => {
         setPos("absolute");
         setL(-550)
         setTimeout(() => {
@@ -63,23 +65,23 @@ const Live = () => {
             setPos("relative")
             setL(0)
         }, 3000);
-    });
+    }); */
 
     return ( 
         <div className="live">
             <div className="live_images">
                 {
                     test_array.map((element, index)=>
-                    <div className="live_images_image" style={{backgroundColor: index%2 ? "red" : index%3 ? "yellow" : "green",
-                    opacity: index === 0 ? cover : "1", position: index === 0 ? pos : "relative", left: index === 0 ? l : "0"
+                    <div className="live_images_image" style={{opacity: index === 0 ? cover : "1", 
+                            position: index === 0 ? pos : "relative", left: index === 0 ? l : "0"
                     
                      }}>
-                            {element}
+                            <img src={element} alt="xxx" />
+
                     </div>
                     )
                 }
             </div>
-            <button onClick={left_click}>Left</button>
         </div> 
     );
 }

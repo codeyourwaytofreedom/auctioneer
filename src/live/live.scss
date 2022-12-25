@@ -3,19 +3,69 @@
 .live{
     position: relative;
     top:70px;
+    border-bottom: 4px solid salmon;
+    padding-bottom: 50px;
     &_images{
         display: grid;
         grid-auto-flow: column;
         overflow: hidden;
-        padding: 30px;
-        column-gap: 30px;
         position: relative;
+        padding-top: 20px;
         &_image{
             border: 3px solid black;
             @include grid-center;
             width: 25vw;
-            aspect-ratio: 5/3;
-            background-color: yellow;
+            //aspect-ratio: 5/3;
+            padding: 5px;
+            @include image-fit;
         }
     }
 }
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+    .live{
+        border-bottom: 4px solid blue;
+        &_images{
+            &_image{
+                width: 33.33vw;
+            }
+        }
+    }
+    
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    .live{
+        border-bottom: 4px solid red;
+        &_images{
+            &_image{
+                width: 50vw;
+            }
+        }
+    }
+    
+ }
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .live{
+        top:50px;
+        border-bottom: 4px solid green;
+        &_images{
+            padding-top: 0;
+            &_image{
+                width: 100vw;
+                padding: 5vw;
+            }
+        }
+    }
+    
+ }
+
+
+
