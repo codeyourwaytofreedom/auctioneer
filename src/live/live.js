@@ -47,43 +47,41 @@ const Live = () => {
         }
         
     }
+    const [test_array, setTestarray] = useState(["one", "two", "three", "four", "five", "six"])
+    const [cover, setCover] = useState(1)
+    const [pos, setPos] = useState("relative")
+    const [l, setL] = useState(0)
 
+    useEffect(() => {
+        setPos("absolute");
+        setL(-550)
+        setTimeout(() => {
+            let n = test_array.length;
+            let first = test_array.slice(0, 1);
+            let remaining_elements = test_array.slice(1, n);
+            setTestarray([ ...remaining_elements, ...first]);  
+            setPos("relative")
+            setL(0)
+        }, 3000);
+    });
 
     return ( 
-    <div className="live">
-        <div className="live_screen">
-                <div className="live_screen_info">
-                        <div className="live_screen_info_item_images">
-                            <button id="left" >L</button>
-                            <button id="right">R</button>
-                            <div className="live_screen_info_item_images_image"> 
-                                <img src={product} alt="image" />
-                            </div>
-                            <div className="live_screen_info_item_images_image"> 
-                                <img src={product} alt="image" />
-                            </div>
-                            <div className="live_screen_info_item_images_image"> 
-                                <img src={product} alt="image" />
-                            </div>
-                            <div className="live_screen_info_item_images_image"> 
-                                <img src={product} alt="image" />
-                            </div>
-{/*                             <div className="live_screen_info_item_images_live">
-                                <img src={screen} alt="" />
-                            </div> */}
-                            
-                        </div>
-                        <div className="live_screen_info_participants">
-                            Participants table
-                        </div>
-                        <div className="live_screen_info_bid_button">
-                            Bidding button
-                        </div>
-                </div>
-        </div>
-        <input type="text" ref={message} />
-        <button onClick={message_socket} >Socket Test</button>
-    </div> );
+        <div className="live">
+            <div className="live_images">
+                {
+                    test_array.map((element, index)=>
+                    <div className="live_images_image" style={{backgroundColor: index%2 ? "red" : index%3 ? "yellow" : "green",
+                    opacity: index === 0 ? cover : "1", position: index === 0 ? pos : "relative", left: index === 0 ? l : "0"
+                    
+                     }}>
+                            {element}
+                    </div>
+                    )
+                }
+            </div>
+            <button onClick={left_click}>Left</button>
+        </div> 
+    );
 }
  
 export default Live;
