@@ -1,4 +1,5 @@
 import "./live.css";
+import { useEffect } from "react";
 
 const Live = () => {
     return ( 
@@ -7,4 +8,4 @@ const Live = () => {
     </div> );
 }
  
-export default Live;<div className="live"></div>
+export default Live;

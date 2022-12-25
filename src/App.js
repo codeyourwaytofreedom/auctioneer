@@ -10,9 +10,13 @@ import Auction from "./auction/auction";
 import Payment from "./payment/payment";
 import User_profile from "./profile/user_profile";
 import Live from "./live/live";
+import io from 'socket.io-client';
+import { useEffect } from "react";
 
+const socket = io.connect("http://localhost:9000")
 
 function App() {
+
   return (
       <Router>
         <Routes>
@@ -54,7 +58,7 @@ function App() {
           <Route element={<Check_login/>}>
               <Route path="/liveroom" 
                       element={<>
-                          <Navbar bg={"crimson"}/>
+                          <Navbar bg={"#9370DB"}/>
                           <Live/>
                       </>}
               />

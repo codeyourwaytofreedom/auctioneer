@@ -6,7 +6,18 @@ require ("dotenv").config();
 const express = require('express'); 
 const app = express();
 const cors = require('cors');
+const http = require('http');
 
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"]
+  }
+});
+
+ 
 //token operation and parsers
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
@@ -29,15 +40,25 @@ const {categories} = require("/Users/waytofreedom/Desktop/auctioneer/backend/dum
 app.use(express.static(__dirname+'/images'));
 
 
+
+
+
 let db;
 const { connectToDb, getDb } = require("./db");
 connectToDb( (err) => {
         if(!err){
-          app.listen(port, () => {console.log(`Listening on port ${port}`)}); //Line 6
+          server.listen(port, () => {console.log(`Listening on port ${port}`)}); //Line 6
           //stored an instance of database after successful connection
           db = getDb();
         }
 })
+
+
+//socket
+io.on('connection', (socket) => {
+  console.log('a user connected');
+});
+
 
 
 
@@ -256,3 +277,5 @@ app.post('/webhook',express.raw({type: 'application/json'}), async (request, res
 
   response.status(200);
 });
+
+
