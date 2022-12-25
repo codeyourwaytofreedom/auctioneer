@@ -1,11 +1,14 @@
 import "./live.css";
 import { useEffect } from "react";
 import io from 'socket.io-client';
+import { useRef } from "react";
+import { useState } from "react";
 
 const socket = io.connect("http://localhost:9000")
 
 
 const Live = () => {
+    const [msg, setMessage] = useState("");
 
     useEffect(() => {
         socket.on('connect', () => {
@@ -15,7 +18,12 @@ const Live = () => {
         socket.on('disconnect', () => {
             console.log("Disconnected from Socket")
         });
-    
+
+        socket.on('chat message', (ms) => {
+            setMessage(ms)
+            console.log("New user message received from the Socket server")
+        });
+
         socket.on('pong', () => {
             console.log("Ponged Socket")
         });
@@ -27,8 +35,15 @@ const Live = () => {
         };
       }, []);
 
+
+
+    const message = useRef();
     const message_socket = () => {
-        socket.emit('chat message', "Hello Dear Socket...");
+        if(message.current.value)
+        {
+            socket.emit('chat message', message.current.value);
+        }
+        
     }
 
 
@@ -38,7 +53,8 @@ const Live = () => {
         <br />
         <br />
         <br />
-        <input type="text" />
+        <h1>{msg}</h1>
+        <input type="text" ref={message} />
         <button onClick={message_socket} >Socket Test</button>
     </div> );
 }

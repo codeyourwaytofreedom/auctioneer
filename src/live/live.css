@@ -374,4 +374,7 @@ html, body {
   position: relative;
   top: 70px;
   border: 2px solid slateblue;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=live.css.map */
