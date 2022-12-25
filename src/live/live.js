@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import io from 'socket.io-client';
 import { useRef } from "react";
 import { useState } from "react";
+import screen from "./screen.png";
+import product from "./product.jpg";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -49,11 +51,36 @@ const Live = () => {
 
     return ( 
     <div className="live">
-        Live auction room
-        <br />
-        <br />
-        <br />
-        <h1>{msg}</h1>
+        <div className="live_screen">
+                <div className="live_screen_info">
+                        <div className="live_screen_info_item_images">
+                            <button id="left" >L</button>
+                            <button id="right">R</button>
+                            <div className="live_screen_info_item_images_image"> 
+                                <img src={product} alt="image" />
+                            </div>
+                            <div className="live_screen_info_item_images_image"> 
+                                <img src={product} alt="image" />
+                            </div>
+                            <div className="live_screen_info_item_images_image"> 
+                                <img src={product} alt="image" />
+                            </div>
+                            <div className="live_screen_info_item_images_image"> 
+                                <img src={product} alt="image" />
+                            </div>
+{/*                             <div className="live_screen_info_item_images_live">
+                                <img src={screen} alt="" />
+                            </div> */}
+                            
+                        </div>
+                        <div className="live_screen_info_participants">
+                            Participants table
+                        </div>
+                        <div className="live_screen_info_bid_button">
+                            Bidding button
+                        </div>
+                </div>
+        </div>
         <input type="text" ref={message} />
         <button onClick={message_socket} >Socket Test</button>
     </div> );
