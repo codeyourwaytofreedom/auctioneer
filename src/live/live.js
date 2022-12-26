@@ -7,6 +7,9 @@ import screen from "./screen.png";
 import product from "./product.jpg";
 import product1 from "./product1.jpg";
 import product2 from "./product2.jpg";
+import product3 from "./product3.jpg";
+import product4 from "./product4.jpg";
+import mic from "./microphone.png";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -49,8 +52,7 @@ const Live = () => {
         }
         
     }
-    const [test_array, setTestarray] = useState([product, product1, product2, product, product1, product2])
-    const [cover, setCover] = useState(1)
+    const [test_array, setTestarray] = useState([product, product1, product2, product3, product4, product1])
     const [pos, setPos] = useState("relative")
     const [l, setL] = useState(0)
 
@@ -72,7 +74,7 @@ const Live = () => {
             <div className="live_images">
                 {
                     test_array.map((element, index)=>
-                    <div className="live_images_image" style={{opacity: index === 0 ? cover : "1", 
+                    <div className="live_images_image" style={{
                             position: index === 0 ? pos : "relative", left: index === 0 ? l : "0"
                     
                      }}>
@@ -81,6 +83,17 @@ const Live = () => {
                     </div>
                     )
                 }
+            </div>
+            <div className="live_auction">
+                <div className="live_auction_latest">
+                    <div>
+                        Latest Price
+                    </div>
+                    <div className="live_auction_latest_mic">
+                        <img src={mic} alt="mic" />
+                    </div>
+                    
+                </div>
             </div>
         </div> 
     );

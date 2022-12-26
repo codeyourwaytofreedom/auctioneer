@@ -3,7 +3,7 @@
 .live{
     position: relative;
     top:70px;
-    border-bottom: 4px solid salmon;
+    //border-bottom: 4px solid salmon;
     padding-bottom: 50px;
     &_images{
         display: grid;
@@ -12,12 +12,29 @@
         position: relative;
         padding-top: 20px;
         &_image{
-            border: 3px solid black;
+            //border: 3px solid black;
             @include grid-center;
             width: 25vw;
             //aspect-ratio: 5/3;
             padding: 5px;
             @include image-fit;
+        }
+    }
+    &_auction{
+        border: 2px solid red;
+        display: flex;
+        justify-content: center;
+        &_latest{
+            border: 2px solid black;
+            width: fit-content;
+            
+            display: grid;
+            justify-content: center;
+            &_mic{
+                @include image-fit;
+                width: 20vw;
+                max-width: 100px;
+            }
         }
     }
 }

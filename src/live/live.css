@@ -373,7 +373,6 @@ html, body {
 .live {
   position: relative;
   top: 70px;
-  border-bottom: 4px solid salmon;
   padding-bottom: 50px;
 }
 .live_images {
@@ -384,7 +383,6 @@ html, body {
   padding-top: 20px;
 }
 .live_images_image {
-  border: 3px solid black;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -392,6 +390,32 @@ html, body {
   padding: 5px;
 }
 .live_images_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
+}
+.live_auction {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+}
+.live_auction_latest {
+  border: 2px solid black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: grid;
+  justify-content: center;
+}
+.live_auction_latest_mic {
+  width: 20vw;
+  max-width: 100px;
+}
+.live_auction_latest_mic img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
