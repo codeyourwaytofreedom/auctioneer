@@ -9,7 +9,7 @@ import product1 from "./product1.jpg";
 import product2 from "./product2.jpg";
 import product3 from "./product3.jpg";
 import product4 from "./product4.jpg";
-import mic from "./microphone.png";
+import hand from "./hand.png";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -85,14 +85,39 @@ const Live = () => {
                 }
             </div>
             <div className="live_auction">
+                <div className="live_auction_left">
+                    {
+                        [...Array(5)].map(el =>
+                            <div className="live_auction_left_double">
+                                <span>
+                                    <img src={hand} alt="hand" />
+                                </span>
+                                <span>
+                                    Participant ID
+                                </span>
+                            </div>   
+                            )
+                    }
+
+                </div>
+
                 <div className="live_auction_latest">
-                    <div>
                         Latest Price
-                    </div>
-                    <div className="live_auction_latest_mic">
-                        <img src={mic} alt="mic" />
-                    </div>
-                    
+                </div>
+
+                <div className="live_auction_right">
+                {
+                        [...Array(5)].map(el =>
+                            <div className="live_auction_right_double">
+                                <span>
+                                    <img src={hand} alt="hand" />
+                                </span>
+                                <span>
+                                    Participant ID
+                                </span>
+                            </div>   
+                            )
+                    }
                 </div>
             </div>
         </div> 

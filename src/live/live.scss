@@ -23,17 +23,36 @@
     &_auction{
         border: 2px solid red;
         display: flex;
-        justify-content: center;
+        background-color: #1a0546;
         &_latest{
-            border: 2px solid black;
-            width: fit-content;
-            
+            border: 2px solid crimson;
+            @include grid-center;
+            font-size: 4vw;
+            font-weight: bolder;
+            font-family: $annie;
+            width: 20vw;
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px yellow,
+                0 0 82px yellow,
+        }
+        &_left, &_right{
+            border:2px solid yellow;
             display: grid;
-            justify-content: center;
-            &_mic{
-                @include image-fit;
+            grid-template-columns: repeat(2, 1fr);
+            &_double{
+                display: grid;
                 width: 20vw;
-                max-width: 100px;
+                border: 2px solid black;
+                background-color: salmon;
+                span{
+                    color: white;
+                    display: grid;
+                    justify-content: center;
+                }
             }
         }
     }
@@ -48,6 +67,17 @@
         &_images{
             &_image{
                 width: 33.33vw;
+            }
+        }
+        &_auction{
+            &_latest{
+
+            }
+            &_left, &_right{
+                border:2px solid yellow;
+                &_double{
+
+                }
             }
         }
     }
