@@ -85,40 +85,17 @@ const Live = () => {
                 }
             </div>
             <div className="live_auction">
-                <div className="live_auction_left">
-                    {
-                        [...Array(5)].map(el =>
-                            <div className="live_auction_left_double">
-                                <span>
-                                    <img src={hand} alt="hand" />
-                                </span>
-                                <span>
-                                    Participant ID
-                                </span>
-                            </div>   
-                            )
-                    }
-
-                </div>
-
-                <div className="live_auction_latest">
-                        Latest Price
-                </div>
-
-                <div className="live_auction_right">
+                         <div className="live_auction_cell">
+                            CEll
+                        </div>
                 {
-                        [...Array(5)].map(el =>
-                            <div className="live_auction_right_double">
-                                <span>
-                                    <img src={hand} alt="hand" />
-                                </span>
-                                <span>
-                                    Participant ID
-                                </span>
-                            </div>   
-                            )
-                    }
-                </div>
+                    [...Array(11)].map((e) =>
+                        <div className="live_auction_cell">
+                            CEll
+                        </div>
+                        )
+                }
+
             </div>
         </div> 
     );
