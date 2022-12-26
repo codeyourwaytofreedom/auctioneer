@@ -29,6 +29,19 @@
         &_cell{
             border: 2px solid black;
             aspect-ratio: 4/3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            #hand{
+                height: 50%;
+                @include image-fit;
+            }
+            span{
+                color:white;
+                font-size: 19px;
+
+            }
         }
     }
 
@@ -69,6 +82,13 @@
             grid-template-columns: repeat(3, 1fr);
             &_cell{
                 aspect-ratio: 2/1;
+                #hand{
+                    height: 70%;
+                    @include image-fit;
+                }
+                span{
+                    font-size: 15px;
+                }
             }
         }
 

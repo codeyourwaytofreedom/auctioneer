@@ -408,6 +408,26 @@ html, body {
 .live_auction_cell {
   border: 2px solid black;
   aspect-ratio: 4/3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.live_auction_cell #hand {
+  height: 50%;
+}
+.live_auction_cell #hand img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  max-width: 900px;
+  max-height: 600px;
+}
+.live_auction_cell span {
+  color: white;
+  font-size: 19px;
 }
 
 @media (max-width: 991.98px) {
@@ -430,6 +450,21 @@ html, body {
   }
   .live_auction_cell {
     aspect-ratio: 2/1;
+  }
+  .live_auction_cell #hand {
+    height: 70%;
+  }
+  .live_auction_cell #hand img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    max-width: 900px;
+    max-height: 600px;
+  }
+  .live_auction_cell span {
+    font-size: 15px;
   }
 }
 @media (max-width: 575.98px) {

@@ -18,6 +18,12 @@ const Live = () => {
     const [msg, setMessage] = useState("");
 
     useEffect(() => {
+        const a = 5;
+      //a === 5 ? console.log("hello") : null;
+      console.log(a ?? 7)
+      console.log(a ===5 ? a : null)
+
+      a ?? console.log("srhwrshwr")
         socket.on('connect', () => {
           console.log("Connected to Socket")
         });
@@ -42,7 +48,7 @@ const Live = () => {
         };
       }, []);
 
-
+      
 
     const message = useRef();
     const message_socket = () => {
@@ -50,8 +56,9 @@ const Live = () => {
         {
             socket.emit('chat message', message.current.value);
         }
-        
     }
+    
+
     const [test_array, setTestarray] = useState([product, product1, product2, product3, product4, product1])
     const [pos, setPos] = useState("relative")
     const [l, setL] = useState(0)
@@ -88,10 +95,16 @@ const Live = () => {
                          <div className="live_auction_cell">
                             CEll
                         </div>
-                {
-                    [...Array(11)].map((e) =>
                         <div className="live_auction_cell">
                             CEll
+                        </div>
+                {
+                    [...Array(10)].map((e) =>
+                        <div className="live_auction_cell" >
+                            <span id="hand">
+                                <img src={hand} alt="" />
+                            </span>
+                            <span>Username</span>
                         </div>
                         )
                 }
