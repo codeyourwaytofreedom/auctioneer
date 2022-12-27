@@ -243,3 +243,27 @@ $main_turq: #80C4B7;
     width: 30px;
   }
 }
+
+
+@keyframes blink {
+  0%{
+    text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
+            0 0 18px green;
+  }
+  50%{
+    text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
+            0 0 18px yellow,
+            0 0 38px yellow,
+            0 0 68px yellow;
+  }
+  100%{
+    text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
+            0 0 18px green;
+  }
+}

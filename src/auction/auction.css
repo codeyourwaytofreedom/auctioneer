@@ -374,6 +374,28 @@ button {
     width: 30px;
   }
 }
+@-webkit-keyframes blink {
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
+  }
+  50% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow;
+  }
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
+  }
+}
+@keyframes blink {
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
+  }
+  50% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow;
+  }
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
+  }
+}
 .auction {
   position: relative;
   top: 70px;

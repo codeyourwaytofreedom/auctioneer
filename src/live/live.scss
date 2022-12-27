@@ -64,6 +64,23 @@
             text-shadow:
             0 0 4px #fff,
             0 0 10px #fff,
+            0 0 18px green;
+            background-color: rgb(58, 7, 58);
+            border-radius: 5px;
+            height: 50%;
+            width: 100%;
+            display: grid;
+            align-self: center;  
+            position: relative;
+            left: 2vw;
+            //animation: blink 2s infinite;
+        }
+        #price_anim{
+            color: white;
+            font-size: 45px;
+            text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
             0 0 18px green,
             0 0 38px green;
             background-color: rgb(58, 7, 58);
@@ -71,8 +88,10 @@
             height: 50%;
             width: 100%;
             display: grid;
-            align-self: center;
-            
+            align-self: center;  
+            position: relative;
+            left: 2vw;
+            animation: blink 2s infinite;
         }
     }
 
@@ -121,6 +140,9 @@
                     font-size: 15px;
                 }
             }
+            #price{
+                height: 80%;
+            }
         }
 
     }
@@ -138,6 +160,16 @@
             &_image{
                 width: 100vw;
                 padding: 5vw;
+            }
+        }
+        &_auction{
+            #price{
+                font-size: 25px;
+            }
+            button{
+                #up{
+                     height: 80%;
+                }
             }
         }
     }

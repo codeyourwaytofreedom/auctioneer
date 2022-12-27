@@ -29,6 +29,10 @@ const Live = () => {
 
         socket.on('chat message', (ms) => {
             setPricefromScoket(ms)
+            setSwitch(true)
+            setTimeout(() => {
+                setSwitch(false)
+            }, 2000);
             console.log("New user message received from the Socket server")
         });
 
@@ -60,6 +64,8 @@ const Live = () => {
         }, 3000);
     }); */
 
+    const [swtch, setSwitch] = useState(false);
+
     const price = 500;
     const bidup = () => {
         socket.emit('chat message', price_from_socket ?? price);
@@ -80,7 +86,7 @@ const Live = () => {
                 }
             </div>
             <div className="live_auction">
-                         <div className="live_auction_cell" id="price">
+                         <div className="live_auction_cell" id={swtch ? "price_anim" : "price" }>
                          £ {price_from_socket ?? price}
                         </div>
                         <button className="live_auction_cell" id="bidup" onClick={bidup}>
