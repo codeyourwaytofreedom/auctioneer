@@ -25,23 +25,54 @@
         grid-template-columns: repeat(6, 1fr);
         position: relative;
         top:3vh;
-        background-color: rgb(56, 5, 56);
+        gap: 0.5vw;
+        padding: 0.5vw;
+        button{
+            border: none;
+            background: transparent;
+            color: yellow;
+            font-size: 25px;
+           
+            #up{
+                 @include image-fit;
+                 height: 50%;
+                 img{border: none;}
+            }
+        }
         &_cell{
-            border: 2px solid black;
+            //border: 2px solid black;
             aspect-ratio: 4/3;
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
+            //background-color: #9370DB;
+            img{border-top: 2px solid gray;}
             #hand{
                 height: 50%;
                 @include image-fit;
             }
             span{
-                color:white;
+                color: rgb(83, 6, 83);
                 font-size: 19px;
+                text-decoration: underline;
 
             }
+        }
+        #price{
+            color: white;
+            font-size: 45px;
+            text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
+            0 0 18px green,
+            0 0 38px green;
+            background-color: rgb(58, 7, 58);
+            border-radius: 5px;
+            height: 50%;
+            width: 100%;
+            display: grid;
+            align-self: center;
+            
         }
     }
 

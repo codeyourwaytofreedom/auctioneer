@@ -8,6 +8,10 @@ html, body {
   overflow-x: hidden;
 }
 
+button {
+  cursor: pointer;
+}
+
 * {
   font-family: "Oswald", sans-serif;
   color: black;

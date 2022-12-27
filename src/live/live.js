@@ -10,20 +10,15 @@ import product2 from "./product2.jpg";
 import product3 from "./product3.jpg";
 import product4 from "./product4.jpg";
 import hand from "./hand.png";
+import up from "./up.png";
 
 const socket = io.connect("http://localhost:9000")
 
 
 const Live = () => {
-    const [msg, setMessage] = useState("");
+    const [price_from_socket, setPricefromScoket] = useState(null);
 
     useEffect(() => {
-        const a = 5;
-      //a === 5 ? console.log("hello") : null;
-      console.log(a ?? 7)
-      console.log(a ===5 ? a : null)
-
-      a ?? console.log("srhwrshwr")
         socket.on('connect', () => {
           console.log("Connected to Socket")
         });
@@ -33,7 +28,7 @@ const Live = () => {
         });
 
         socket.on('chat message', (ms) => {
-            setMessage(ms)
+            setPricefromScoket(ms)
             console.log("New user message received from the Socket server")
         });
 
@@ -47,17 +42,6 @@ const Live = () => {
           socket.off('pong');
         };
       }, []);
-
-      
-
-    const message = useRef();
-    const message_socket = () => {
-        if(message.current.value)
-        {
-            socket.emit('chat message', message.current.value);
-        }
-    }
-    
 
     const [test_array, setTestarray] = useState([product, product1, product2, product3, product4, product1])
     const [pos, setPos] = useState("relative")
@@ -76,6 +60,11 @@ const Live = () => {
         }, 3000);
     }); */
 
+    const price = 500;
+    const bidup = () => {
+        socket.emit('chat message', price_from_socket ?? price);
+    }
+
     return ( 
         <div className="live">
             <div className="live_images">
@@ -86,18 +75,19 @@ const Live = () => {
                     
                      }}>
                             <img src={element} alt="xxx" />
-
                     </div>
                     )
                 }
             </div>
             <div className="live_auction">
-                         <div className="live_auction_cell">
-                            CEll
+                         <div className="live_auction_cell" id="price">
+                         £ {price_from_socket ?? price}
                         </div>
-                        <div className="live_auction_cell">
-                            CEll
-                        </div>
+                        <button className="live_auction_cell" id="bidup" onClick={bidup}>
+                                <span id="up">
+                                <img src={up} alt="" />
+                                </span>
+                        </button>
                 {
                     [...Array(10)].map((e) =>
                         <div className="live_auction_cell" >
