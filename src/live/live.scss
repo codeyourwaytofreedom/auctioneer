@@ -143,6 +143,9 @@
             #price{
                 height: 80%;
             }
+            #price_anim{
+                height: 80%;
+            }
         }
 
     }
@@ -164,6 +167,9 @@
         }
         &_auction{
             #price{
+                font-size: 25px;
+            }
+            #price_anim{
                 font-size: 25px;
             }
             button{

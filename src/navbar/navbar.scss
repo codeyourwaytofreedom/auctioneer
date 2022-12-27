@@ -87,6 +87,11 @@
 @media (max-width: 767.98px) { 
     .Navbar{
         padding-left: 19px;
+        &_bid_page{
+            #bid_now{
+                display: none;
+            }
+        }
     }
  }
 

@@ -11,6 +11,7 @@ import product3 from "./product3.jpg";
 import product4 from "./product4.jpg";
 import hand from "./hand.png";
 import up from "./up.png";
+import { useSelector } from "react-redux";
 
 const socket = io.connect("http://localhost:9000")
 
@@ -51,7 +52,7 @@ const Live = () => {
     const [pos, setPos] = useState("relative")
     const [l, setL] = useState(0)
 
-/*     useEffect(() => {
+    useEffect(() => {
         setPos("absolute");
         setL(-550)
         setTimeout(() => {
@@ -62,10 +63,10 @@ const Live = () => {
             setPos("relative")
             setL(0)
         }, 3000);
-    }); */
+    });
 
     const [swtch, setSwitch] = useState(false);
-
+    const user_in = useSelector((state) => state.userSlice.email)
     const price = 500;
     const bidup = () => {
         socket.emit('chat message', price_from_socket ?? price);
@@ -94,8 +95,16 @@ const Live = () => {
                                 <img src={up} alt="" />
                                 </span>
                         </button>
+
+                        <div className="live_auction_cell" >
+                            <span id="hand">
+                                <img src={hand} alt="" />
+                            </span>
+                            <span>{user_in.username ?? "username"}</span>
+                        </div>
+
                 {
-                    [...Array(10)].map((e) =>
+                    [...Array(9)].map((e) =>
                         <div className="live_auction_cell" >
                             <span id="hand">
                                 <img src={hand} alt="" />

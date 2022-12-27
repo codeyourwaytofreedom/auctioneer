@@ -379,7 +379,7 @@ button {
     text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
   }
   50% {
-    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow;
+    text-shadow: 0 0 4px yellow, 0 0 10px yellow, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow, 0 0 98px yellow;
   }
   100% {
     text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
@@ -390,7 +390,7 @@ button {
     text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
   }
   50% {
-    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow;
+    text-shadow: 0 0 4px yellow, 0 0 10px yellow, 0 0 18px yellow, 0 0 38px yellow, 0 0 68px yellow, 0 0 98px yellow;
   }
   100% {
     text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px green;
@@ -547,6 +547,9 @@ button {
   .live_auction #price {
     height: 80%;
   }
+  .live_auction #price_anim {
+    height: 80%;
+  }
 }
 @media (max-width: 575.98px) {
   .live {
@@ -560,6 +563,9 @@ button {
     padding: 5vw;
   }
   .live_auction #price {
+    font-size: 25px;
+  }
+  .live_auction #price_anim {
     font-size: 25px;
   }
   .live_auction button #up {
